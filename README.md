@@ -26,6 +26,6 @@ Open `site/index.html` or run a static web server from the repository root:
 python3 -m http.server 8000 --directory site
 ```
 
-## GitHub Pages deployment
+## Existing project deployment
 
-`.github/workflows/pages.yml` deploys the `site/` directory on pushes to `main` (requires GitHub Pages to use GitHub Actions as its source).
+The repository already has an integrated GitHub Pages planner on `main` at <https://kanlerxz87-cyber.github.io/Freetime2/>. This branch is based on an earlier commit; the separate `site/` prototype is not the Pages deployment source and should not replace the existing root/docs/scoreboard sites.
