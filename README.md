@@ -21,3 +21,15 @@ Run `node scripts/test.mjs` and `node --check docs/app.mjs` locally, then serve 
 - `VERIFICATION.md` — line-by-line verification log
 
 Key caveat: 2027–2029 NFL/NCAAF/MLB game-by-game schedules were not released at build time; future blocks are ESTIMATED and must be re-verified. See `VERIFICATION.md`.
+
+## Scoreboard site, verified snapshot (session a2ab7210)
+
+A second, self-contained site lives in `scoreboard/` (served at [`/Freetime2/scoreboard/`](https://kanlerxz87-cyber.github.io/Freetime2/scoreboard/)):
+
+- `scoreboard/index.html`: executive summary, verified facts and open items, live 2027 MLB runs with no Giants/Athletics game
+- `scoreboard/schedule.html`: day-by-day scoreboard (yesterday / today / tomorrow) with PT timeline and free blocks; a day is never shown as FREE unless every category is covered
+- `scoreboard/mlb.html`, `nfl.html`, `ncaaf.html`, `radio.html`, `research.html`, `flagged.html`
+- `scoreboard/data/snapshot.json`: 76 hand-verified rows, each with a source link, and 13 flags
+- Build check: `node scripts/check-links.mjs` (internal links, JSON/JS parse, every row has a source)
+
+Coordination board: `COORDINATION.md`.
