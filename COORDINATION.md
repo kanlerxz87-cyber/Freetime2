@@ -11,3 +11,5 @@
 - Tests cover interval merging, DST, leap days, TBD/cancelled MLB records, and local entry links. External references are not exhaustively link-checked. Full NFL, college, local radio and future-season coverage remain open; see Flagged for Review.
 
 - Integration PR: [#1](https://github.com/kanlerxz87-cyber/Freetime2/pull/1). Publication target: [GitHub Pages](https://kanlerxz87-cyber.github.io/Freetime2/).
+
+- GitHub confirmed PR #1 merged as `ef11767c2cf5bce675ee9dc83ee1ee5f2fcfafa2`; Pages reported `built` for that commit and the public landing page was fetched successfully.
