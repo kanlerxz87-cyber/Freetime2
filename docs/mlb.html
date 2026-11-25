@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MLB · Free Time Vacation Planner</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="mlb">
+<header class="top">
+  <div class="brand">Free Time Vacation Planner</div>
+  <nav>
+    <a href="index.html">Summary</a>
+    <a href="schedule.html">Scoreboard</a>
+    <a href="mlb.html" class="active">MLB</a>
+    <a href="nfl.html">NFL</a>
+    <a href="ncaaf.html">NCAAF</a>
+    <a href="radio.html">Radio</a>
+    <a href="research.html">Research</a>
+    <a href="flagged.html">Flagged for Review</a>
+  </nav>
+</header>
+<main>
+  <h1>MLB — all 30 clubs</h1>
+  <p class="lead">Giants and Athletics are flagged HIGH priority. The 2027 regular season was released Jul 16, 2026. Game-by-game data for every club is loaded live on the <a href="schedule.html">Scoreboard</a>.</p>
+  <div class="ok">The 2027 regular season is published: Opening Day is Thu Mar 25, 2027 (MLB). The 2028 and 2029 schedules are not published yet.</div>
+  <div class="warn">Giants and Athletics 2027 games were checked directly in the MLB Stats API when the site was built. For the other 28 clubs, the 2027 release is confirmed league-wide; their games load live on the Scoreboard and are not hand-checked here. Start times the feed marks TBD are estimates (see <a href="flagged.html#F8">F8</a>).</div>
+  <p class="note" id="mlbCount"></p>
+  <div class="table-wrap"><table id="mlbTable"><thead><tr><th>Club</th><th>Abbr.</th><th>Ballpark</th><th>Division</th><th>2027 status</th><th>Official source</th></tr></thead><tbody></tbody></table></div>
+  <h2>Official sources</h2>
+  <div class="card"><ul>
+    <li>MLB Stats API, all clubs: <a href="https://statsapi.mlb.com/api/v1/teams?sportId=1" target="_blank" rel="noopener">statsapi.mlb.com/api/v1/teams?sportId=1</a></li>
+    <li>2027 Giants feed: <a href="https://statsapi.mlb.com/api/v1/schedule?sportId=1&amp;teamId=137&amp;season=2027&amp;gameType=R" target="_blank" rel="noopener">link</a> · Athletics feed: <a href="https://statsapi.mlb.com/api/v1/schedule?sportId=1&amp;teamId=133&amp;season=2027&amp;gameType=R" target="_blank" rel="noopener">link</a></li>
+    <li>MLB 2027 release (Jul 16, 2026): <a href="https://www.mlb.com/press-release/press-release-orioles-announce-2027-regular-season-schedule" target="_blank" rel="noopener">Orioles</a> · <a href="https://www.mlb.com/press-release/press-release-brewers-announce-2027-regular-season-schedule" target="_blank" rel="noopener">Brewers</a> · <a href="https://www.mlb.com/press-release/pirates-announce-2027-regular-season-schedule" target="_blank" rel="noopener">Pirates</a> · <a href="https://www.mlb.com/press-release/washington-nationals-announce-2027-schedule" target="_blank" rel="noopener">Nationals</a></li>
+    <li>Giants flagship radio: KNBR 680 AM / 104.5 FM (see <a href="radio.html">Radio</a>). Athletics Bay Area flagship: unverified (<a href="flagged.html#F10">F10</a>).</li>
+  </ul></div>
+</main>
+<footer>Every row links to its official source. Unverified items are labelled and listed on <a href="flagged.html">Flagged for Review</a>. Verified 2026-11-25.</footer>
+<script src="js/common.js"></script>
+<script src="js/pages.js"></script>
+</body>
+</html>

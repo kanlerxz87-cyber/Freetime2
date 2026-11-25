@@ -10,18 +10,19 @@ Branch note: this session works only on `arena/a2ab7210-freetime2` (branched fro
 
 | # | Task | Status | Owner (session) | Branch | Files in scope |
 |---|------|--------|-----------------|--------|----------------|
-| T1 | Repo review + COORDINATION board | in progress | a2ab7210 | arena/a2ab7210-freetime2 | `COORDINATION.md`, `README.md` |
-| T2 | Official schedule data: MLB 2027 (SF & ATH games + all 30 clubs), NFL 2026 national radio, 49ers, Stanford, Cal | in progress | a2ab7210 | arena/a2ab7210-freetime2 | `docs/data/snapshot.json`, `docs/data/mlb-teams.json` |
-| T3 | Radio station research (KNBR, KSAN, Stanford, A's, Westwood One) | in progress | a2ab7210 | arena/a2ab7210-freetime2 | `docs/radio.html` |
-| T4 | Game-duration research (MLB / NFL / college) | in progress | a2ab7210 | arena/a2ab7210-freetime2 | `docs/research.html` |
-| T5 | Site: landing, scoreboard calendar, category pages, Flagged for Review page | in progress | a2ab7210 | arena/a2ab7210-freetime2 | `docs/**` |
-| T6 | Integration: link check, build check, PR to `main`, merge, Pages deploy | unclaimed | — | — | `scripts/check-links.mjs`, `.github/**` |
+| T1 | Repo review + COORDINATION board | done | a2ab7210 | arena/a2ab7210-freetime2 | `COORDINATION.md`, `README.md` |
+| T2 | Official schedule data: MLB 2027 (SF & ATH games + all 30 clubs), NFL 2026 national radio, 49ers, Stanford, Cal | done (needs review on flagged rows) | a2ab7210 | arena/a2ab7210-freetime2 | `docs/data/snapshot.json`, `docs/data/mlb-teams.json` |
+| T3 | Radio station research (KNBR, KSAN, Stanford, A's, Westwood One) | done (needs review: F3, F10, F11) | a2ab7210 | arena/a2ab7210-freetime2 | `docs/radio.html` |
+| T4 | Game-duration research (MLB / NFL / college) | done (needs review: F9) | a2ab7210 | arena/a2ab7210-freetime2 | `docs/research.html` |
+| T5 | Site: landing, scoreboard calendar, category pages, Flagged for Review page | done | a2ab7210 | arena/a2ab7210-freetime2 | `docs/**` |
+| T6 | Integration: link check, build check, PR to `main`, merge, Pages deploy | in progress | a2ab7210 | arena/a2ab7210-freetime2 | `scripts/check-links.mjs`, `docs/.nojekyll` |
 
 Only one session is active on this branch right now. Another remote branch, `arena/9636f11d-freetime2`, exists on origin and was not touched.
 
 ## Claims log
 
 - 2026-11-25 · a2ab7210 · claimed T1–T5 on `arena/a2ab7210-freetime2`. Scope: files listed above only.
+- 2026-11-25 · a2ab7210 · claimed T6 (integration). No other session is active on this branch, so this session is also the integration session.
 
 ## Sources, verification and irregularities
 
@@ -68,3 +69,7 @@ Sources are logged per task as they are verified. Every data row in `docs/data/s
 ## Log
 
 - 2026-11-25 · a2ab7210 · T1 claimed; repo reviewed (README only). Shared board created.
+- 2026-11-25 · a2ab7210 · T2–T5 built on this branch: `docs/` site (8 pages), `docs/data/snapshot.json` (76 hand-verified rows, 13 flags), `docs/data/mlb-teams.json` (30 clubs), `scripts/check-links.mjs` (build check, passing).
+- 2026-11-25 · a2ab7210 · Calendar logic tested in Node against the snapshot and a sample of the MLB feed. A headless browser is not available in this sandbox, so the live MLB load was not tested in a real browser. Flagged for review.
+- 2026-11-25 · a2ab7210 · Calendar de-duplication: the two 49ers games also on Westwood One (Dec 17, Jan 3) are marked `dup_of` so each game is counted once.
+- 2026-11-25 · a2ab7210 · Coverage rule: a day is never shown as FREE. It shows GAMES ON THIS DAY, NO GAMES LISTED (not verified free), or UNKNOWN. NFL and NCAAF coverage is partial, so no day is verified free.

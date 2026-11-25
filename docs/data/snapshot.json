@@ -1,0 +1,1437 @@
+{
+  "meta": {
+    "project": "Free Time Vacation Planner",
+    "verified_on": "2026-11-25",
+    "timezone": "America/Los_Angeles (Pacific Time). Westwood One and NFL.com times are converted from ET by subtracting 3 hours (all listed dates fall in Pacific Standard Time).",
+    "notes": "Only rows marked status=verified were read from an official page. Rows marked conflict have a time that differs between sources and are listed on the Flagged for Review page. Nothing here was inferred."
+  },
+  "durations_minutes": {
+    "MLB": {
+      "minutes": 158,
+      "label": "2:38 — MLB 2025 official average time of game",
+      "source_url": "https://www.mlb.com/press-release/press-release-mlb-attendance-reaches-71-4-million-three-straight-years-of-growth-for-first-time-since-2007",
+      "official": true
+    },
+    "NFL": {
+      "minutes": 183,
+      "label": "3:03 — 2025 regular-season average, kickoff to final whistle (includes halftime). Third-party analysis, not an NFL figure",
+      "source_url": "https://nflanalytic.com/explainer-how-long-is-an-nfl-game.html",
+      "official": false
+    },
+    "NCAAF": {
+      "minutes": 207,
+      "label": "3:27 — 2025 college football average. Third-party, not an NCAA figure",
+      "source_url": "https://www.underarmour.com/en-us/t/playbooks/football/the-real-length-of-a-football-game/",
+      "official": false
+    }
+  },
+  "tbd_start_estimate_pt": {
+    "MLB": {
+      "time_pt": "18:40",
+      "note": "ESTIMATE used only when the MLB feed marks startTimeTBD=true"
+    },
+    "NFL": {
+      "time_pt": "12:00",
+      "note": "ESTIMATE used only when no start time is published"
+    },
+    "NCAAF": {
+      "time_pt": "12:00",
+      "note": "ESTIMATE used only when no start time is published"
+    }
+  },
+  "coverage": {
+    "MLB": {
+      "status": "live",
+      "source_url": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&season=2027",
+      "note": "All 30 clubs, loaded live from the MLB Stats API in your browser. The 2027 regular season was released Jul 16, 2026 (MLB press releases). Postseason and 2028 are not yet published."
+    },
+    "NFL": {
+      "status": "partial",
+      "note": "Only the Westwood One national radio slate (Nov 25 2026 – Jan 10 2027) and 49ers games are loaded. The full NFL slate is NOT loaded. The 2027 schedule was not on nfl.com in this session."
+    },
+    "NCAAF": {
+      "status": "partial",
+      "note": "Only Stanford and Cal 2026 games are loaded. No 2027 or 2028 Stanford/Cal schedule is loaded."
+    }
+  },
+  "irregularities": [
+    {
+      "id": "F1",
+      "title": "NFL kickoff times differ between Westwood One and NFL.com",
+      "detail": "Westwood One lists Packers at Rams Nov 25 at 7:30 PM ET; NFL.com lists 8:00 PM ET (Netflix). Bears at Lions: 12:30 vs 1:00 PM ET. Eagles at Cowboys: 4:15 vs 4:30 PM ET. Chiefs at Bills: 8:00 vs 8:20 PM ET. Broncos at Steelers: 2:30 vs 3:00 PM ET. The site shows the Westwood One time for radio and both values are listed.",
+      "sources": [
+        {
+          "name": "Westwood One NFL schedule",
+          "url": "https://www.westwoodonesports.com/nfl-schedule/"
+        },
+        {
+          "name": "NFL.com 2026 schedule (week 12)",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-12"
+        }
+      ]
+    },
+    {
+      "id": "F2",
+      "title": "49ers game times differ between 49ers.com and Westwood One",
+      "detail": "Dec 17 at Chargers: 49ers.com 5:15 PM PT vs Westwood One 7:30 PM ET (4:30 PM PT). Jan 3 vs Eagles: 49ers.com 5:20 PM PT vs Westwood One 7:30 PM ET (4:30 PM PT).",
+      "sources": [
+        {
+          "name": "49ers.com schedule",
+          "url": "https://www.49ers.com/schedule/"
+        },
+        {
+          "name": "Westwood One event 548568",
+          "url": "https://www.westwoodonesports.com/events/548568"
+        },
+        {
+          "name": "Westwood One event 548509",
+          "url": "https://www.westwoodonesports.com/events/548509"
+        }
+      ]
+    },
+    {
+      "id": "F3",
+      "title": "Stanford radio station name conflicts with KNBR 680 AM",
+      "detail": "Stanford's official release says its football radio broadcasts air on 'KNBR/KTCT 1050 AM'. KNBR's own materials and the 49ers list KNBR 680 AM / 104.5 FM. Not resolved; the radio page lists both.",
+      "sources": [
+        {
+          "name": "Stanford 2026 radio team release",
+          "url": "https://gostanford.com/news/2026/07/30/2026-football-radio-broadcast-team-announced"
+        },
+        {
+          "name": "49ers.com schedule (radio line)",
+          "url": "https://www.49ers.com/schedule/"
+        }
+      ]
+    },
+    {
+      "id": "F4",
+      "title": "Cal vs Pittsburgh (Nov 28) kickoff time is not confirmed",
+      "detail": "A Cal Big Game week release lists the Nov 28 Pitt game at 4:30 PM. Cal's text schedule lists no time for Nov 28. Not confirmed; shown as an estimate of 4:30 PM PT.",
+      "sources": [
+        {
+          "name": "Cal Big Game week events",
+          "url": "https://calbears.com/news/2026/11/15/football-2026-big-game-week-events"
+        },
+        {
+          "name": "Cal 2026 schedule (text)",
+          "url": "https://calbears.com/sports/football/schedule/text"
+        }
+      ]
+    },
+    {
+      "id": "F5",
+      "title": "Cal result for Nov 21 Big Game is missing from Cal's schedule",
+      "detail": "Stanford's official schedule shows a final result of Stanford 44, California 28 on Nov 21. Cal's text schedule shows no result. Stanford's result is used and is flagged here.",
+      "sources": [
+        {
+          "name": "Stanford 2026 schedule",
+          "url": "https://gostanford.com/sports/football/schedule"
+        },
+        {
+          "name": "Cal 2026 schedule (text)",
+          "url": "https://calbears.com/sports/football/schedule/text"
+        }
+      ]
+    },
+    {
+      "id": "F6",
+      "title": "Third-party schedule site conflicts with official Stanford data",
+      "detail": "CollegeFootballNetwork shows Stanford at Cal on Fri Nov 20 and Stanford vs SMU as TBA. The official Stanford schedule shows Sat Nov 21 (Big Game) and Sat Nov 28 at 12:30 PM PT. Third-party data is not used.",
+      "sources": [
+        {
+          "name": "CollegeFootballNetwork Stanford schedule",
+          "url": "https://collegefootballnetwork.com/teams/stanford-cardinal-football/schedule"
+        },
+        {
+          "name": "Stanford official schedule",
+          "url": "https://gostanford.com/sports/football/schedule"
+        }
+      ]
+    },
+    {
+      "id": "F7",
+      "title": "NFL 2027 schedule not released in this session",
+      "detail": "nfl.com's 2026 schedule page was loaded; no 2027 schedule was found on nfl.com. Third-party sites expect a May 2027 release. NFL 2027 days are NOT treated as free; they show as unverified.",
+      "sources": [
+        {
+          "name": "NFL.com schedules hub",
+          "url": "https://www.nfl.com/schedules/"
+        },
+        {
+          "name": "nfl-schedule.com 2027 release status (third party)",
+          "url": "https://www.nfl-schedule.com/blog/2027-nfl-schedule-release-date"
+        }
+      ]
+    },
+    {
+      "id": "F8",
+      "title": "MLB start times TBD in the 2027 feed",
+      "detail": "Many 2027 MLB games have startTimeTBD=true in the MLB Stats API. The time is estimated at 6:40 PM PT, labelled ESTIMATE on the calendar, and must be confirmed.",
+      "sources": [
+        {
+          "name": "MLB Stats API 2027 Giants schedule",
+          "url": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&teamId=137&season=2027&gameType=R"
+        }
+      ]
+    },
+    {
+      "id": "F9",
+      "title": "NFL and college average durations are not from official sources",
+      "detail": "NFL 3:03 and college 3:27 come from third-party analysis (nflverse analysis, Under Armour blog). MLB 2:38 is official. Replace with official NFL/NCAA figures when found.",
+      "sources": [
+        {
+          "name": "nflanalytic.com NFL game length",
+          "url": "https://nflanalytic.com/explainer-how-long-is-an-nfl-game.html"
+        },
+        {
+          "name": "Under Armour football game length",
+          "url": "https://www.underarmour.com/en-us/t/playbooks/football/the-real-length-of-a-football-game/"
+        }
+      ]
+    },
+    {
+      "id": "F10",
+      "title": "Athletics (A's) Bay Area radio flagship not confirmed",
+      "detail": "A 2025 Daily Republic article says A's games stay on iHeart Sports 960 (KNEW-AM) in the Bay Area. A 2022 list names Bloomberg 960 AM / 103.7 HD-2. A third site names KGMZ 95.7 FM. No official A's 2026 source was found. Left blank.",
+      "sources": [
+        {
+          "name": "Daily Republic (2025)",
+          "url": "https://www.dailyrepublic.com/sports/professional/oakland-as/as-announce-new-flagship-radio-station-in-sacramento/article_7afad5b8-eb2e-11ef-8c50-73d145c66ff3.html"
+        },
+        {
+          "name": "gotknowhow A's radio list (2022)",
+          "url": "https://www.gotknowhow.com/articles/listen-to-oakland-athletics-radio-and-stream-games-live"
+        }
+      ]
+    },
+    {
+      "id": "F11",
+      "title": "Outer Sunset (94122) reception not verified",
+      "detail": "No official or FCC coverage data was located for outer Sunset AM/FM reception of KNBR, KSAN, KNBR 1050 or Westwood One carriers. Not claimed.",
+      "sources": [
+        {
+          "name": "KNBR (AM) on Wikipedia (secondary)",
+          "url": "https://en.wikipedia.org/wiki/KNBR_(AM)"
+        }
+      ]
+    },
+    {
+      "id": "F12",
+      "title": "Reference sites did not load",
+      "detail": "https://buffedlizard55-lab.github.io/RADIOSF/ and https://buffedlizard55-lab.github.io/VacationSchedule/site/ failed to fetch. https://buffedlizard55-lab.github.io/ScheduleFreeTime/ was not fetched. Their contents are NOT used.",
+      "sources": [
+        {
+          "name": "RADIOSF (reference)",
+          "url": "https://buffedlizard55-lab.github.io/RADIOSF/#2026-09-27"
+        },
+        {
+          "name": "VacationSchedule (reference)",
+          "url": "https://buffedlizard55-lab.github.io/VacationSchedule/site/"
+        },
+        {
+          "name": "ScheduleFreeTime (reference)",
+          "url": "https://buffedlizard55-lab.github.io/ScheduleFreeTime/"
+        }
+      ]
+    },
+    {
+      "id": "F13",
+      "title": "Repository had no prior content",
+      "detail": "On arrival the repository contained only a README. The shared task board was created in COORDINATION.md. No other session's data was present on this branch.",
+      "sources": [
+        {
+          "name": "COORDINATION.md",
+          "url": "COORDINATION.md"
+        }
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "WO-548511",
+      "category": "NFL",
+      "league": "NFL",
+      "date": "2026-11-25",
+      "time_pt": "16:30",
+      "time_published": "7:30 PM ET (Westwood One)",
+      "status": "conflict",
+      "flag": "F1",
+      "title": "Green Bay Packers at Los Angeles Rams",
+      "venue": "SoFi Stadium, Inglewood, CA",
+      "network": "Westwood One Sports (national radio)",
+      "priority": "HIGH",
+      "source_url": "https://www.westwoodonesports.com/events/548511",
+      "source_name": "Westwood One"
+    },
+    {
+      "id": "WO-548512",
+      "category": "NFL",
+      "league": "NFL",
+      "date": "2026-11-26",
+      "time_pt": "09:30",
+      "time_published": "12:30 PM ET (Westwood One)",
+      "status": "conflict",
+      "flag": "F1",
+      "title": "Chicago Bears at Detroit Lions",
+      "venue": "Ford Field, Detroit, MI",
+      "network": "Westwood One Sports (national radio)",
+      "priority": "HIGH",
+      "source_url": "https://www.westwoodonesports.com/events/548512",
+      "source_name": "Westwood One"
+    },
+    {
+      "id": "WO-548513",
+      "category": "NFL",
+      "league": "NFL",
+      "date": "2026-11-26",
+      "time_pt": "13:15",
+      "time_published": "4:15 PM ET (Westwood One)",
+      "status": "conflict",
+      "flag": "F1",
+      "title": "Philadelphia Eagles at Dallas Cowboys",
+      "venue": "AT&T Stadium, Arlington, TX",
+      "network": "Westwood One Sports (national radio)",
+      "priority": "HIGH",
+      "source_url": "https://www.westwoodonesports.com/events/548513",
+      "source_name": "Westwood One"
+    },
+    {
+      "id": "WO-548514",
+      "category": "NFL",
+      "league": "NFL",
+      "date": "2026-11-26",
+      "time_pt": "17:00",
+      "time_published": "8:00 PM ET (Westwood One)",
+      "status": "conflict",
+      "flag": "F1",
+      "title": "Kansas City Chiefs at Buffalo Bills",
+      "venue": "New Highmark Stadium, Orchard Park, NY",
+      "network": "Westwood One Sports (national radio)",
+      "priority": "HIGH",
+      "source_url": "https://www.westwoodonesports.com/events/548514",
+      "source_name": "Westwood One"
+    },
+    {
+      "id": "WO-548515",
+      "category": "NFL",
+      "league": "NFL",
+      "date": "2026-11-27",
+      "time_pt": "11:30",
+      "time_published": "2:30 PM ET (Westwood One)",
+      "status": "conflict",
+      "flag": "F1",
+      "title": "Denver Broncos at Pittsburgh Steelers",
+      "venue": "Acrisure Stadium, Pittsburgh, PA",
+      "network": "Westwood One Sports (national radio)",
+      "priority": "HIGH",
+      "source_url": "https://www.westwoodonesports.com/events/548515",
+      "source_name": "Westwood One"
+    },
+    {
+      "id": "WO-548502",
+      "category": "NFL",
+      "league": "NFL",
+      "date": "2026-11-29",
+      "time_pt": "16:30",
+      "time_published": "7:30 PM ET (Westwood One)",
+      "status": "verified",
+      "title": "Las Vegas Raiders at Cleveland Browns",
+      "venue": "Huntington Bank Field, Cleveland, OH",
+      "network": "Westwood One Sports (national radio)",
+      "priority": "HIGH",
+      "source_url": "https://www.westwoodonesports.com/events/548502",
+      "source_name": "Westwood One"
+    },
+    {
+      "id": "WO-548544",
+      "category": "NFL",
+      "league": "NFL",
+      "date": "2026-11-30",
+      "time_pt": "16:00",
+      "time_published": "7:00 PM ET (Westwood One)",
+      "status": "verified",
+      "title": "Carolina Panthers at Tampa Bay Buccaneers",
+      "venue": "Raymond James Stadium, Tampa, FL",
+      "network": "Westwood One Sports (national radio)",
+      "priority": "HIGH",
+      "source_url": "https://www.westwoodonesports.com/events/548544",
+      "source_name": "Westwood One"
+    },
+    {
+      "id": "WO-548566",
+      "category": "NFL",
+      "league": "NFL",
+      "date": "2026-12-03",
+      "time_pt": "16:30",
+      "time_published": "7:30 PM ET (Westwood One)",
+      "status": "verified",
+      "title": "Kansas City Chiefs at Los Angeles Rams",
+      "venue": "SoFi Stadium, Inglewood, CA",
+      "network": "Westwood One Sports (national radio)",
+      "priority": "HIGH",
+      "source_url": "https://www.westwoodonesports.com/events/548566",
+      "source_name": "Westwood One"
+    },
+    {
+      "id": "WO-548503",
+      "category": "NFL",
+      "league": "NFL",
+      "date": "2026-12-06",
+      "time_pt": "16:30",
+      "time_published": "7:30 PM ET (Westwood One)",
+      "status": "verified",
+      "title": "Houston Texans at Pittsburgh Steelers",
+      "venue": "Acrisure Stadium, Pittsburgh, PA",
+      "network": "Westwood One Sports (national radio)",
+      "priority": "HIGH",
+      "source_url": "https://www.westwoodonesports.com/events/548503",
+      "source_name": "Westwood One"
+    },
+    {
+      "id": "WO-548545",
+      "category": "NFL",
+      "league": "NFL",
+      "date": "2026-12-07",
+      "time_pt": "16:00",
+      "time_published": "7:00 PM ET (Westwood One)",
+      "status": "verified",
+      "title": "Dallas Cowboys at Seattle Seahawks",
+      "venue": "Lumen Field, Seattle, WA",
+      "network": "Westwood One Sports (national radio)",
+      "priority": "HIGH",
+      "source_url": "https://www.westwoodonesports.com/events/548545",
+      "source_name": "Westwood One"
+    },
+    {
+      "id": "WO-548567",
+      "category": "NFL",
+      "league": "NFL",
+      "date": "2026-12-10",
+      "time_pt": "16:30",
+      "time_published": "7:30 PM ET (Westwood One)",
+      "status": "verified",
+      "title": "Minnesota Vikings at New England Patriots",
+      "venue": "Gillette Stadium, Foxborough, MA",
+      "network": "Westwood One Sports (national radio)",
+      "priority": "HIGH",
+      "source_url": "https://www.westwoodonesports.com/events/548567",
+      "source_name": "Westwood One"
+    },
+    {
+      "id": "WO-548505",
+      "category": "NFL",
+      "league": "NFL",
+      "date": "2026-12-13",
+      "time_pt": "16:30",
+      "time_published": "7:30 PM ET (Westwood One)",
+      "status": "verified",
+      "title": "Buffalo Bills at Green Bay Packers",
+      "venue": "Lambeau Field, Green Bay, WI",
+      "network": "Westwood One Sports (national radio)",
+      "priority": "HIGH",
+      "source_url": "https://www.westwoodonesports.com/events/548505",
+      "source_name": "Westwood One"
+    },
+    {
+      "id": "WO-548546",
+      "category": "NFL",
+      "league": "NFL",
+      "date": "2026-12-14",
+      "time_pt": "16:00",
+      "time_published": "7:00 PM ET (Westwood One)",
+      "status": "verified",
+      "title": "Pittsburgh Steelers at Jacksonville Jaguars",
+      "venue": "EverBank Stadium, Jacksonville, FL",
+      "network": "Westwood One Sports (national radio)",
+      "priority": "HIGH",
+      "source_url": "https://www.westwoodonesports.com/events/548546",
+      "source_name": "Westwood One"
+    },
+    {
+      "id": "WO-548568",
+      "category": "NFL",
+      "league": "NFL",
+      "date": "2026-12-17",
+      "time_pt": "16:30",
+      "time_published": "7:30 PM ET (Westwood One)",
+      "status": "conflict",
+      "flag": "F2",
+      "title": "San Francisco 49ers at Los Angeles Chargers",
+      "venue": "SoFi Stadium, Inglewood, CA",
+      "network": "Westwood One Sports (national radio)",
+      "priority": "HIGH",
+      "source_url": "https://www.westwoodonesports.com/events/548568",
+      "source_name": "Westwood One"
+    },
+    {
+      "id": "WO-548517",
+      "category": "NFL",
+      "league": "NFL",
+      "date": "2026-12-19",
+      "time_pt": "13:30",
+      "time_published": "4:30 PM ET (Westwood One)",
+      "status": "verified",
+      "title": "Seattle Seahawks at Philadelphia Eagles",
+      "venue": "Lincoln Financial Field, Philadelphia, PA",
+      "network": "Westwood One Sports (national radio)",
+      "priority": "HIGH",
+      "source_url": "https://www.westwoodonesports.com/events/548517",
+      "source_name": "Westwood One"
+    },
+    {
+      "id": "WO-548518",
+      "category": "NFL",
+      "league": "NFL",
+      "date": "2026-12-19",
+      "time_pt": "17:00",
+      "time_published": "8:00 PM ET (Westwood One)",
+      "status": "verified",
+      "title": "Chicago Bears at Buffalo Bills",
+      "venue": "New Highmark Stadium, Orchard Park, NY",
+      "network": "Westwood One Sports (national radio)",
+      "priority": "HIGH",
+      "source_url": "https://www.westwoodonesports.com/events/548518",
+      "source_name": "Westwood One"
+    },
+    {
+      "id": "WO-548506",
+      "category": "NFL",
+      "league": "NFL",
+      "date": "2026-12-20",
+      "time_pt": "16:30",
+      "time_published": "7:30 PM ET (Westwood One)",
+      "status": "verified",
+      "title": "Detroit Lions at Minnesota Vikings",
+      "venue": "U.S. Bank Stadium, Minneapolis, MN",
+      "network": "Westwood One Sports (national radio)",
+      "priority": "HIGH",
+      "source_url": "https://www.westwoodonesports.com/events/548506",
+      "source_name": "Westwood One"
+    },
+    {
+      "id": "WO-548548",
+      "category": "NFL",
+      "league": "NFL",
+      "date": "2026-12-21",
+      "time_pt": "16:00",
+      "time_published": "7:00 PM ET (Westwood One)",
+      "status": "verified",
+      "title": "New England Patriots at Kansas City Chiefs",
+      "venue": "GEHA Field at Arrowhead Stadium, Kansas City, MO",
+      "network": "Westwood One Sports (national radio)",
+      "priority": "HIGH",
+      "source_url": "https://www.westwoodonesports.com/events/548548",
+      "source_name": "Westwood One"
+    },
+    {
+      "id": "WO-548569",
+      "category": "NFL",
+      "league": "NFL",
+      "date": "2026-12-24",
+      "time_pt": "16:30",
+      "time_published": "7:30 PM ET (Westwood One)",
+      "status": "verified",
+      "title": "Houston Texans at Philadelphia Eagles",
+      "venue": "Lincoln Financial Field, Philadelphia, PA",
+      "network": "Westwood One Sports (national radio)",
+      "priority": "HIGH",
+      "source_url": "https://www.westwoodonesports.com/events/548569",
+      "source_name": "Westwood One"
+    },
+    {
+      "id": "WO-548528",
+      "category": "NFL",
+      "league": "NFL",
+      "date": "2026-12-25",
+      "time_pt": "09:30",
+      "time_published": "12:30 PM ET (Westwood One)",
+      "status": "verified",
+      "title": "Green Bay Packers at Chicago Bears",
+      "venue": "Soldier Field, Chicago, IL",
+      "network": "Westwood One Sports (national radio)",
+      "priority": "HIGH",
+      "source_url": "https://www.westwoodonesports.com/events/548528",
+      "source_name": "Westwood One"
+    },
+    {
+      "id": "WO-548531",
+      "category": "NFL",
+      "league": "NFL",
+      "date": "2026-12-25",
+      "time_pt": "13:15",
+      "time_published": "4:15 PM ET (Westwood One)",
+      "status": "verified",
+      "title": "Buffalo Bills at Denver Broncos",
+      "venue": "Empower Field at Mile High, Denver, CO",
+      "network": "Westwood One Sports (national radio)",
+      "priority": "HIGH",
+      "source_url": "https://www.westwoodonesports.com/events/548531",
+      "source_name": "Westwood One"
+    },
+    {
+      "id": "WO-548534",
+      "category": "NFL",
+      "league": "NFL",
+      "date": "2026-12-25",
+      "time_pt": "17:00",
+      "time_published": "8:00 PM ET (Westwood One)",
+      "status": "verified",
+      "title": "Los Angeles Rams at Seattle Seahawks",
+      "venue": "Lumen Field, Seattle, WA",
+      "network": "Westwood One Sports (national radio)",
+      "priority": "HIGH",
+      "source_url": "https://www.westwoodonesports.com/events/548534",
+      "source_name": "Westwood One"
+    },
+    {
+      "id": "WO-548519",
+      "category": "NFL",
+      "league": "NFL",
+      "date": "2026-12-26",
+      "time_pt": "13:00",
+      "time_published": "4:00 PM ET (Westwood One) — teams TBA",
+      "status": "verified",
+      "title": "Week 16 Saturday Doubleheader (teams TBA)",
+      "venue": "TBA",
+      "network": "Westwood One Sports (national radio)",
+      "priority": "HIGH",
+      "source_url": "https://www.westwoodonesports.com/events/548519",
+      "source_name": "Westwood One"
+    },
+    {
+      "id": "WO-548520",
+      "category": "NFL",
+      "league": "NFL",
+      "date": "2026-12-26",
+      "time_pt": "17:00",
+      "time_published": "8:00 PM ET (Westwood One) — teams TBA",
+      "status": "verified",
+      "title": "Week 16 Saturday Doubleheader (teams TBA)",
+      "venue": "TBA",
+      "network": "Westwood One Sports (national radio)",
+      "priority": "HIGH",
+      "source_url": "https://www.westwoodonesports.com/events/548520",
+      "source_name": "Westwood One"
+    },
+    {
+      "id": "WO-548507",
+      "category": "NFL",
+      "league": "NFL",
+      "date": "2026-12-27",
+      "time_pt": "16:30",
+      "time_published": "7:30 PM ET (Westwood One)",
+      "status": "verified",
+      "title": "Jacksonville Jaguars at Dallas Cowboys",
+      "venue": "AT&T Stadium, Arlington, TX",
+      "network": "Westwood One Sports (national radio)",
+      "priority": "HIGH",
+      "source_url": "https://www.westwoodonesports.com/events/548507",
+      "source_name": "Westwood One"
+    },
+    {
+      "id": "WO-548550",
+      "category": "NFL",
+      "league": "NFL",
+      "date": "2026-12-28",
+      "time_pt": "16:00",
+      "time_published": "7:00 PM ET (Westwood One)",
+      "status": "verified",
+      "title": "New York Giants at Detroit Lions",
+      "venue": "Ford Field, Detroit, MI",
+      "network": "Westwood One Sports (national radio)",
+      "priority": "HIGH",
+      "source_url": "https://www.westwoodonesports.com/events/548550",
+      "source_name": "Westwood One"
+    },
+    {
+      "id": "WO-548570",
+      "category": "NFL",
+      "league": "NFL",
+      "date": "2026-12-31",
+      "time_pt": "16:30",
+      "time_published": "7:30 PM ET (Westwood One)",
+      "status": "verified",
+      "title": "Baltimore Ravens at Cincinnati Bengals",
+      "venue": "Paycor Stadium, Cincinnati, OH",
+      "network": "Westwood One Sports (national radio)",
+      "priority": "HIGH",
+      "source_url": "https://www.westwoodonesports.com/events/548570",
+      "source_name": "Westwood One"
+    },
+    {
+      "id": "WO-548521",
+      "category": "NFL",
+      "league": "NFL",
+      "date": "2027-01-02",
+      "time_pt": "13:00",
+      "time_published": "4:00 PM ET (Westwood One) — teams TBA",
+      "status": "verified",
+      "title": "Week 17 Saturday Doubleheader (teams TBA)",
+      "venue": "TBA",
+      "network": "Westwood One Sports (national radio)",
+      "priority": "HIGH",
+      "source_url": "https://www.westwoodonesports.com/events/548521",
+      "source_name": "Westwood One"
+    },
+    {
+      "id": "WO-548522",
+      "category": "NFL",
+      "league": "NFL",
+      "date": "2027-01-02",
+      "time_pt": "17:00",
+      "time_published": "8:00 PM ET (Westwood One) — teams TBA",
+      "status": "verified",
+      "title": "Week 17 Saturday Doubleheader (teams TBA)",
+      "venue": "TBA",
+      "network": "Westwood One Sports (national radio)",
+      "priority": "HIGH",
+      "source_url": "https://www.westwoodonesports.com/events/548522",
+      "source_name": "Westwood One"
+    },
+    {
+      "id": "WO-548509",
+      "category": "NFL",
+      "league": "NFL",
+      "date": "2027-01-03",
+      "time_pt": "16:30",
+      "time_published": "7:30 PM ET (Westwood One)",
+      "status": "conflict",
+      "flag": "F2",
+      "title": "Philadelphia Eagles at San Francisco 49ers",
+      "venue": "Levi's Stadium, Santa Clara, CA",
+      "network": "Westwood One Sports (national radio)",
+      "priority": "HIGH",
+      "source_url": "https://www.westwoodonesports.com/events/548509",
+      "source_name": "Westwood One"
+    },
+    {
+      "id": "WO-548552",
+      "category": "NFL",
+      "league": "NFL",
+      "date": "2027-01-04",
+      "time_pt": "16:00",
+      "time_published": "7:00 PM ET (Westwood One)",
+      "status": "verified",
+      "title": "Houston Texans at Green Bay Packers",
+      "venue": "Lambeau Field, Green Bay, WI",
+      "network": "Westwood One Sports (national radio)",
+      "priority": "HIGH",
+      "source_url": "https://www.westwoodonesports.com/events/548552",
+      "source_name": "Westwood One"
+    },
+    {
+      "id": "WO-548523",
+      "category": "NFL",
+      "league": "NFL",
+      "date": "2027-01-09",
+      "time_pt": "09:30",
+      "time_published": "12:30 PM ET (Westwood One) — teams TBA",
+      "status": "verified",
+      "title": "Week 18 Saturday Tripleheader (teams TBA)",
+      "venue": "TBA",
+      "network": "Westwood One Sports (national radio)",
+      "priority": "HIGH",
+      "source_url": "https://www.westwoodonesports.com/events/548523",
+      "source_name": "Westwood One"
+    },
+    {
+      "id": "WO-548524",
+      "category": "NFL",
+      "league": "NFL",
+      "date": "2027-01-09",
+      "time_pt": "13:15",
+      "time_published": "4:15 PM ET (Westwood One) — teams TBA",
+      "status": "verified",
+      "title": "Week 18 Saturday Tripleheader (teams TBA)",
+      "venue": "TBA",
+      "network": "Westwood One Sports (national radio)",
+      "priority": "HIGH",
+      "source_url": "https://www.westwoodonesports.com/events/548524",
+      "source_name": "Westwood One"
+    },
+    {
+      "id": "WO-548526",
+      "category": "NFL",
+      "league": "NFL",
+      "date": "2027-01-09",
+      "time_pt": "17:00",
+      "time_published": "8:00 PM ET (Westwood One) — teams TBA",
+      "status": "verified",
+      "title": "Week 18 Saturday Tripleheader (teams TBA)",
+      "venue": "TBA",
+      "network": "Westwood One Sports (national radio)",
+      "priority": "HIGH",
+      "source_url": "https://www.westwoodonesports.com/events/548526",
+      "source_name": "Westwood One"
+    },
+    {
+      "id": "WO-548510",
+      "category": "NFL",
+      "league": "NFL",
+      "date": "2027-01-10",
+      "time_pt": "16:30",
+      "time_published": "7:30 PM ET (Westwood One) — teams TBA",
+      "status": "verified",
+      "title": "Week 18 Sunday Night Football (teams TBA)",
+      "venue": "TBA",
+      "network": "Westwood One Sports (national radio)",
+      "priority": "HIGH",
+      "source_url": "https://www.westwoodonesports.com/events/548510",
+      "source_name": "Westwood One"
+    },
+    {
+      "id": "SF-2026-W12",
+      "category": "NFL",
+      "league": "NFL",
+      "date": "2026-11-29",
+      "time_pt": "13:25",
+      "time_published": "1:25 PM PST",
+      "status": "verified",
+      "title": "Seattle Seahawks at San Francisco 49ers (Week 12)",
+      "venue": "Levi's Stadium, Santa Clara, CA",
+      "network": "FOX; 49ers radio: KSAN 107.7 FM / KNBR 104.5 FM / 680 AM",
+      "priority": "HIGH",
+      "source_url": "https://www.49ers.com/schedule/",
+      "source_name": "49ers.com"
+    },
+    {
+      "id": "SF-2026-W13",
+      "category": "NFL",
+      "league": "NFL",
+      "date": "2026-12-06",
+      "time_pt": "10:00",
+      "time_published": "10:00 AM PST",
+      "status": "verified",
+      "title": "San Francisco 49ers at New York Giants (Week 13)",
+      "venue": "MetLife Stadium",
+      "network": "FOX; 49ers radio: KSAN 107.7 FM / KNBR 104.5 FM / 680 AM",
+      "priority": "HIGH",
+      "source_url": "https://www.49ers.com/schedule/",
+      "source_name": "49ers.com"
+    },
+    {
+      "id": "SF-2026-W14",
+      "category": "NFL",
+      "league": "NFL",
+      "date": "2026-12-13",
+      "time_pt": "13:25",
+      "time_published": "1:25 PM PST",
+      "title": "Los Angeles Rams at San Francisco 49ers (Week 14)",
+      "venue": "Levi's Stadium, Santa Clara, CA",
+      "network": "FOX; 49ers radio: KSAN 107.7 FM / KNBR 104.5 FM / 680 AM",
+      "priority": "HIGH",
+      "status": "verified",
+      "source_url": "https://www.49ers.com/schedule/",
+      "source_name": "49ers.com"
+    },
+    {
+      "id": "SF-2026-W15",
+      "category": "NFL",
+      "league": "NFL",
+      "date": "2026-12-17",
+      "time_pt": "17:15",
+      "time_published": "5:15 PM PST",
+      "status": "conflict",
+      "flag": "F2",
+      "title": "San Francisco 49ers at Los Angeles Chargers (Week 15)",
+      "venue": "SoFi Stadium, Inglewood, CA",
+      "network": "Prime Video; 49ers radio: KSAN 107.7 FM / KNBR 104.5 FM / 680 AM",
+      "priority": "HIGH",
+      "source_url": "https://www.49ers.com/schedule/",
+      "source_name": "49ers.com",
+      "dup_of": "WO-548568"
+    },
+    {
+      "id": "SF-2026-W16",
+      "category": "NFL",
+      "league": "NFL",
+      "date": "2026-12-27",
+      "time_pt": "13:25",
+      "time_published": "1:25 PM PST",
+      "status": "verified",
+      "title": "San Francisco 49ers at Kansas City Chiefs (Week 16)",
+      "venue": "GEHA Field at Arrowhead Stadium, Kansas City, MO",
+      "network": "CBS; 49ers radio: KSAN 107.7 FM / KNBR 104.5 FM / 680 AM",
+      "priority": "HIGH",
+      "source_url": "https://www.49ers.com/schedule/",
+      "source_name": "49ers.com"
+    },
+    {
+      "id": "SF-2026-W17",
+      "category": "NFL",
+      "league": "NFL",
+      "date": "2027-01-03",
+      "time_pt": "17:20",
+      "time_published": "5:20 PM PST",
+      "status": "conflict",
+      "flag": "F2",
+      "title": "Philadelphia Eagles at San Francisco 49ers (Week 17)",
+      "venue": "Levi's Stadium, Santa Clara, CA",
+      "network": "NBC; 49ers radio: KSAN 107.7 FM / KNBR 104.5 FM / 680 AM",
+      "priority": "HIGH",
+      "source_url": "https://www.49ers.com/schedule/",
+      "source_name": "49ers.com",
+      "dup_of": "WO-548509"
+    },
+    {
+      "id": "SF-2026-W18",
+      "category": "NFL",
+      "league": "NFL",
+      "date": null,
+      "time_pt": null,
+      "time_published": "Week 18 at Arizona Cardinals — date and time TBD",
+      "status": "verified",
+      "title": "San Francisco 49ers at Arizona Cardinals (Week 18)",
+      "venue": "State Farm Stadium",
+      "network": "49ers radio: KSAN 107.7 FM / KNBR 104.5 FM / 680 AM",
+      "priority": "HIGH",
+      "source_url": "https://www.49ers.com/schedule/",
+      "source_name": "49ers.com"
+    },
+    {
+      "id": "SF-2026-P1",
+      "category": "NFL",
+      "league": "NFL",
+      "date": "2026-08-13",
+      "time_pt": null,
+      "time_published": "Preseason Week 1 — FINAL: L 13-19 vs Tennessee Titans",
+      "status": "verified",
+      "title": "Tennessee Titans at San Francisco 49ers (Preseason 1)",
+      "venue": "Levi's Stadium",
+      "network": "49ers radio",
+      "priority": "HIGH",
+      "result": "L 13-19",
+      "source_url": "https://www.49ers.com/schedule/",
+      "source_name": "49ers.com"
+    },
+    {
+      "id": "SF-2026-R1",
+      "category": "NFL",
+      "league": "NFL",
+      "date": "2026-09-10",
+      "time_pt": null,
+      "time_published": "Week 1 — FINAL: W 27-7 vs Los Angeles Rams (Melbourne)",
+      "status": "verified",
+      "title": "San Francisco 49ers vs Los Angeles Rams (Week 1, Melbourne)",
+      "venue": "Melbourne Cricket Ground",
+      "network": "49ers radio",
+      "priority": "HIGH",
+      "result": "W 27-7",
+      "source_url": "https://www.49ers.com/schedule/",
+      "source_name": "49ers.com"
+    },
+    {
+      "id": "SF-2026-R2",
+      "category": "NFL",
+      "league": "NFL",
+      "date": "2026-09-20",
+      "time_pt": null,
+      "time_published": "Week 2 — FINAL: W 35-13 vs Miami Dolphins",
+      "status": "verified",
+      "title": "Miami Dolphins at San Francisco 49ers (Week 2)",
+      "venue": "Levi's Stadium",
+      "network": "49ers radio",
+      "priority": "HIGH",
+      "result": "W 35-13",
+      "source_url": "https://www.49ers.com/schedule/",
+      "source_name": "49ers.com"
+    },
+    {
+      "id": "SF-2026-R3",
+      "category": "NFL",
+      "league": "NFL",
+      "date": "2026-09-27",
+      "time_pt": null,
+      "time_published": "Week 3 — FINAL: W 36-30 vs Arizona Cardinals",
+      "status": "verified",
+      "title": "Arizona Cardinals at San Francisco 49ers (Week 3)",
+      "venue": "Levi's Stadium",
+      "network": "49ers radio",
+      "priority": "HIGH",
+      "result": "W 36-30",
+      "source_url": "https://www.49ers.com/schedule/",
+      "source_name": "49ers.com"
+    },
+    {
+      "id": "SF-2026-R4",
+      "category": "NFL",
+      "league": "NFL",
+      "date": "2026-10-04",
+      "time_pt": null,
+      "time_published": "Week 4 — FINAL: W 24-14 vs Denver Broncos",
+      "status": "verified",
+      "title": "Denver Broncos at San Francisco 49ers (Week 4)",
+      "venue": "Levi's Stadium",
+      "network": "49ers radio",
+      "priority": "HIGH",
+      "result": "W 24-14",
+      "source_url": "https://www.49ers.com/schedule/",
+      "source_name": "49ers.com"
+    },
+    {
+      "id": "SF-2026-R5",
+      "category": "NFL",
+      "league": "NFL",
+      "date": "2026-10-11",
+      "time_pt": null,
+      "time_published": "Week 5 — FINAL: W 32-29 at Seattle Seahawks",
+      "status": "verified",
+      "title": "San Francisco 49ers at Seattle Seahawks (Week 5)",
+      "venue": "Lumen Field",
+      "network": "49ers radio",
+      "priority": "HIGH",
+      "result": "W 32-29",
+      "source_url": "https://www.49ers.com/schedule/",
+      "source_name": "49ers.com"
+    },
+    {
+      "id": "SF-2026-R6",
+      "category": "NFL",
+      "league": "NFL",
+      "date": "2026-10-19",
+      "time_pt": null,
+      "time_published": "Week 6 — FINAL: W 23-17 vs Washington Commanders",
+      "status": "verified",
+      "title": "Washington Commanders at San Francisco 49ers (Week 6)",
+      "venue": "Levi's Stadium",
+      "network": "49ers radio",
+      "priority": "HIGH",
+      "result": "W 23-17",
+      "source_url": "https://www.49ers.com/schedule/",
+      "source_name": "49ers.com"
+    },
+    {
+      "id": "SF-2026-R7",
+      "category": "NFL",
+      "league": "NFL",
+      "date": "2026-10-25",
+      "time_pt": null,
+      "time_published": "Week 7 — FINAL: L 20-29 at Atlanta Falcons",
+      "status": "verified",
+      "title": "San Francisco 49ers at Atlanta Falcons (Week 7)",
+      "venue": "Mercedes-Benz Stadium",
+      "network": "49ers radio",
+      "priority": "HIGH",
+      "result": "L 20-29",
+      "source_url": "https://www.49ers.com/schedule/",
+      "source_name": "49ers.com"
+    },
+    {
+      "id": "SF-2026-R9",
+      "category": "NFL",
+      "league": "NFL",
+      "date": "2026-11-08",
+      "time_pt": null,
+      "time_published": "Week 9 — FINAL: W 38-17 vs Las Vegas Raiders",
+      "status": "verified",
+      "title": "Las Vegas Raiders at San Francisco 49ers (Week 9)",
+      "venue": "Levi's Stadium",
+      "network": "49ers radio",
+      "priority": "HIGH",
+      "result": "W 38-17",
+      "source_url": "https://www.49ers.com/schedule/",
+      "source_name": "49ers.com"
+    },
+    {
+      "id": "SF-2026-R10",
+      "category": "NFL",
+      "league": "NFL",
+      "date": "2026-11-15",
+      "time_pt": null,
+      "time_published": "Week 10 — FINAL: W 46-40 at Dallas Cowboys",
+      "status": "verified",
+      "title": "San Francisco 49ers at Dallas Cowboys (Week 10)",
+      "venue": "AT&T Stadium",
+      "network": "49ers radio",
+      "priority": "HIGH",
+      "result": "W 46-40",
+      "source_url": "https://www.49ers.com/schedule/",
+      "source_name": "49ers.com"
+    },
+    {
+      "id": "SF-2026-R11",
+      "category": "NFL",
+      "league": "NFL",
+      "date": "2026-11-22",
+      "time_pt": null,
+      "time_published": "Week 11 — FINAL: W 35-10 vs Minnesota Vikings (Mexico City)",
+      "status": "verified",
+      "title": "Minnesota Vikings at San Francisco 49ers (Week 11, Mexico City)",
+      "venue": "Estadio Banorte",
+      "network": "49ers radio",
+      "priority": "HIGH",
+      "result": "W 35-10",
+      "source_url": "https://www.49ers.com/schedule/",
+      "source_name": "49ers.com"
+    },
+    {
+      "id": "CFB-STAN-2026-08-29",
+      "category": "NCAAF",
+      "league": "NCAAF",
+      "date": "2026-08-29",
+      "time_pt": "16:00",
+      "time_published": "4:00 PM PDT",
+      "status": "verified",
+      "title": "Hawai'i at Stanford",
+      "venue": "Stanford Stadium",
+      "network": "ACC Network",
+      "priority": "HIGH",
+      "result": "W 37-27",
+      "source_url": "https://gostanford.com/sports/football/schedule",
+      "source_name": "Stanford Athletics"
+    },
+    {
+      "id": "CFB-STAN-2026-09-04",
+      "category": "NCAAF",
+      "league": "NCAAF",
+      "date": "2026-09-04",
+      "time_pt": "18:00",
+      "time_published": "6:00 PM PDT",
+      "status": "verified",
+      "title": "Miami (FL) at Stanford",
+      "venue": "Stanford Stadium",
+      "network": "ESPN",
+      "priority": "HIGH",
+      "result": "L 6-45",
+      "source_url": "https://gostanford.com/sports/football/schedule",
+      "source_name": "Stanford Athletics"
+    },
+    {
+      "id": "CFB-STAN-2026-09-19",
+      "category": "NCAAF",
+      "league": "NCAAF",
+      "date": "2026-09-19",
+      "time_pt": "13:00",
+      "time_published": "1:00 PM PDT",
+      "status": "verified",
+      "title": "Stanford at Duke",
+      "venue": "Wallace Wade Stadium, Durham, NC",
+      "network": "The CW",
+      "priority": "HIGH",
+      "result": "L 7-35",
+      "source_url": "https://gostanford.com/sports/football/schedule",
+      "source_name": "Stanford Athletics"
+    },
+    {
+      "id": "CFB-STAN-2026-09-26",
+      "category": "NCAAF",
+      "league": "NCAAF",
+      "date": "2026-09-26",
+      "time_pt": "19:30",
+      "time_published": "7:30 PM PDT",
+      "status": "verified",
+      "title": "Georgia Tech at Stanford",
+      "venue": "Stanford Stadium",
+      "network": "ESPN",
+      "priority": "HIGH",
+      "result": "W 34-27",
+      "source_url": "https://gostanford.com/sports/football/schedule",
+      "source_name": "Stanford Athletics"
+    },
+    {
+      "id": "CFB-STAN-2026-10-03",
+      "category": "NCAAF",
+      "league": "NCAAF",
+      "date": "2026-10-03",
+      "time_pt": "09:00",
+      "time_published": "9:00 AM PDT",
+      "status": "verified",
+      "title": "Stanford at Wake Forest",
+      "venue": "Allegacy Federal Credit Union Stadium, Winston-Salem, NC",
+      "network": "ACC Network",
+      "priority": "HIGH",
+      "result": "L 3-57",
+      "source_url": "https://gostanford.com/sports/football/schedule",
+      "source_name": "Stanford Athletics"
+    },
+    {
+      "id": "CFB-STAN-2026-10-10",
+      "category": "NCAAF",
+      "league": "NCAAF",
+      "date": "2026-10-10",
+      "time_pt": "12:30",
+      "time_published": "12:30 PM PDT",
+      "status": "verified",
+      "title": "Stanford at Notre Dame",
+      "venue": "Notre Dame Stadium, Notre Dame, IN",
+      "network": "NBC / Peacock",
+      "priority": "HIGH",
+      "result": "L 7-58",
+      "source_url": "https://gostanford.com/sports/football/schedule",
+      "source_name": "Stanford Athletics"
+    },
+    {
+      "id": "CFB-STAN-2026-10-17",
+      "category": "NCAAF",
+      "league": "NCAAF",
+      "date": "2026-10-17",
+      "time_pt": "16:30",
+      "time_published": "4:30 PM PDT",
+      "title": "Elon at Stanford",
+      "venue": "Stanford Stadium",
+      "network": "ACC Network Extra",
+      "priority": "HIGH",
+      "result": "W 34-7",
+      "status": "verified",
+      "source_url": "https://gostanford.com/sports/football/schedule",
+      "source_name": "Stanford Athletics"
+    },
+    {
+      "id": "CFB-STAN-2026-10-23",
+      "category": "NCAAF",
+      "league": "NCAAF",
+      "date": "2026-10-23",
+      "time_pt": "19:30",
+      "time_published": "7:30 PM PDT",
+      "title": "North Carolina State at Stanford",
+      "venue": "Stanford Stadium",
+      "network": "ESPN",
+      "priority": "HIGH",
+      "result": "W 31-28",
+      "status": "verified",
+      "source_url": "https://gostanford.com/sports/football/schedule",
+      "source_name": "Stanford Athletics"
+    },
+    {
+      "id": "CFB-STAN-2026-10-31",
+      "category": "NCAAF",
+      "league": "NCAAF",
+      "date": "2026-10-31",
+      "time_pt": "12:15",
+      "time_published": "12:15 PM PDT",
+      "title": "Stanford at Louisville",
+      "venue": "L&N Federal Credit Union Stadium, Louisville, KY",
+      "network": "ACC Network",
+      "priority": "HIGH",
+      "result": "L 24-52",
+      "status": "verified",
+      "source_url": "https://gostanford.com/sports/football/schedule",
+      "source_name": "Stanford Athletics"
+    },
+    {
+      "id": "CFB-STAN-2026-11-14",
+      "category": "NCAAF",
+      "league": "NCAAF",
+      "date": "2026-11-14",
+      "time_pt": "16:30",
+      "time_published": "4:30 PM PDT",
+      "title": "Stanford at Virginia Tech",
+      "venue": "Lane Stadium/Worsham Field, Blacksburg, VA",
+      "network": "ACC Network",
+      "priority": "HIGH",
+      "result": "W 40-22",
+      "status": "verified",
+      "source_url": "https://gostanford.com/sports/football/schedule",
+      "source_name": "Stanford Athletics"
+    },
+    {
+      "id": "CFB-BIG-2026-11-21",
+      "category": "NCAAF",
+      "league": "NCAAF",
+      "date": "2026-11-21",
+      "time_pt": "16:30",
+      "time_published": "4:30 PM PT",
+      "title": "Stanford at California (129th Big Game)",
+      "venue": "Databricks Field at California Memorial Stadium, Berkeley, CA",
+      "network": "ACC Network",
+      "priority": "HIGH",
+      "result": "Stanford W 44-28 (Cal result not shown on Cal schedule — F5)",
+      "status": "verified",
+      "flag": "F5",
+      "source_url": "https://gostanford.com/sports/football/schedule",
+      "source_name": "Stanford Athletics"
+    },
+    {
+      "id": "CFB-STAN-2026-11-28",
+      "category": "NCAAF",
+      "league": "NCAAF",
+      "date": "2026-11-28",
+      "time_pt": "12:30",
+      "time_published": "12:30 PM PST",
+      "status": "verified",
+      "title": "SMU at Stanford",
+      "venue": "Stanford Stadium",
+      "network": "ACC Network",
+      "priority": "HIGH",
+      "source_url": "https://gostanford.com/sports/football/schedule",
+      "source_name": "Stanford Athletics"
+    },
+    {
+      "id": "CFB-CAL-2026-09-05",
+      "category": "NCAAF",
+      "league": "NCAAF",
+      "date": "2026-09-05",
+      "time_pt": "19:30",
+      "time_published": "7:30 PM PT",
+      "title": "UCLA at California",
+      "venue": "Databricks Field at California Memorial Stadium, Berkeley, CA",
+      "network": "",
+      "priority": "HIGH",
+      "result": "L 24-45",
+      "status": "verified",
+      "source_url": "https://calbears.com/sports/football/schedule/text",
+      "source_name": "Cal Athletics"
+    },
+    {
+      "id": "CFB-CAL-2026-09-12",
+      "category": "NCAAF",
+      "league": "NCAAF",
+      "date": "2026-09-12",
+      "time_pt": "12:30",
+      "time_published": "12:30 PM PT",
+      "title": "California at Syracuse",
+      "venue": "JMA Wireless Dome, Syracuse, NY",
+      "network": "",
+      "priority": "HIGH",
+      "result": "W 21-18",
+      "status": "verified",
+      "source_url": "https://calbears.com/sports/football/schedule/text",
+      "source_name": "Cal Athletics"
+    },
+    {
+      "id": "CFB-CAL-2026-09-19",
+      "category": "NCAAF",
+      "league": "NCAAF",
+      "date": "2026-09-19",
+      "time_pt": "12:30",
+      "time_published": "12:30 PM PT",
+      "title": "Wagner at California",
+      "venue": "California Memorial Stadium",
+      "network": "",
+      "priority": "HIGH",
+      "result": "W 49-7",
+      "status": "verified",
+      "source_url": "https://calbears.com/sports/football/schedule/text",
+      "source_name": "Cal Athletics"
+    },
+    {
+      "id": "CFB-CAL-2026-09-25",
+      "category": "NCAAF",
+      "league": "NCAAF",
+      "date": "2026-09-25",
+      "time_pt": "19:30",
+      "time_published": "7:30 PM PT",
+      "title": "Clemson at California",
+      "venue": "California Memorial Stadium",
+      "network": "",
+      "priority": "HIGH",
+      "result": "L 10-24",
+      "status": "verified",
+      "source_url": "https://calbears.com/sports/football/schedule/text",
+      "source_name": "Cal Athletics"
+    },
+    {
+      "id": "CFB-CAL-2026-10-03",
+      "category": "NCAAF",
+      "league": "NCAAF",
+      "date": "2026-10-03",
+      "time_pt": "12:30",
+      "time_published": "12:30 PM PT",
+      "title": "California at UNLV",
+      "venue": "Allegiant Stadium, Las Vegas, NV",
+      "network": "",
+      "priority": "HIGH",
+      "result": "L 31-39",
+      "status": "verified",
+      "source_url": "https://calbears.com/sports/football/schedule/text",
+      "source_name": "Cal Athletics"
+    },
+    {
+      "id": "CFB-CAL-2026-10-10",
+      "category": "NCAAF",
+      "league": "NCAAF",
+      "date": "2026-10-10",
+      "time_pt": "12:30",
+      "time_published": "12:30 PM PT",
+      "title": "Virginia Tech at California",
+      "venue": "California Memorial Stadium",
+      "network": "",
+      "priority": "HIGH",
+      "result": "W 25-20",
+      "status": "verified",
+      "source_url": "https://calbears.com/sports/football/schedule/text",
+      "source_name": "Cal Athletics"
+    },
+    {
+      "id": "CFB-CAL-2026-10-17",
+      "category": "NCAAF",
+      "league": "NCAAF",
+      "date": "2026-10-17",
+      "time_pt": "19:30",
+      "time_published": "7:30 PM PT",
+      "title": "Wake Forest at California",
+      "venue": "California Memorial Stadium",
+      "network": "",
+      "priority": "HIGH",
+      "result": "L 7-41",
+      "status": "verified",
+      "source_url": "https://calbears.com/sports/football/schedule/text",
+      "source_name": "Cal Athletics"
+    },
+    {
+      "id": "CFB-CAL-2026-10-24",
+      "category": "NCAAF",
+      "league": "NCAAF",
+      "date": "2026-10-24",
+      "time_pt": "09:00",
+      "time_published": "9 AM (as listed)",
+      "title": "California at SMU",
+      "venue": "Gerald J. Ford Stadium, Dallas, TX",
+      "network": "",
+      "priority": "HIGH",
+      "result": "L 20-59",
+      "status": "verified",
+      "source_url": "https://calbears.com/sports/football/schedule/text",
+      "source_name": "Cal Athletics"
+    },
+    {
+      "id": "CFB-CAL-2026-10-31",
+      "category": "NCAAF",
+      "league": "NCAAF",
+      "date": "2026-10-31",
+      "time_pt": "09:00",
+      "time_published": "9 AM (as listed)",
+      "title": "California at NC State",
+      "venue": "Raleigh, NC",
+      "network": "",
+      "priority": "HIGH",
+      "result": "L 10-31",
+      "status": "verified",
+      "source_url": "https://calbears.com/sports/football/schedule/text",
+      "source_name": "Cal Athletics"
+    },
+    {
+      "id": "CFB-CAL-2026-11-14",
+      "category": "NCAAF",
+      "league": "NCAAF",
+      "date": "2026-11-14",
+      "time_pt": "12:30",
+      "time_published": "12:30 PM PT",
+      "title": "California at Virginia",
+      "venue": "Scott Stadium, Charlottesville, VA",
+      "network": "",
+      "priority": "HIGH",
+      "result": "L 7-36",
+      "status": "verified",
+      "source_url": "https://calbears.com/sports/football/schedule/text",
+      "source_name": "Cal Athletics"
+    },
+    {
+      "id": "CFB-CAL-2026-11-28",
+      "category": "NCAAF",
+      "league": "NCAAF",
+      "date": "2026-11-28",
+      "time_pt": "16:30",
+      "time_published": "4:30 PM PT (conflict — text schedule shows no time)",
+      "status": "conflict",
+      "flag": "F4",
+      "title": "Pittsburgh at California",
+      "venue": "California Memorial Stadium, Berkeley, CA",
+      "network": "",
+      "priority": "HIGH",
+      "source_url": "https://calbears.com/news/2026/11/15/football-2026-big-game-week-events",
+      "source_name": "Cal Athletics"
+    }
+  ]
+}

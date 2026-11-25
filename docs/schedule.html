@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Scoreboard · Free Time Vacation Planner</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand">Free Time Vacation Planner</div>
+  <nav>
+    <a href="index.html">Summary</a>
+    <a href="schedule.html" class="active">Scoreboard</a>
+    <a href="mlb.html">MLB</a>
+    <a href="nfl.html">NFL</a>
+    <a href="ncaaf.html">NCAAF</a>
+    <a href="radio.html">Radio</a>
+    <a href="research.html">Research</a>
+    <a href="flagged.html">Flagged for Review</a>
+  </nav>
+</header>
+<main>
+  <h1>Daily scoreboard — when am I free?</h1>
+  <p class="lead">Pick a day to see every listed game, the free blocks in Pacific Time, and how the day is verified. Times are PT. Use the buttons to move between days.</p>
+
+  <div class="toolbar">
+    <button class="btn" id="prev">← Yesterday</button>
+    <button class="btn primary" id="today">Today</button>
+    <button class="btn" id="next">Tomorrow →</button>
+    <input type="date" id="pick" aria-label="Pick a date">
+    <select id="scope" aria-label="Scope">
+      <option value="all">Scope: all 30 MLB clubs + all listed NFL/college games</option>
+      <option value="sf">Scope: SF-focused (Giants, Athletics, 49ers, Stanford, Cal, Westwood One NFL radio)</option>
+    </select>
+  </div>
+
+  <div id="status" class="warn">Loading official schedule data…</div>
+
+  <div class="card" id="dayCard" hidden>
+    <div class="dayhead">
+      <div><div class="big" id="dayTitle"></div><div class="note" id="dayNote"></div></div>
+      <div id="dayPill"></div>
+    </div>
+    <h3>Timeline (Pacific Time, midnight → midnight)</h3>
+    <div class="timeline" id="timeline" aria-label="Busy and free time for the day"></div>
+    <div class="ticks"><span>12 AM</span><span>3 AM</span><span>6 AM</span><span>9 AM</span><span>12 PM</span><span>3 PM</span><span>6 PM</span><span>9 PM</span><span>12 AM</span></div>
+    <div class="legend" style="margin-top:8px">
+      <span><i style="background:var(--red)"></i>Game on air (estimated length)</span>
+      <span><i style="background:var(--green-bg);border:1px solid #9ee3b4"></i>Free (no listed game)</span>
+    </div>
+
+    <h3>Free time blocks</h3>
+    <div class="table-wrap"><table id="freeTable"><thead><tr><th>From (PT)</th><th>To (PT)</th><th>Length</th><th>Note</th></tr></thead><tbody></tbody></table></div>
+
+    <h3>Games on this day</h3>
+    <div class="table-wrap"><table id="gameTable"><thead><tr><th>Start (PT)</th><th>Busy until (est.)</th><th>Category</th><th>Game</th><th>Priority</th><th>Status</th><th>Source</th></tr></thead><tbody></tbody></table></div>
+    <p class="note" id="durNote"></p>
+  </div>
+
+  <h2>Next 7 days</h2>
+  <div class="strip" id="strip"></div>
+  <p class="note">Dot colour: <span class="dot dot-busy"></span> games on this day · <span class="dot dot-cand"></span> no game listed (not verified free) · <span class="dot dot-unk"></span> unknown.</p>
+</main>
+<footer>Times are Pacific. Free time = minutes not covered by a listed game plus its estimated length. Sources and verification: <a href="research.html">Research</a> · <a href="flagged.html">Flagged for Review</a>.</footer>
+<script src="js/common.js"></script>
+<script src="js/schedule.js"></script>
+</body>
+</html>
