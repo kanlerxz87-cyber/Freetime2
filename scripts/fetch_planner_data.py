@@ -23,8 +23,10 @@ UA = "Mozilla/5.0 (X11; Linux x86_64) FreeTimeVacationPlanner/1.0 (+https://gith
 LOG = []
 
 
-def get(url, timeout=60):
-    req = urllib.request.Request(url, headers={"User-Agent": UA, "Accept": "*/*", "Accept-Encoding": "gzip"})
+def get(url, timeout=60, extra=None):
+    hdr = {"User-Agent": UA, "Accept": "*/*", "Accept-Encoding": "gzip"}
+    hdr.update(extra or {})
+    req = urllib.request.Request(url, headers=hdr)
     with urllib.request.urlopen(req, timeout=timeout) as r:
         data = r.read()
         if r.headers.get("Content-Encoding") == "gzip":
@@ -139,10 +141,23 @@ def fetch_mlb():
 
 
 # ---------------------------------------------------------------- NBA (official NBA CDN) – Warriors
+NBA_HDR = {"Origin": "https://www.nba.com", "Referer": "https://www.nba.com/",
+           "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36"}
+
+
 def fetch_nba():
-    url = "https://cdn.nba.com/static/json/staticData/scheduleLeagueV2.json"
+    url, data = None, None
+    for cand in ("https://cdn.nba.com/static/json/staticData/scheduleLeagueV2.json",
+                 "https://cdn.nba.com/static/json/staticData/scheduleLeagueV2_1.json"):
+        try:
+            st, data = get(cand, timeout=120, extra=NBA_HDR)
+            url = cand
+            break
+        except Exception as e:  # noqa: BLE001
+            log("nba_attempt", cand, False, repr(e)[:200])
+    if data is None:
+        return
     try:
-        st, data = get(url, timeout=120)
         j = json.loads(data)
         ls = j.get("leagueSchedule", {})
         out = []
@@ -217,6 +232,10 @@ PAGES = {
     "sb_lxiii": "https://www.allegiantstadium.com/events/detail/super-bowl-lxiii",
     "cfp_future": "https://collegefootballplayoff.com/sports/2018/8/31/cfp-games-schedule",
     "mlb_avg_time_2025": "https://www.mlb.com/news/mlb-average-game-time-under-three-hours-third-straight-year",
+    "warriors_broadcast_2026_27": "https://www.nba.com/warriors/news/warriors-announce-2026-27-television-radio-broadcast-schedules-20260824",
+    "earthquakes_radio_2026": "https://www.sjearthquakes.com/news/news-earthquakes-announce-radio-stations-for-2026-mls-season",
+    "stanford_radio_2026": "https://gostanford.com/news/2026/07/30/2026-football-radio-broadcast-team-announced",
+    "cal_mbb": "https://calbears.com/sports/mens-basketball/schedule/text",
 }
 
 
