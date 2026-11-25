@@ -1,27 +1,23 @@
-# Freetime2 — Bay Area Sports Radio Free-Time Planner
+# Free Time Vacation
 
-Planning tool for finding vacation windows in the San Francisco Bay Area (Outer Sunset, 94122) when no high-priority live sports are likely/known to be on AM/FM radio.
+[Open the GitHub Pages planner](https://kanlerxz87-cyber.github.io/Freetime2/).
 
-## Scope
-High-priority conflicts (any of these on air = not free):
-- **MLB**: San Francisco Giants, Oakland Athletics (flagged high priority); all 30 MLB clubs shown
-- **NFL**: San Francisco 49ers preseason/regular/postseason (high priority); Westwood One Sports national NFL radio broadcasts
-- **NCAAF**: Stanford Cardinal, California Golden Bears (high priority)
+The planner shows vacation candidates, a 2026–2029 daily scoreboard in Pacific time, an AM/FM reference for San Francisco ZIP 94122, and a coverage audit. It does not certify game-free days. The strongest preliminary candidate is February 15–18, 2027, between the published Super Bowl and listed spring games. A full week is not verified.
 
-## What this repo contains
-- `docs/` — GitHub Pages static site (executive summary, schedule/windows, radio sources, methodology, flagged-for-review)
-- `data/sources.json` — source registry with official URLs and verification status
-- `data/windows_2026_2029.json` — structured vacation-window analysis (verified where published, estimated where not)
-- `VERIFICATION.md` — line-by-line verification log and irregularities
-- `COORDINATION.md` — shared task board for parallel agent sessions
+The scoreboard reads MLB's official Stats API directly in the browser and keeps a sourced snapshot of selected football dates and Westwood One network listings. It separates confirmed starts from estimated ends and does not assume local radio carriage. Unverified times are blank; unknown starts and incomplete coverage are called out. See **Flagged for Review** before making travel decisions.
 
-## Key caveats
-- **2026**: Partial official schedules exist (MLB season schedule published; NFL/49ers schedule published; Stanford/Cal 2026 schedules published; Westwood One NFL schedule shows selected national games). Game times/TBD items are flagged.
-- **2027 MLB**: MLB clubs announced 2027 regular-season schedules (official press releases, e.g. Opening Day Mar 25 2027). Full game-by-game/team-by-team details require per-team/MLB schedule pages; this repo records verified season boundaries and flags game-level details as needing per-game source verification.
-- **2027-2029 NFL, NCAAF, MLB (beyond published structure)**: **No official game-by-game schedules released at build time.** Windows for these years are **ESTIMATES** based on official league season-structure patterns and historical calendar norms. They are explicitly labeled `ESTIMATED` and must not be treated as confirmed conflict-free periods.
+Run `node scripts/test.mjs` and `node --check docs/app.mjs` locally, then serve the repository root over HTTP to preview. No build dependencies are required.
 
-## Official sources (primary)
-See `data/sources.json` and the site "Sources / Methodology" page for full citations.
+## Supplementary verified-data pages (session b1591c47)
 
-## GitHub Pages
-Site is served from `docs/` (configure Pages to deploy from `main` / `docs`).
+- `docs/index.html` — dashboard + source registry (official sources with links)
+- `docs/executive-summary.html` — strict vs practical vacation windows
+- `docs/windows.html` — 2026–2029 windows + busy blocks
+- `docs/schedules.html` — 2026 49ers / Stanford / Cal tables (official sources)
+- `docs/radio.html` — KNBR 680/104.5 + Westwood One 2026 slate
+- `docs/methodology.html` — Day Planner (yesterday/tomorrow, PT free-time math)
+- `docs/flagged.html` — Flagged for Review
+- `data/sources.json`, `data/schedules_2026.json`, `data/windows_2026_2029.json` — structured data
+- `VERIFICATION.md` — line-by-line verification log
+
+Key caveat: 2027–2029 NFL/NCAAF/MLB game-by-game schedules were not released at build time; future blocks are ESTIMATED and must be re-verified. See `VERIFICATION.md`.
