@@ -40,3 +40,16 @@ node scripts/check-links.mjs
 ```
 
 Coordination board: `COORDINATION.md`.
+
+## Deep-Dive Verified Data Library (`docs/` — extended by this session)
+
+The `docs/` library now also ships a parallel full dataset build (`tools/generate_schedules.py`, deterministic) and pages:
+
+- **`docs/calendar.html`** — MLB/NFL-style scoreboard calendar (2026–2029): month grid, prev/today/next day navigation, per-day PT busy blocks with exact free-time ranges, hour-by-hour busy grid, click any day for every game + radio call + source link.
+- **`docs/mlb.html`** — all 30 clubs 2026–2029 (~2,900 game rows/season) with high-priority flags + CSV export. **2027 SF Giants & Athletics fixtures (and 16 marquee games) are VERIFIED official rows from the MLB Stats API** (ingested from `data/mlb_2027_bayarea.json`); all other generated rows are labeled ESTIMATED.
+- **`docs/nfl.html`**, **`docs/ncaaf.html`**, **`docs/westwood.html`** — same pattern; verified SF 49ers 2026 + officially remaining 2026 NFL weeks 12–18 and 2026–27 playoffs/Super Bowl LXI (from `data/nfl_2026_remaining.json` / `data/all_events.json`) appear as VERIFIED rows.
+- **`docs/executive-summary.html` / `docs/windows.html`** — computed from `data/vacation_analysis.json`.
+- **`docs/sources.html` / `docs/methodology.html` / `docs/flagged.html`** — source registry, model card, consolidated flags.
+- **`docs/live-planner.html`** — preserved browser-live MLB Stats API planner.
+
+Rebuild: `python3 tools/generate_schedules.py` (deterministic; imports the verified official overlays from this repo where present).

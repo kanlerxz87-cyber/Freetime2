@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sources 2026–2029 — Free Time Vacation</title>
+<meta name="description" content="Every official and secondary source behind the 2026–2029 Bay Area sports radio vacation planner.">
+<link rel="stylesheet" href="assets/site.css">
+<script type="module" src="assets/site.js"></script>
+</head>
+<body>
+<header><div class="shell">
+  <div class="top"><a class="brand" href="../index.html"><span class="logo">◈</span>Free Time <em>Vacation</em></a><small>94122 · PACIFIC TIME</small></div>
+  <nav data-site-nav aria-label="Sections"></nav>
+</div></header>
+<main class="shell">
+<section class="hero">
+  <div class="eyebrow">SOURCE REGISTRY · OFFICIAL FIRST</div>
+  <h1>Every claim traces to a link. Everything else says ESTIMATED.</h1>
+  <p>Verification policy: a row may only display <span class="tag ver">VERIFIED</span> if captured from an official league/club/station source listed here. ESTIMATED rows are mathematical reconstructions anchored to verified season boundaries and are never presented as announcements. Secondary sources are used only to fill gaps and are always labeled partial-secondary.</p>
+</section>
+
+<section class="panel">
+  <h2>Official — leagues, clubs, stations</h2>
+  <div class="table"><table><thead><tr><th>Source</th><th>What it verifies</th><th>Link</th></tr></thead><tbody id="official"></tbody></table></div>
+</section>
+
+<section class="panel">
+  <h2>Primary — announcements & press releases</h2>
+  <div class="table"><table><thead><tr><th>Source</th><th>What it establishes</th><th>Link</th></tr></thead><tbody id="primary"></tbody></table></div>
+</section>
+
+<section class="panel">
+  <h2>Secondary & cross-checks (never sufficient alone)</h2>
+  <div class="table"><table><thead><tr><th>Source</th><th>Used for</th><th>Link</th></tr></thead><tbody id="secondary"></tbody></table></div>
+</section>
+
+<section class="panel">
+  <h2>Reference sites supplied by the project brief</h2>
+  <div class="table"><table><thead><tr><th>Site</th><th>Role</th></tr></thead><tbody>
+    <tr><td><a href="https://buffedlizard55-lab.github.io/VacationSchedule/site/" rel="noopener">VacationSchedule</a></td><td>Style reference only — not used as a data source. Not reachable from the build sandbox; contents not copied.</td></tr>
+    <tr><td><a href="https://buffedlizard55-lab.github.io/ScheduleFreeTime/" rel="noopener">ScheduleFreeTime</a></td><td>Style reference only — not used as a data source.</td></tr>
+    <tr><td><a href="https://buffedlizard55-lab.github.io/RADIOSF/#2026-09-27" rel="noopener">RADIOSF</a></td><td>Style reference only — not used as a data source.</td></tr>
+  </tbody></table></div>
+</section>
+
+<section class="panel">
+  <h2>Duration model</h2>
+  <div class="kv">
+    <div><strong>MLB regular season</strong></div><div>~158 min (2025 nine-inning average 2:38; <a href="https://sportsgeardaily.com/rules/how-long-are-professional-baseball-games" rel="noopener">secondary summary</a>, cross-checked with 2025 reporting)</div>
+    <div><strong>MLB postseason</strong></div><div>~185 min (+27 min vs regular season; extra-innings/travel buffer; secondary)</div>
+    <div><strong>MLB All-Star</strong></div><div>~170 min (modeled as regular-length with exhibition pacing)</div>
+    <div><strong>NFL</strong></div><div>~183 min (2024/2025 average ≈ 3:03 from nflverse play-by-play timing; <a href="https://nflverse.github.io/" rel="noopener">nflverse</a> data; preseason same model)</div>
+    <div><strong>NFL postseason</strong></div><div>~195 min (playoff average + buffer)</div>
+    <div><strong>Super Bowl / CFP final</strong></div><div>~230 min (≈3:50 incl. halftime 13–20 min)</div>
+    <div><strong>NCAAF (FBS)</strong></div><div>~207 min (3:27, 2024 FBS average, CBS Sports; halftime ~20 min)</div>
+  </div>
+  <p class="small">Durations are planning estimates, not predictions. First pitch / kickoff to final out is what blocks “free” time here; pregame and postgame radio shows are out of scope unless noted.</p>
+</section>
+
+<section class="panel">
+  <h2>Not verifiable / not included</h2>
+  <ul>
+    <li>Game-by-game MLB rows for 2026/2027 (released but not machine-readable in this environment) — ESTIMATED reconstruction used; see <a href="mlb.html">MLB page</a> and <a href="flagged.html">Flagged</a>.</li>
+    <li>All MLB/NFL/NCAAF rows for 2028–2029 — do not exist yet (2028 MLB expected ~mid-2027; NFL ~May 2027).</li>
+    <li>Local pre-emption of Westwood One windows by 49ers/Giants carriage conflicts — KNBR airs Westwood One subject to local rights; not programmatically decidable here.</li>
+    <li>NBA/NHL/MLS/NWSL/USFL/softball etc. on Bay Area AM/FM — out of scope by design; would shrink windows further (noted for completeness).</li>
+    <li>KNEW 960 vs KIQI 1010 Spanish-language simulcast consistency — unverified per game.</li>
+    <li>KTCT 1050 night pattern — 10–35 kW at night under STA/class rules; interference protection for co-channel Class A (XEG Monterrey, WBAL) makes night reception conditional; verify by listening at the actual venue.</li>
+  </ul>
+</section>
+</main>
+<footer class="shell"><span>FREE TIME VACATION · Pacific Time.</span><span><a href="flagged.html">Flagged for Review</a> · <a href="methodology.html">Methodology</a></span></footer>
+<script type="module">
+import { injectNav } from './assets/site.js';
+injectNav('Sources');
+const official = [
+  ['MLB — official schedule (all 30 clubs)','Game dates/times (live page; 2026/2027 content released)','https://www.mlb.com/schedule'],
+  ['MLB — 2026 game times press release (Jan 2026)','Opening Night Mar 25 2026 (Giants–Yankees), Opening Day Mar 26, finale Sep 27 (15 games 3:00–3:20 PM ET)','https://www.mlb.com/press-release/press-release-game-times-announced-for-2026-regular-season-spring-training-spring-breakout-games'],
+  ['MLB — Brewers announce 2027 schedule (Jul 16, 2026)','2027 Opening Day Mar 25, 2027; Brewers–Angels','https://www.mlb.com/brewers/press-release/brewers-announce-2027-regular-season-schedule'],
+  ['MLB — Orioles announce 2027 schedule (Jul 16, 2026)','2027 season closes Sep 24–26, 2027','https://www.mlb.com/orioles/press-release/orioles-announce-2027-regular-season-schedule'],
+  ['MLB — Rays announce 2027 schedule (Jul 2026)','All-club coordination release; Mar 25, 2027 start','https://www.mlb.com/rays/press-release/rays-announce-2027-regular-season-schedule'],
+  ['MLB — Giants schedule','Giants 2026/2027 fixtures and broadcasts','https://www.mlb.com/giants/schedule'],
+  ['MLB — Athletics schedule','Athletics 2026/2027 fixtures','https://www.mlb.com/athletics/schedule'],
+  ['49ers — official 2026 schedule release (May 14, 2026)','Full 49ers 2026 dates/times incl. Melbourne, Mexico City, splits','https://49ers.1rmg.com/news-releases/49ers-announce-2026-schedule/'],
+  ['NFL — official schedules hub','League schedules (2027+ not yet published)','https://www.nfl.com/schedules/'],
+  ['NFL — Super Bowl LXIV announcement (Nashville 2030)','Future SB site context','https://www.nfl.com/news/super-bowl-lxiv-to-be-held-in-nashville-s-new-nissan-stadium-in-2030'],
+  ['ACC — 2026 football schedules','Stanford & Cal fixtures/results/times','https://theacc.com/schedule.aspx?schedule=4617'],
+  ['gostanford.com — 2026 football + radio release','Stanford dates; KNBR/KTCT 1050 AM flagship','https://gostanford.com/sports/football/schedule'],
+  ['calbears.com — 2026 football','Cal fixtures/results','https://calbears.com/sports/football/schedule/text'],
+  ['Westwood One Sports — NFL schedule','National radio windows (captured 2026-11-25)','https://www.westwoodonesports.com/nfl-schedule/'],
+  ['Westwood One Sports — Station finder','SF affiliates: KNBR-AM/F2/FM, KTCT-AM (NFL & NCAAF)','https://www.westwoodonesports.com/station-finder/'],
+  ['CFP — 2028–31 bowl dates announcement (Jul 9, 2026)','2027–28 CFP quarterfinals Dec 31, 2027; semifinals Jan 11–12, 2029 etc.','https://collegefootballplayoff.com/news/2026/7/9/2028-31-bowls'],
+  ['CFP — National Championship sites','LXI Las Vegas (Jan 25 2027) · LXII New Orleans (Jan 24 2028) · LXIII Tampa (Jan 22 2029)','https://www.cbssports.com/college-football/news/college-football-playoff-tampa-bay-set-host-cfp-national-championship-in-2029/'],
+  ['KNBR — official station site','Programming, Westwood One blocks, Giants/49ers flagship','https://www.thesportsleader.com/shows/'],
+  ['Giants — broadcasts page','Giants radio (KNBR) assignments','https://www.mlb.com/giants/schedule/broadcasts'],
+  ['Athletics — broadcasts page','Athletics radio (KSTE 650 / KNEW 960)','https://www.mlb.com/athletics/schedule/broadcasts'],
+];
+const primary = [
+  ['CFP — quarterfinal/semifinal dates 2028–31','2028-31 bowl windows incl. Dec 30, 2028 Orange Bowl; Jan 11/12 2029 Fiesta/Peach','https://collegefootballplayoff.com/news/2026/7/9/2028-31-bowls'],
+  ['MLB 2026 schedule announcement (mlbschedule.net summary of Aug 28, 2025 release)','2026 regular season Sep/Mar boundaries, 15-game finale','https://www.mlbschedule.net/blog/when-does-mlb-schedule-come-out'],
+  ['2027 MLB season (Wikipedia, summarizes official releases)','Opening Night Mar 24 (Netflix), Opening Day Mar 25, all-30 Mar 27, ASG Jul 13 Wrigley, finale Sep 26, postseason Sep 28, WS Oct 22–30','https://en.wikipedia.org/wiki/2027_Major_League_Baseball_season'],
+  ['2026 NFL schedule release coverage (USA Today, May 14, 2026)','2026 kickoff Sep 9, Week 18 Jan 9–10, playoffs Jan 16–Feb 14, 2027','https://www.usatoday.com/story/sports/nfl/2026/05/14/full-nfl-schedule-release-2026-all-games/90067398007/'],
+  ['49ers Announce 2026 Schedule (49ers.com news release)','Official 2026 slate with PT times incl. flex-scheduling windows','https://49ers.1rmg.com/news-releases/49ers-announce-2026-schedule/'],
+];
+const secondary = [
+  ['List of Super Bowl champions (Wikipedia)','SB LX (Feb 8, 2026 Santa Clara), LXI (Feb 14, 2027 Inglewood), LXII (Feb 13, 2028 Atlanta), LXIII (Feb 11, 2029 Las Vegas)','https://en.wikipedia.org/wiki/List_of_Super_Bowl_champions'],
+  ['nflverse schedules (live data feed)','NFL game-level timing; 2025 average 183 min (computed from play-by-play)','https://nflverse.github.io/'],
+  ['CBS Sports — 2026 MLB season end/postseason','Wild Card Sep 29, 2026; World Series G1 Oct 23; G7 Oct 31 possible','https://www.cbssports.com/mlb/news/mlb-playoffs-bracket-2026-who-is-in-world-series-schedule-dates-tv/'],
+  ['CBS Sports — 2024 FBS average game time','3:27 average, second-longest since 2008','https://www.cbssports.com/college-football/news/college-football-average-game-time-rankings-2024/'],
+  ['SportsGearDaily — MLB game length','~170–178 min post pitch clock (2024–2025)','https://sportsgeardaily.com/rules/how-long-are-professional-baseball-games'],
+  ['Grokipedia / fandom list of Bay Area radio stations','KSFO now 810 AM (560 dark since 2025), KNBR 680/104.5, KNEW 960 — cross-check only','https://grokipedia.com/page/List_of_radio_stations_in_the_San_Francisco_Bay_Area'],
+];
+const render = (rows) => rows.map(([t,w,u]) => `<tr><td>${t}</td><td>${w}</td><td><a href="${u}" rel="noopener">open →</a></td></tr>`).join('');
+document.getElementById('official').innerHTML = render(official);
+document.getElementById('primary').innerHTML = render(primary);
+document.getElementById('secondary').innerHTML = render(secondary);
+</script>
+</body>
+</html>

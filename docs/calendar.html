@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Scoreboard Calendar 2026–2029 — Free Time Vacation</title>
+<meta name="description" content="MLB/NFL-style calendar 2026–2029. Pick a date, get exact PT busy blocks, free-time windows, and every Bay Area-relevant game that day.">
+<link rel="stylesheet" href="assets/site.css">
+<script type="module" src="assets/site.js"></script>
+<style>.hourgrid{display:grid;grid-template-columns:repeat(6,1fr);gap:2px;font-size:11px;margin:6px 0}.hourgrid div{background:#eef4ee;border-radius:4px;padding:2px 4px;text-align:center;color:#2d4a3e}.hourgrid div.busy{background:#c2742f;color:#fff;font-weight:800}.hourgrid div.partial{background:#e9c893}</style>
+</head>
+<body>
+<header><div class="shell">
+  <div class="top"><a class="brand" href="../index.html"><span class="logo">◈</span>Free Time <em>Vacation</em></a><small>94122 · PACIFIC TIME</small></div>
+  <nav data-site-nav aria-label="Sections"></nav>
+</div></header>
+<main class="shell">
+<section class="hero">
+  <div class="eyebrow">SCOREBOARD · CALENDAR + DAY VIEW · PACIFIC TIME</div>
+  <h1>Pick a day. See the games. See the free hours.</h1>
+  <p>Prev / Today / Next navigation or jump to any date 2026–2029. Busy = any in-scope game on the air (all 30 MLB clubs, all NFL, Stanford/Cal NCAAF). Practical mode counts only high-priority broadcasts (Giants/A’s, 49ers, Stanford/Cal, Westwood One national). Untimed rows are shown but not counted as timed blocks — they flag the day as busy-without-precise-hours. Times are PT (America/Los_Angeles).</p>
+</section>
+
+<section class="panel" aria-label="Calendar">
+  <div class="controls">
+    <button id="prevDay" type="button">← Yesterday</button>
+    <button id="todayBtn" type="button" class="button secondary">Today</button>
+    <button id="nextDay" type="button">Tomorrow →</button>
+    <label>Jump <input id="dateInput" type="date" min="2026-01-01" max="2029-12-31"></label>
+    <label>View <select id="mode"><option value="practical">Practical (high priority)</option><option value="strict">Strict (all games)</option></select></label>
+  </div>
+  <div class="controls">
+    <button id="prevMonth" type="button">← Prev month</button>
+    <strong id="monthLabel" style="min-width:170px;text-align:center"></strong>
+    <button id="nextMonth" type="button">Next month →</button>
+  </div>
+  <div class="legend"><span><span class="dot free"></span>Free day (mode)</span><span><span class="dot busy"></span>Busy day (mode)</span><span><span class="dot today"></span>Today</span><span class="small">Click any cell to inspect the day.</span></div>
+  <div class="cal" id="cal" role="grid" aria-label="Month calendar"></div>
+</section>
+
+<section class="panel" id="dayPanel" aria-live="polite">
+  <h2 id="dayTitle">—</h2>
+  <p id="dayVerdict" class="small"></p>
+  <div id="busyBarWrap"><div class="bar" id="busyBar" role="img" aria-label="Busy intervals across the day"></div><div class="axis"><span>Midnight</span><span>6 AM</span><span>Noon</span><span>6 PM</span><span>Midnight</span></div></div>
+  <h3>Free time blocks</h3>
+  <p id="freeList" class="small"></p>
+  <div class="hourgrid" id="hourGrid" aria-hidden="true"></div>
+  <h3>Games & broadcasts this day</h3>
+  <div class="table"><table><thead><tr><th>PT</th><th>Est. end</th><th>Matchup</th><th>Type</th><th>Priority</th><th>Status</th><th>Source</th></tr></thead><tbody id="dayRows"></tbody></table></div>
+  <p class="small" id="dayFoot"></p>
+</section>
+</main>
+<footer class="shell"><span>FREE TIME VACATION · Pacific Time (PT) · ESTIMATED rows are not announcements.</span><span><a href="mlb.html">All MLB games</a> · <a href="flagged.html">Flagged</a></span></footer>
+<script type="module">
+import { injectNav, esc, loadYear, toMin, clockPt, fmtDateLong, mergeIntervals, downloadCsv } from './assets/site.js';
+injectNav('Scoreboard Calendar');
+const $ = id => document.getElementById(id);
+const MIN = '2026-01-01', MAX = '2029-12-31';
+const today = () => { const d = new Date(); const p = n => String(n).padStart(2,'0'); return `${d.getFullYear()}-${p(d.getMonth()+1)}-${p(d.getDate())}`; };
+const clamped = Math.min(Math.max(new Date(), new Date('2026-01-01T12:00:00')), new Date('2029-12-01T12:00:00'));
+let viewMonth = new Date(clamped.getFullYear(), clamped.getMonth(), 1);
+let selected = today();
+if (selected < MIN) selected = MIN;
+if (selected > MAX) selected = MAX;
+let mode = 'practical';
+const cacheByYear = new Map();
+async function yearRows(y){
+  if(!cacheByYear.has(y)) cacheByYear.set(y, await loadYear(y));
+  return cacheByYear.get(y);
+}
+async function allRows(){
+  const ys = [2026,2027,2028,2029];
+  const parts = await Promise.all(ys.map(yearRows));
+  return parts.flat();
+}
+let rows = [];
+function isoAdd(d, n){ const x = new Date(d + 'T12:00:00'); x.setDate(x.getDate()+n); const p = n2 => String(n2).padStart(2,'0'); return `${x.getFullYear()}-${p(x.getMonth()+1)}-${p(x.getDate())}`; }
+function monthGrid(y, m){
+  const first = new Date(y, m, 1);
+  const startDow = first.getDay();
+  const days = new Date(y, m+1, 0).getDate();
+  const cells = [];
+  for(let i=0;i<startDow;i++) cells.push(null);
+  for(let d=1; d<=days; d++) cells.push(`${y}-${String(m+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`);
+  while(cells.length % 7) cells.push(null);
+  return cells;
+}
+function dayData(date){
+  const list = rows.filter(r => r.date === date && inScope(r, mode));
+  const timed = [];
+  let untimed = 0, hi = 0, verified = 0;
+  for(const r of list){
+    if(r.priority === 'high') hi++;
+    if(r.verified) verified++;
+    const s = toMin(r.start);
+    if(s === null) untimed++;
+    else timed.push([s, s + r.minutes, r]);
+  }
+  const busy = mergeIntervals(timed.map(([s,e]) => [s,e]));
+  const gaps = []; let cur = 0;
+  for(const [s,e] of busy){ if(s > cur) gaps.push([cur,s]); cur = Math.max(cur, e); }
+  if(cur < 1440) gaps.push([cur, 1440]);
+  return {list, timed, busy, gaps, untimed, hi, verified, freeDay: busy.length === 0 && untimed === 0};
+}
+function inScope(r, mode){
+  if(/\(informational\)/.test(r.league)) return false;
+  if(!['spring_training','preseason','regular','postseason','all_star','bowl'].includes(r.season_type)) return false;
+  if(mode === 'practical') return r.priority === 'high';
+  return true;
+}
+async function renderMonth(){
+  const y = viewMonth.getFullYear(), m = viewMonth.getMonth();
+  $('monthLabel').textContent = viewMonth.toLocaleDateString('en-US', {month:'long', year:'numeric'});
+  const cells = monthGrid(y, m);
+  const todayIso = today();
+  const html = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].map(d => `<div class="dow">${d}</div>`).join('') +
+    cells.map(iso => {
+      if(!iso) return '<div class="cell pad"></div>';
+      const dd = dayData(iso);
+      const cls = ['cell'];
+      if(dd.freeDay) cls.push('free'); else cls.push('busy');
+      if(iso === todayIso) cls.push('today');
+      if(iso === selected) cls.push('sel');
+      const n = dd.list.length;
+      return `<button type="button" class="${cls.join(' ')}" data-date="${iso}" role="gridcell" aria-pressed="${iso===selected}"><span class="n">${Number(iso.slice(8))}</span><span class="badge">${n ? n + ' game' + (n>1?'s':'') : 'free'}</span></button>`;
+    }).join('');
+  const cal = $('cal');
+  cal.innerHTML = html;
+  cal.querySelectorAll('button[data-date]').forEach(b => b.addEventListener('click', () => { selected = b.dataset.date; renderAll(); }));
+}
+function renderDay(){
+  const d = selected;
+  $('dateInput').value = d;
+  const dd = dayData(d);
+  $('dayTitle').textContent = fmtDateLong(d);
+  const busyMin = dd.busy.reduce((acc,[s,e]) => acc + (e - s), 0);
+  const freeMin = 1440 - busyMin;
+  const verdictBits = [];
+  if(dd.freeDay) verdictBits.push(mode === 'practical' ? '✅ PRACTICAL-FREE — no high-priority broadcasts this day.' : '✅ STRICT-FREE — no in-scope games at all this day.');
+  else verdictBits.push(`${busyMin >= 60 ? Math.floor(busyMin/60) + 'h ' + (busyMin%60) + 'm' : busyMin + 'm'} of the day occupied by known timed games${dd.untimed ? ` + ${dd.untimed} untimed row(s) (TBD — day flagged busy)` : ''}.`);
+  verdictBits.push(`${dd.hi} high-priority · ${dd.verified} verified row(s).`);
+  $('dayVerdict').textContent = verdictBits.join(' ');
+  // busy bar
+  const pct = t => (100 * t / 1440).toFixed(2) + '%';
+  $('busyBar').innerHTML = dd.busy.map(([s,e]) => `<span style="left:${pct(s)};width:${pct(e - s)}"></span>`).join('');
+  $('freeList').innerHTML = dd.gaps.length
+    ? dd.gaps.map(([s,e]) => `<strong>${clockPt(s)} – ${e >= 1440 ? 'Midnight' : clockPt(e)}</strong> (${Math.floor((e - s)/60)}h ${String((e - s)%60).padStart(2,'0')}m free)`).join(' · ')
+    : '<em>No free blocks — the day is fully occupied in this mode.</em>';
+  // hour grid: 6 rows x 4 cols of 4-hour buckets? Use 24 hour cells
+  const hours = [];
+  for(let h = 0; h < 24; h++){
+    const s = h*60, e = s + 60;
+    const overlap = dd.timed.filter(([a,b]) => a < e && b > s).reduce((acc,[a,b]) => acc + Math.min(b,e) - Math.max(a,s), 0);
+    const cls = overlap >= 60 ? 'busy' : overlap > 0 ? 'partial' : '';
+    hours.push(`<div class="${cls}">${String(h).padStart(2,'0')}:00</div>`);
+  }
+  $('hourGrid').innerHTML = hours.join('');
+  // rows table
+  $('dayRows').innerHTML = dd.list.length ? dd.list.map(r => {
+    const s = toMin(r.start);
+    const end = s === null ? '—' : clockPt(s + r.minutes);
+    const badge = r.verified ? '<span class="tag ver">VERIFIED</span>' : '<span class="tag est">ESTIMATED</span>';
+    const pr = r.priority === 'high' ? '<span class="tag good">HIGH</span>' : 'normal';
+    const time = r.start ? r.start + ' PT' : '<span class="tag flag">TBD</span>';
+    return `<tr><td>${esc(time)}</td><td>${esc(end)}</td><td>${esc(r.title)}<div class="small">${esc(r.note||'')}</div></td><td>${esc(r.season_type)}</td><td>${pr}</td><td>${badge}</td><td><a href="${esc(r.source)}" rel="noopener">source</a></td></tr>`;
+  }).join('') : '<tr><td colspan="7">No in-scope games this day. 🎉</td></tr>';
+  const srcs = [...new Set(dd.list.map(r => r.source))].slice(0, 6);
+  $('dayFoot').innerHTML = `Free minutes (timed games only): <strong>${freeMin}</strong> · ${dd.list.length} listing(s) · Sources evaluated this day: ${srcs.map(s => `<a href="${esc(s)}" rel="noopener">link</a>`).join(' · ') || '—'}.`;
+}
+function renderAll(){ renderMonth(); renderDay(); }
+async function boot(){
+  rows = await allRows();
+  $('dateInput').value = selected;
+  $('dateInput').addEventListener('change', e => { if(e.target.value){ selected = e.target.value; viewMonth = new Date(selected + 'T12:00:00'); viewMonth.setDate(1); renderAll(); } });
+  $('mode').addEventListener('change', e => { mode = e.target.value; renderAll(); });
+  $('todayBtn').addEventListener('click', () => { const t = today(); selected = t < MIN ? MIN : t > MAX ? MAX : t; viewMonth = new Date(selected + 'T12:00:00'); viewMonth.setDate(1); renderAll(); });
+  $('prevDay').addEventListener('click', () => { selected = isoAdd(selected, -1); if(selected < MIN) selected = MIN; viewMonth = new Date(selected + 'T12:00:00'); viewMonth.setDate(1); renderAll(); });
+  $('nextDay').addEventListener('click', () => { selected = isoAdd(selected, 1); if(selected > MAX) selected = MAX; viewMonth = new Date(selected + 'T12:00:00'); viewMonth.setDate(1); renderAll(); });
+  $('prevMonth').addEventListener('click', () => { viewMonth = new Date(viewMonth.getFullYear(), viewMonth.getMonth()-1, 1); renderAll(); });
+  $('nextMonth').addEventListener('click', () => { viewMonth = new Date(viewMonth.getFullYear(), viewMonth.getMonth()+1, 1); renderAll(); });
+  renderAll();
+}
+boot();
+</script>
+</body>
+</html>

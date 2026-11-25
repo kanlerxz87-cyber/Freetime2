@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NCAAF · Stanford & Cal 2026–2029 — Free Time Vacation</title>
+<meta name="description" content="Stanford and California football 2026–2029 dates, results and estimated future slates, plus conference-championship and CFP context.">
+<link rel="stylesheet" href="assets/site.css">
+<script type="module" src="assets/site.js"></script>
+</head>
+<body>
+<header><div class="shell">
+  <div class="top"><a class="brand" href="../index.html"><span class="logo">◈</span>Free Time <em>Vacation</em></a><small>94122 · PACIFIC TIME</small></div>
+  <nav data-site-nav aria-label="Sections"></nav>
+</div></header>
+<main class="shell">
+<section class="hero">
+  <div class="eyebrow">NCAAF · STANFORD & CALIFORNIA ONLY · 2026–2029</div>
+  <h1>The Big Game is sacred. Everything else is inventory.</h1>
+  <p>Only Stanford and Cal count as “busy” for the free-time definition (plus their bowl/conference-championship games when eligible). Other FBS games don’t block your vacation. 2026 rows are official (ACC/athletics releases). 2027–2029 rows are <span class="tag est">ESTIMATED</span> — opponents/dates not released.</p>
+</section>
+
+<section class="panel">
+  <h2>2026 (official — results through final week)</h2>
+  <div class="table"><table id="t2026"><thead><tr><th>Date</th><th>Game</th><th>Start (PT)</th><th>Result / note</th><th>Source</th></tr></thead><tbody></tbody></table></div>
+  <p class="small">Stanford went 6–5 (2026); Cal finished 6–5 per ACC/CBS Sports trackers. Big Game at California on Sat Nov 21, 2026: Stanford won 44–28.</p>
+</section>
+
+<section class="grid">
+  <div class="card"><div class="eyebrow">STANFORD RADIO (2026)</div><p><strong>KNBR/KTCT 1050 AM</strong> — Stanford football flagship per gostanford.com (Jul 30, 2026 release). Westwood One affiliate; KTCT is 50 kW by day, ~10–35 kW at night (Class B).</p><p class="small"><a href="https://gostanford.com/news/2026/07/30/2026-football-radio-broadcast-team-announced">gostanford.com release</a></p></div>
+  <div class="card"><div class="eyebrow">CAL RADIO (2026)</div><p><strong>KSFO 810 AM</strong> carried Pittsburgh at Cal Nov 28, 2026 (timeout list). Season-long assignment unverified — check the <a href="https://calbears.com/sports/football/schedule/text">Cal schedule page</a> for each game.</p><p class="small"><a href="https://calbears.com/sports/football/schedule/text">calbears.com</a></p></div>
+  <div class="card"><div class="eyebrow">BIG GAME 2026</div><p>Nov 21, 2026 · California Memorial Stadium · 4:30 PM PT (7:30 PM ET) · ACC Network. Stanford 44, Cal 28.</p><p class="small"><a href="https://theacc.com/schedule.aspx?schedule=4617">ACC official schedule</a></p></div>
+  <div class="card"><div class="eyebrow">CFP CONTEXT (INFORMATIONAL)</div><p>National Championship: <strong>Jan 25, 2027</strong> Allegiant Stadium (Las Vegas) · <strong>Jan 24, 2028</strong> Caesars Superdome (New Orleans) · <strong>Jan 22, 2029</strong> Raymond James Stadium (Tampa). Only counts if Stanford or Cal qualifies — neither was bowl-locked in checked sources.</p><p class="small"><a href="https://collegefootballplayoff.com/news/2026/7/9/2028-31-bowls">CFP announcement</a></p></div>
+</section>
+
+<section class="panel">
+  <h2>2027–2029 (ESTIMATED slates)</h2>
+  <div class="controls">
+    <label>Year <select id="year"><option>2027</option><option>2028</option><option>2029</option></select></label>
+  </div>
+  <p class="small" id="counts">Loading…</p>
+  <div class="table"><table><thead><tr><th>Date</th><th>Start (PT)</th><th>Game</th><th>Status</th><th>Source</th></tr></thead><tbody id="rows"></tbody></table></div>
+  <div class="danger"><strong>Estimates only.</strong> ACC future slates are generated from the 2026 pattern (12 games, Late-Aug → Thanksgiving week, Big Game on Nov Saturday). Re-verify on theacc.com when released (typically January/February of the season year).</div>
+</section>
+</main>
+<footer class="shell"><span>FREE TIME VACATION · All times Pacific.</span><span><a href="westwood.html">Westwood One</a> · <a href="flagged.html">Flagged</a></span></footer>
+<script type="module">
+import { injectNav, esc, loadAll } from './assets/site.js';
+injectNav('NCAAF · Stanford & Cal');
+const $ = id => document.getElementById(id);
+const tbody = document.querySelector('#t2026 tbody');
+const verified2026 = [
+  ['2026-08-29','Hawaiʻi at Stanford','4:00 PM','W 37–27'],
+  ['2026-09-04','Miami at Stanford','6:00 PM','L 6–45'],
+  ['2026-09-19','Stanford at Duke','12:00 PM','L 7–35'],
+  ['2026-09-26','Georgia Tech at Stanford','7:00 PM','W 34–27'],
+  ['2026-10-03','Stanford at Wake Forest','TBD','L 3–57'],
+  ['2026-10-10','Stanford at Notre Dame','9:30 AM','L 7–58'],
+  ['2026-10-17','Elon at Stanford','4:30 PM','W 34–7'],
+  ['2026-10-23','NC State at Stanford','7:30 PM','W 31–28'],
+  ['2026-10-31','Stanford at Louisville','TBD','L 24–52'],
+  ['2026-11-14','Stanford at Virginia Tech','TBD','W 40–22'],
+  ['2026-11-21','Stanford at California — Big Game','4:30 PM','W 44–28'],
+  ['2026-11-28','SMU at Stanford','12:30 PM','Final week'],
+  ['2026-09-05','UCLA at California','7:30 PM','L 24–45'],
+  ['2026-09-12','California at Syracuse','12:30 PM','W 21–18'],
+  ['2026-09-19','Wagner at California','12:30 PM','W 49–7'],
+  ['2026-09-25','Clemson at California','7:30 PM','L 10–24'],
+  ['2026-10-03','California at UNLV','12:30 PM','L 31–39'],
+  ['2026-10-10','Virginia Tech at California','12:30 PM','W 25–20'],
+  ['2026-10-17','Wake Forest at California','TBD','TBA'],
+  ['2026-10-24','California at SMU','TBD','TBA'],
+  ['2026-10-31','California at NC State','TBD','TBA'],
+  ['2026-11-14','California at Virginia','TBD','TBA'],
+  ['2026-11-21','Stanford at California — Big Game','4:30 PM','L 28–44'],
+  ['2026-11-28','Pittsburgh at California','TBD','TBA'],
+].sort((a,b)=>a[0].localeCompare(b[0]));
+tbody.innerHTML = verified2026.map(([d,g,t,n]) =>
+  `<tr><td>${d}</td><td>${g}</td><td>${t}</td><td>${n}</td><td><a href="https://theacc.com/schedule.aspx?schedule=4617" rel="noopener">ACC official</a></td></tr>`).join('');
+
+async function reload(){
+  const y = $('year').value;
+  const rowsAll = (await loadAll()).filter(r => r.sport === 'NCAAF' && !/\(informational\)/.test(r.league) && r.date.startsWith(y));
+  const rows = rowsAll;
+  $('rows').innerHTML = rows.map(r => `<tr><td>${esc(r.date)}</td><td>${r.start ? esc(r.start) : '<span class="tag flag">TBD</span>'}</td><td>${esc(r.title)}<div class="small">${esc(r.note||'')}</div></td><td>${r.verified ? '<span class="tag ver">VERIFIED</span>' : '<span class="tag est">ESTIMATED</span>'}</td><td><a href="${esc(r.source)}" rel="noopener">${esc(r.source_label)}</a></td></tr>`).join('');
+  $('counts').textContent = `${rows.length} rows (estimated). Big Game appears twice — once per team file.`;
+}
+$('year').addEventListener('change', reload);
+reload();
+</script>
+</body>
+</html>

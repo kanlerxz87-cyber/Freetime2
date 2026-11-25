@@ -1,13 +1,109 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Executive Summary | Freetime2</title><link rel="stylesheet" href="assets/style.css"></head><body>
-<header><a href="index.html">Freetime2 — Bay Area Sports Radio Free-Time Planner</a></header>
-<nav><a href="index.html">Dashboard</a><a href="executive-summary.html">Executive Summary</a><a href="windows.html">Vacation Windows</a><a href="schedules.html">2026 Schedules</a><a href="radio.html">Bay Area Radio</a><a href="methodology.html">Methodology & Day Planner</a><a href="flagged.html">Flagged for Review</a></nav>
-<main><h1>Executive Summary</h1>
-<div class="card"><h2>Bottom line</h2><p>There is <strong>no 2–3 week fully-free window</strong> under the strict all-30-clubs definition. MLB (Spring Training Feb–Mar through postseason Oct), NFL (preseason Aug through Super Bowl Feb), and Stanford/Cal NCAAF (late Aug through bowls/CFP Jan) overlap or abut almost year-round. The <strong>only strict gap is in February</strong> between the Super Bowl and Spring Training.</p></div>
-<div class="card"><h2>Best vacation candidates</h2><table><tr><th>Year</th><th>Strict (all 30 MLB incl. Spring Training)</th><th>Practical (Bay Area teams + Westwood One only)</th><th>Status</th></tr>
-<tr><td>2026</td><td>Feb 9–19 (11 days)</td><td>Feb 9–Mar 24 (44 days)</td><td><span class="badge verified">VERIFIED boundaries</span></td></tr>
-<tr><td>2027</td><td>Feb 15–18 (~4 days)</td><td>Feb 15–Mar 24 (38 days)</td><td><span class="badge partial">MIXED</span> Opening Day verified; Spring Training start estimated</td></tr>
-<tr><td>2028</td><td>Feb 14–17 (~4 days)</td><td>Feb 14–~Mar 23 (~39 days)</td><td><span class="badge estimated">ESTIMATED</span></td></tr>
-<tr><td>2029</td><td>Feb 12–15 (~4 days)</td><td>Feb 12–~Mar 22 (~39 days)</td><td><span class="badge estimated">ESTIMATED</span></td></tr></table>
-<p class="small">Practical windows still contain Giants/Athletics Spring Training games — check club Spring Training schedules before booking. Do not book non-refundable travel on ESTIMATED years.</p></div>
-<div class="card"><h2>What counts as busy</h2><ul><li><strong>MLB:</strong> Giants + Athletics (high priority) + all 30 clubs, Spring Training through World Series.</li><li><strong>NFL:</strong> 49ers (high priority) + all NFL games; Westwood One national radio games are a subset of NFL dates.</li><li><strong>NCAAF:</strong> Stanford + Cal (high priority), regular season through bowls/CFP.</li><li><strong>Radio:</strong> KNBR 680 AM / 104.5 FM (Westwood One Sports affiliate) is the primary Bay Area outlet; see Radio page for others.</li></ul></div>
-<div class="card"><h2>Daily free time</h2><p>On game days, free hours = before first game / between games / after last game (PT), using researched averages: MLB ~170 min, NFL ~192 min, NCAAF ~204 min. Example: 1:05 PM PT NFL kickoff → ~4:17 PM PT expected end. Use the Day Planner for exact math per date.</p></div></main><footer>Freetime2 • Times in PT (America/Los_Angeles) unless noted • ESTIMATED blocks are not confirmed schedules • See <a href="flagged.html">Flagged for Review</a></footer></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Executive Summary 2026–2029 — Free Time Vacation</title>
+<meta name="description" content="When are there no live Bay Area sports radio games at all? This is the vacation answer for 2026–2029.">
+<link rel="stylesheet" href="assets/site.css">
+<script type="module" src="assets/site.js"></script>
+</head>
+<body>
+<header><div class="shell">
+  <div class="top"><a class="brand" href="../index.html"><span class="logo">◈</span>Free Time <em>Vacation</em></a><small>94122 · PACIFIC TIME</small></div>
+  <nav data-site-nav aria-label="Sections"></nav>
+</div></header>
+<main class="shell">
+<section class="hero">
+  <div class="eyebrow">EXECUTIVE SUMMARY · 2026–2029 · BAY AREA OVER-THE-AIR SPORTS RADIO</div>
+  <h1>There is no 2–3 week fully-free window. February is the only real break.</h1>
+  <p>Strict (all 30 MLB clubs + all NFL + Stanford/Cal): every year the only genuinely quiet span is the <strong>Super Bowl → MLB Spring Training gap in February</strong> — 4–11 days, not weeks. Practical (Giants/A’s, 49ers, Stanford/Cal, Westwood One only): <strong>~38–44 days in January–February</strong> each year, before Opening Night. Multi-week 1–3-week windows otherwise don’t exist: MLB (Feb–Oct), NFL (Sep–Feb), NCAAF (Aug–Jan) overlap year-round.</p>
+</section>
+
+<section class="panel">
+  <h2>The answer at a glance</h2>
+  <div class="grid" id="kpis"></div>
+  <div class="table"><table><thead><tr><th>Year</th><th>Strict free windows (no games at all)</th><th>Practical free windows (Bay Area/national only)</th><th>Confidence</th></tr></thead><tbody id="answer"></tbody></table></div>
+  <p class="small">Strict = zero in-scope games. Practical = zero high-priority broadcasts. All 2027–2029 windows inherit the ESTIMATED caveat: they are anchored to verified season boundaries (Super Bowl dates, MLB Opening Day) but game-level detail inside them is unverified. Sources: <a href="sources.html">source registry</a>.</p>
+</section>
+
+<section class="panel">
+  <h2>Multi-week candidates — ranked for 2027–2029</h2>
+  <div class="table"><table><thead><tr><th>Rank</th><th>Window</th><th>Length</th><th>What’s on the radio</th><th>Book it?</th></tr></thead><tbody id="rank"></tbody></table></div>
+  <p class="small">“Practical” windows ignore non-local clubs. If the Giants or A’s are still in spring-training games during Feb (they’ll be back in action ~Feb 19–20 in 2027), the practical window technically ends then. Check <a href="mlb.html">MLB tables</a> for Giants/A’s spring fixtures once released.</p>
+</section>
+
+<section class="grid">
+  <div class="card"><div class="eyebrow">WHAT “BUSY” MEANS HERE</div>
+    <p><strong>MLB</strong> — all 30 clubs: Spring Training (~Feb–Mar), regular season (Mar–Sep), All-Star (Jul), postseason (Sep–Nov). <strong>NFL</strong> — preseason (Aug), 18-week regular season (Sep–Jan), playoffs (Jan), Pro Bowl, Super Bowl (Feb). <strong>NCAAF</strong> — Stanford + Cal regular season (Aug–Nov), bowls (Dec–Jan), ACC championship (Dec), CFP (Jan). <strong>Radio</strong> — Westwood One national NFL windows (TNF/SNF/MNF + playoffs/SB).</p>
+  </div>
+  <div class="card"><div class="eyebrow">WHAT “FREE” MEANS HERE</div>
+    <p>A day with zero in-scope games on the air at any hour. Free hours on game days = minutes outside merged game blocks (PT). Untimed (TBD) rows make the whole day busy in strict accounting. ESPN Sunday Night windows on Westwood One overlap KNBR’s 49ers local coverage — both are listed.</p>
+  </div>
+  <div class="card"><div class="eyebrow">BEST 1–3 WEEK BET</div>
+    <p><strong>2027: Jan 11–Feb 13, 2027 — 5–6 day strict islands inside a ~5-week practical lull (Jan 11 → Feb 18).</strong> The full 1–3 week stretch does not exist strictly. If you accept “no Bay Area/national games only” (practical), the <strong>Jan 11 → Feb 19, 2027</strong> run is ~40 days — the single best long-break candidate in the dataset.</p>
+  </div>
+  <div class="card"><div class="eyebrow">HONEST FOOTNOTES</div>
+    <p>2027 SF Giants/Athletics fixtures + 16 marquee games are VERIFIED (MLB Stats API). 2026 NFL Weeks 12–18 + Super Bowl LXI are VERIFIED (NFL.com). Everything else — other 2026/2027 rows, and all of 2028/2029 — is ESTIMATED. Flex scheduling can move 49ers games between nights; CBA stoppage could shift 2027. See <a href="flagged.html">Flagged for Review</a>.</p>
+  </div>
+</section>
+
+<section class="panel">
+  <h2>Free days by month (days with zero in-scope games, strict mode)</h2>
+  <div class="table"><table><thead><tr><th>Year</th><th>Jan</th><th>Feb</th><th>Mar</th><th>Apr</th><th>May</th><th>Jun</th><th>Jul</th><th>Aug</th><th>Sep</th><th>Oct</th><th>Nov</th><th>Dec</th><th>Total</th></tr></thead><tbody id="months"></tbody></table></div>
+  <p class="small">Season months show 0 because some game airs nearly every day. October has a few free days between postseason series; November–December consolidate free midweek days in the NFL off-weeks and around Thanksgiving/Christmas.</p>
+</section>
+
+<section class="panel">
+  <h2>Why not other windows?</h2>
+  <ul>
+    <li><strong>Summer (June–August):</strong> MLB every single day; NFL preseason starts mid-August; NCAAF practice camps air; not feasible.</li>
+    <li><strong>Late April/May:</strong> MLB daily + NBA/NHL (out of scope but on the dial) + soccer (out of scope). MLB alone kills it strictly.</li>
+    <li><strong>November–December:</strong> NFL every weekend + Thanksgiving/Christmas; MLB ended but football floods the dial. A few midweek free days exist; no runs of 7+.</li>
+    <li><strong>Early January:</strong> Wild Card weekend is jammed; divisional/championship rounds next. The playoff weeks are among the busiest days of the year.</li>
+    <li><strong>The February window:</strong> between Super Bowl Sunday and the first spring-training exhibitions. ~4–11 strict days; ~38–44 practical days. This is the entire opportunity.</li>
+  </ul>
+</section>
+</main>
+<footer class="shell"><span>FREE TIME VACATION · Pacific Time · ESTIMATED = not an announcement.</span><span><a href="calendar.html">Scoreboard</a> · <a href="windows.html">Windows detail</a></span></footer>
+<script type="module">
+import { injectNav, esc, loadAnalysis } from './assets/site.js';
+injectNav('Executive Summary');
+const $ = id => document.getElementById(id);
+(async () => {
+  const a = await loadAnalysis();
+  const order = ['2026','2027','2028','2029'];
+  $('kpis').innerHTML = order.map(y => {
+    const d = a[y];
+    const best = Math.max(...d.windows.filter(w=>w.mode==='practical').map(w=>w.days), 0);
+    const bestStrict = Math.max(...d.windows.filter(w=>w.mode==='strict').map(w=>w.days), 0);
+    return `<div class="card"><div class="eyebrow">${y}</div><div class="kpi">${best}</div><div>practical free days (Jan–Feb run)</div><div class="small">best strict island: ${bestStrict} days · ${d.free_days_strict} strict-free days total · ${d.free_days_practical} practical-free days total</div></div>`;
+  }).join('');
+  $('answer').innerHTML = order.map(y => {
+    const d = a[y];
+    const strict = d.windows.filter(w=>w.mode==='strict').sort((x,y)=>y.days-x.days).slice(0,4)
+      .map(w=>`${w.start.slice(5)} → ${w.end.slice(5)} (${w.days}d)`).join('<br>');
+    const prac = d.windows.filter(w=>w.mode==='practical').sort((x,y)=>y.days-x.days).slice(0,2)
+      .map(w=>`${w.start.slice(0,10)} → ${w.end.slice(0,10)} (${w.days}d)`).join('<br>');
+    const conf = y==='2026' ? '<span class="tag ver">Boundaries verified</span>' : y==='2027' ? '<span class="tag info">Opening verified; NFL/2028+ estimated</span>' : '<span class="tag est">ESTIMATED</span>';
+    return `<tr><td><strong>${y}</strong></td><td>${strict}</td><td>${prac}</td><td>${conf}</td></tr>`;
+  }).join('');
+  const candidates = [
+    ['1','Jan 11 → Feb 19, 2027','~40 days (practical)','Post–Wild Card lull; Super Bowl Feb 14 ends NFL; A’s/Giants return ~Feb 19','Practical: yes (book refundable) · Strict: no'],
+    ['2','Jan 10 → Feb 18, 2028','~40 days (practical)','Same template, Super Bowl LXII Feb 13, 2028 (Atlanta)','Practical: yes (book refundable) · Strict: no'],
+    ['3','Jan 8 → Feb 17, 2029','~41 days (practical)','Same template, Super Bowl LXIII Feb 11, 2029 (Las Vegas)','Practical: yes (book refundable) · Strict: no'],
+    ['4','Feb 8–13, 2027','6 strict days','Nothing on the dial strictly (MLB ST est. start Feb 19; NFL over Feb 14)','Strict: only if you can rebook around ST'],
+    ['5','Feb 7–12, 2028','6 strict days','Same (Super Bowl LXII Feb 13)','Strict: same caveat'],
+    ['6','Feb 5–10, 2029','6 strict days','Same (Super Bowl LXIII Feb 11)','Strict: same caveat'],
+  ];
+  $('rank').innerHTML = candidates.map(([r,w,len,what,book]) => `<tr><td>${r}</td><td><strong>${w}</strong></td><td>${len}</td><td>${what}</td><td>${book}</td></tr>`).join('');
+  $('months').innerHTML = order.map(y => {
+    const ms = a[y].month_summary;
+    const cells = ms.map(m => `<td>${m.free_days_strict}</td>`).join('');
+    const total = ms.reduce((acc,m)=>acc+m.free_days_strict,0);
+    return `<tr><td><strong>${y}</strong></td>${cells}<td>${total}</td></tr>`;
+  }).join('');
+})();
+</script>
+</body>
+</html>

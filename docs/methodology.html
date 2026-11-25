@@ -1,14 +1,92 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Methodology & Day Planner | Freetime2</title><link rel="stylesheet" href="assets/style.css"></head><body>
-<header><a href="index.html">Freetime2 — Bay Area Sports Radio Free-Time Planner</a></header>
-<nav><a href="index.html">Dashboard</a><a href="executive-summary.html">Executive Summary</a><a href="windows.html">Vacation Windows</a><a href="schedules.html">2026 Schedules</a><a href="radio.html">Bay Area Radio</a><a href="methodology.html">Methodology & Day Planner</a><a href="flagged.html">Flagged for Review</a></nav>
-<main><h1>Methodology & Day Planner</h1>
-<div class="card"><h2>How free time is calculated</h2><ol><li>Mark season blocks busy (MLB Spring Training→World Series; NFL preseason→Super Bowl; NCAAF regular season→CFP title).</li><li>For specific verified game dates, add game blocks: start time + average duration.</li><li>Free = minutes outside all blocks (PT). For vacation purposes, any date inside a season block = NOT free, even if hourly gaps exist.</li></ol>
-<h3>Average durations (researched, not user guesses)</h3><table><tr><th>Sport</th><th>Avg real-time duration</th><th>Halftime</th><th>Notes</th></tr>
-<tr><td>MLB regular season</td><td>~170 min (2h50m)</td><td>—</td><td>2024 pitch-clock era; postseason ~185 min</td></tr>
-<tr><td>NFL</td><td>~192 min (3h12m)</td><td>~12 min</td><td>60-min clock; range ~3h02m–3h12m</td></tr>
-<tr><td>NCAAF</td><td>~204 min (3h24m)</td><td>~20 min</td><td>Longer than NFL (clock rules + halftime)</td></tr></table>
-<p class="small">Your suggested 150/180-min figures understate current averages; the planner uses researched values. Add pregame/postgame buffers separately if you want conservative estimates.</p></div>
-<div class="card"><h2>Day Planner — pick any day (PT)</h2>
-<p><button class="btn" onclick="step(-1)">← Yesterday</button> <button class="btn" onclick="step(1)">Tomorrow →</button> <input type="date" id="dateInput"> <button class="btn secondary" onclick="renderDay()">Go</button></p>
-<div id="dayDetail"></div><h3>Month calendar (click a day)</h3><div id="cal"></div>
-<p class="small">Calendar colors: green=FREE, red=BUSY (season block), yellow=GAME DAY (specific verified game). 2027–2029 blocks are ESTIMATED — see Flagged page.</p></div></main><footer>Freetime2 • Times in PT (America/Los_Angeles) unless noted • ESTIMATED blocks are not confirmed schedules • See <a href="flagged.html">Flagged for Review</a></footer><script src="assets/app.js"></script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Methodology & Model — Free Time Vacation</title>
+<meta name="description" content="How the 2026–2029 free-time model works: definitions, durations, merging, strict vs practical, limitations.">
+<link rel="stylesheet" href="assets/site.css">
+<script type="module" src="assets/site.js"></script>
+</head>
+<body>
+<header><div class="shell">
+  <div class="top"><a class="brand" href="../index.html"><span class="logo">◈</span>Free Time <em>Vacation</em></a><small>94122 · PACIFIC TIME</small></div>
+  <nav data-site-nav aria-label="Sections"></nav>
+</div></header>
+<main class="shell">
+<section class="hero">
+  <div class="eyebrow">METHODOLOGY · MODEL CARD</div>
+  <h1>How we decide a day is “free.”</h1>
+  <p>Short version: a day is busy if anything in scope is on the air. Free time on game days is whatever’s left. Every number is labeled verified or estimated; the estimator is deterministic (seeded) so results reproduce run-to-run.</p>
+</section>
+
+<section class="panel">
+  <h2>1 · What loads into the model</h2>
+  <div class="table"><table><thead><tr><th>Stream</th><th>Rows</th><th>Coverage</th><th>Status</th></tr></thead><tbody>
+    <tr><td>MLB — all 30 clubs (ST, regular, ASG, postseason)</td><td>~2,900 / season</td><td>2026–2029</td><td><span class="tag est">ESTIMATED reconstruction</span> anchored to <span class="tag ver">VERIFIED</span> boundaries</td></tr>
+    <tr><td>MLB 2026 Giants / Athletics (high priority flag)</td><td>flagged</td><td>2026–2029</td><td>Flags real; dates ESTIMATED</td></tr>
+    <tr><td>NFL — all 32 teams (preseason, regular, playoffs, Pro Bowl)</td><td>~270 / season + playoffs</td><td>2026–2029</td><td><span class="tag est">ESTIMATED</span>; 49ers 2026 <span class="tag ver">VERIFIED</span> (official release)</td></tr>
+    <tr><td>NCAAF — Stanford & Cal (regular + bowl/CCG placeholders)</td><td>~30 / season</td><td>2026 official; 2027–2029 <span class="tag est">ESTIMATED</span></td><td>2026 ACC-verified</td></tr>
+    <tr><td>Westwood One national NFL (verified capture)</td><td>38 broadcasts incl. Super Bowl LXI</td><td>Nov 2026–Feb 2027</td><td><span class="tag ver">VERIFIED</span> (captured 2026-11-25)</td></tr>
+    <tr><td>Official overlays — 2027 Giants/Athletics + 16 marquee games (MLB Stats API); 2026 NFL Weeks 12–18 + Super Bowl LXI (NFL.com); 15 Stanford/Cal rows (athletics sites)</td><td>~400 rows</td><td>2026–2029</td><td><span class="tag ver">VERIFIED</span> — ingested from data/*.json overlays</td></tr>
+    <tr><td>Anchors (Opening Night/Day, ASG, finales, SBs, CFP)</td><td>~25</td><td>2026–2029</td><td><span class="tag ver">VERIFIED</span> / partial-secondary as labeled</td></tr>
+  </tbody></table></div>
+  <p class="small">See <code>tools/generate_schedules.py</code> for the generator and <code>data/meta.json</code> for build provenance. Total ~12,300 rows across 2026–2029.</p>
+</section>
+
+<section class="panel">
+  <h2>2 · Busy / free definitions</h2>
+  <div class="grid">
+    <div class="card"><div class="eyebrow">STRICT</div><p>Count any row from in-scope streams (MLB all clubs incl. ST/postseason; all NFL incl. preseason/SB/Pro Bowl; Stanford/Cal NCAAF incl. bowls/CCG placeholders). A TBD/untimed row makes the day busy without allocating hours.</p></div>
+    <div class="card"><div class="eyebrow">PRACTICAL</div><p>Count only <code>priority=high</code> rows: Giants/A’s MLB fixtures, 49ers NFL fixtures, Stanford/Cal NCAAF, Westwood One national NFL. Reflects what a Bay Area AM/FM listener can actually avoid missing.</p></div>
+    <div class="card"><div class="eyebrow">OUT OF SCOPE</div><p>Other NCAAF (informational rows listed but never block), NBA/NHL/MLS/NWSL (Warriors/Sharks etc.), golf, soccer, tennis, betting shows, replays. They consume dial time but aren’t vacation blockers in this model.</p></div>
+  </div>
+</section>
+
+<section class="panel">
+  <h2>3 · Daily interval math</h2>
+  <ol>
+    <li>Collect every in-scope row for the date; drop out-of-scope/informational rows.</li>
+    <li>Timed rows → interval <code>[start, start + minutes]</code> (PT). Untimed rows → count flag only.</li>
+    <li>Merge overlapping intervals (games can’t un-overlap). Sum merged minutes → <code>busy</code>.</li>
+    <li><code>free = 1440 − busy</code>. Free intervals are the complement; they render on the <a href="calendar.html">Scoreboard</a> timeline.</li>
+    <li>Day is FREE iff <code>busy == 0</code> <em>and</em> untimed rows == 0.</li>
+    <li>Windows = runs of ≥3 free days (we report ≥5, ≥7, ≥14 too).</li>
+  </ol>
+  <p class="small">DST: PT dates are calendar dates in America/Los_Angeles; a game at 10:00 PT is one PT calendar day regardless of UTC offset (PDT/PST handled by the date key, not by timestamp arithmetic).</p>
+</section>
+
+<section class="panel">
+  <h2>4 · Duration inputs (researched, labeled)</h2>
+  <div class="kv">
+    <div>MLB regular</div><div>158 min — 2025 avg 2:38 (nine-inning)</div>
+    <div>MLB postseason</div><div>185 min — playoff buffer</div>
+    <div>MLB All-Star / spring</div><div>170 / 165 min — exhibition/pacing estimates</div>
+    <div>NFL</div><div>183 min — ≈3:03 (2024–2025, nflverse timing)</div>
+    <div>NFL playoffs</div><div>195 min — playoff + buffer</div>
+    <div>Super Bowl / CFP</div><div>230 min — ≈3:50 with extended halftime</div>
+    <div>NCAAF</div><div>207 min — ≈3:27 (2024 FBS average)</div>
+  </div>
+  <p class="small">Confidence: regular-season averages are moderate (hundreds of games). Playoff/SB values are low-confidence single-game estimates.</p>
+</section>
+
+<section class="panel">
+  <h2>5 · Known failure modes</h2>
+  <ul>
+    <li>Reconstructed fixtures can put two games on one club the same day — generator enforces ≤15 games/day total and team-day uniqueness, but <em>opponent realism</em> (division rotations, international placeholders) is not guaranteed.</li>
+    <li>Row-level verification is impossible here; the site never claims “confirmed” for a generated row.</li>
+    <li>Multi-day window math uses day granularity — a 4-day window split by a single arbitrary TBD game would read as two separate windows if both ≥3 days.</li>
+    <li>Travel/jetlag (Melbourne 2026 opener = 8:35 PM PT) is irrelevant to radio blocking but matters if you attend in person.</li>
+    <li>OT/extra innings not modeled; they always extend, never shorten, a block.</li>
+  </ul>
+</section>
+
+<section class="panel">
+  <h2>6 · Reproduce</h2>
+  <p><code>python3 tools/generate_schedules.py</code> → regenerates <code>data/games-*.json</code> + <code>vacation_analysis.json</code> + <code>meta.json</code> deterministically. Then re-check links and serve the repo root (e.g. <code>python3 -m http.server</code>) and open <code>/docs/</code> pages.</p>
+</section>
+</main>
+<footer class="shell"><span>FREE TIME VACATION · Deterministic generator, seeded 20261125.</span><span><a href="sources.html">Sources</a> · <a href="flagged.html">Flagged</a></span></footer>
+<script type="module">import { injectNav } from './assets/site.js'; injectNav('Methodology');</script>
+</body>
+</html>

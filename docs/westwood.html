@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Westwood One NFL Radio 2026–2029 — Free Time Vacation</title>
+<meta name="description" content="Every Westwood One Sports national NFL radio broadcast 2026-11-25 → Super Bowl LXI — verified capture with SF affiliates and pregame air times.">
+<link rel="stylesheet" href="assets/site.css">
+<script type="module" src="assets/site.js"></script>
+</head>
+<body>
+<header><div class="shell">
+  <div class="top"><a class="brand" href="../index.html"><span class="logo">◈</span>Free Time <em>Vacation</em></a><small>94122 · PACIFIC TIME</small></div>
+  <nav data-site-nav aria-label="Sections"></nav>
+</div></header>
+<main class="shell">
+<section class="hero">
+  <div class="eyebrow">WESTWOOD ONE SPORTS · NATIONAL NFL RADIO · VERIFIED CAPTURE</div>
+  <h1>Every national NFL radio call, straight from the source.</h1>
+  <p><strong>38 national broadcasts</strong> captured verbatim from westwoodonesports.com/nfl-schedule/ on <strong>2026-11-25</strong> (Week 12 → Super Bowl LXI), with pregame air time, kickoff time, SF affiliate, venue and official event URL for each. In the Bay Area these air on <strong>KNBR 680 AM / 104.5 FM</strong> (overflow KTCT 1050 AM) — subject to local pre-emption by 49ers/Giants rights.</p>
+</section>
+
+<div class="callout"><strong>Super Bowl LXI — airTime 2:00 PM PST (pregame) · kickoff 3:30 PM PST · Sun 2027-02-14 · SoFi Stadium, Inglewood · KNBR (overflow KTCT 1050) · official source: <a href="https://www.nfl.com/news/2026-27-national-football-league-important-dates" rel="noopener">NFL important dates</a>.</strong></div>
+
+<section class="panel">
+  <h2>2026–2027 national NFL windows (verified capture)</h2>
+  <div class="controls"><label>Filter <input id="q" type="search" placeholder="49ers, Thanksgiving, Christmas, playoffs, Super Bowl…" style="min-width:240px"></label><button id="csv" class="button secondary" type="button">Download CSV</button></div>
+  <p class="small" id="counts">Loading…</p>
+  <div class="table"><table><thead><tr><th>Date</th><th>Week</th><th>Pregame (PT)</th><th>Kickoff (PT)</th><th>Broadcast</th><th>Venue</th><th>SF affiliate</th><th>Official</th></tr></thead><tbody id="rows"></tbody></table></div>
+</section>
+
+<section class="panel">
+  <h2>Estimated weekly template for 2027–2029</h2>
+  <div class="grid">
+    <div class="card"><div class="eyebrow">THURSDAY NIGHT</div><p>Every week except Week 18/bye weeks: ~5:15 PM PT kickoff → ~8:30 PM end. Thanksgiving tripleheader (~9:30 AM, 1:15 PM, 5:00 PM PT).</p></div>
+    <div class="card"><div class="eyebrow">SUNDAY NIGHT</div><p>Every week: ~5:20 PM PT → ~8:30 PM. Holiday weeks: Black Friday game (Fri ~11:30 AM PT).</p></div>
+    <div class="card"><div class="eyebrow">MONDAY NIGHT</div><p>Every week: ~5:15 PM PT → ~8:30 PM.</p></div>
+    <div class="card"><div class="eyebrow">POSTSEASON</div><p>Wild Card (Jan 16–18, 2027) · Divisional (Jan 23–24) · Conference championships (Jan 31) · Super Bowl LXI (Feb 14, 2027, verified). 2027–2029 playoff grids: <span class="tag est">ESTIMATED</span> until Westwood One posts them.</p></div>
+  </div>
+  <p class="small"><a href="https://www.westwoodonesports.com/station-finder/">Station finder — San Francisco: KNBR-AM, KNBR-F2, KNBR-FM, KTCT-AM (NFL &amp; NCAA Football)</a> · <a href="https://www.westwoodonesports.com/nfl-schedule/">Official schedule page (rolling — events drop after they air)</a></p>
+</section>
+
+<section class="panel">
+  <h2>Westwood One national NCAAF (informational — NOT in free-time definition)</h2>
+  <div class="table"><table><thead><tr><th>Date</th><th>PT</th><th>Broadcast</th><th>Note</th></tr></thead><tbody id="ncaaf"></tbody></table></div>
+  <p class="small">Michigan at Ohio State 11:30 ET (Nov 28) · SEC Championship 3:30 ET (Dec 5) · Army–Navy 2:00 PM ET (Dec 12). Informational only: the vacation-free definition counts only Stanford/Cal FBS. <a href="https://www.westwoodonesports.com/ncaa-football-schedule/">Official NCAAF schedule</a>.</p>
+</section>
+
+<section class="panel">
+  <h2>Bay Area reception notes (outer Sunset 94122)</h2>
+  <ul>
+    <li><strong>KNBR 680 AM / 104.5 FM</strong> — 50 kW clear-channel AM; Class A; FM simulcast sister. The loud, reliable sports signal in SF — Westwood One NFL affiliate; also Giants + 49ers flagship.</li>
+    <li><strong>KSAN 107.7 FM (“The Bone”)</strong> — 8.9 kW ERP, San Bruno Mountain; 49ers/Giants secondary. Clean FM west of the city.</li>
+    <li><strong>KSFO 810 AM</strong> — 50 kW (ex-KGO, since Nov 2024; 560 went dark Mar 2025). 49ers secondary + Cal football home (Nov 28, 2026).</li>
+    <li><strong>KNEW 960 AM</strong> — iHeart Sports 960 (Oakland); A’s Bay Area home (KSTE 650 Sacramento is weak in 94122).</li>
+    <li><strong>KTCT 1050 AM</strong> — 50 kW day / 10–35 kW night Class B directional (Hayward); Stanford football flagship (2026) + Westwood One affiliate. Full-time, strongest by day.</li>
+    <li><strong>KIQI 1010 AM</strong> — 10 kW Class B; A’s Spanish-language home; stable in 94122.</li>
+  </ul>
+</section>
+</main>
+<footer class="shell"><span>FREE TIME VACATION · Verified capture 2026-11-25 · All times PT.</span><span><a href="radio.html">AM/FM dial guide</a> · <a href="flagged.html">Flagged</a></span></footer>
+<script type="module">
+import { injectNav, esc, downloadCsv } from './assets/site.js';
+injectNav('Westwood One Radio');
+const $ = id => document.getElementById(id);
+const kickoffToMin = t => { const m = /(\d+):(\d+)\s*(AM|PM)/i.exec(t||''); if(!m) return null; let h = +m[1]%12; if(/pm/i.test(m[3])) h += 12; return h*60 + +m[2]; };
+const minToClock = mins => { const h = Math.floor(mins/60), m = mins%60; const ampm = h<12?'AM':'PM'; return `${h%12||12}:${String(m).padStart(2,'0')} ${ampm}`; };
+(async () => {
+  const d = await fetch('../data/westwood_one_2026.json').then(r => r.json());
+  const rows = [...d.broadcasts].sort((a,b) => (a.date + (kickoffToMin(a.kickoffPST)||0)).localeCompare(b.date + (kickoffToMin(b.kickoffPST)||0)));
+  const tb = $('rows');
+  const render = list => {
+    tb.innerHTML = list.map(b => `<tr><td>${esc(b.date)}</td><td>${esc(b.week||'')}</td><td>${esc(b.airTimePST||'—')}</td><td><strong>${esc(b.kickoffPST||'—')}</strong></td><td>${esc(b.matchup)}<div class="small">${esc(b.broadcastLabel||'')}${b.is49ers?' · <span class="tag good">49ERS</span>':''}</div></td><td>${esc(b.venue||'')}</td><td>${esc(b.sfAffiliate||'')}</td><td><a href="${esc(b.sourceUrl)}" rel="noopener">event</a></td></tr>`).join('');
+    $('counts').innerHTML = `<strong>${list.length}</strong> national windows · ${list.filter(r=>r.is49ers).length} 49ers · <a href="../data/westwood_one_2026.json">raw JSON</a>`;
+  };
+  render(rows);
+  $('q').addEventListener('input', e => {
+    const q = e.target.value.trim().toLowerCase();
+    render(q ? rows.filter(b => JSON.stringify(b).toLowerCase().includes(q)) : rows);
+  });
+  $('csv').addEventListener('click', () => downloadCsv('westwoodone-2026-11-25-capture.csv',
+    [['date','week','pregame_pt','kickoff_pt','matchup','label','venue','sf_affiliate','source_url'],
+     ...rows.map(b => [b.date, b.week||'', b.airTimePST||'', b.kickoffPST||'', b.matchup, b.broadcastLabel||'', b.venue||'', b.sfAffiliate||'', b.sourceUrl])]));
+})().catch(err => { $('rows').innerHTML = '<tr><td colspan="8">Failed to load data/westwood_one_2026.json — see repository.</td></tr>'; $('counts').textContent = String(err); });
+$('ncaaf').innerHTML = [
+  ['2026-11-28','8:30 AM','Michigan at Ohio State (Big Ten)','11:30 AM ET · westwoodonesports.com/events/557131','https://www.westwoodonesports.com/events/557131'],
+  ['2026-12-05','12:30 PM','SEC Championship Game (Atlanta)','3:30 PM ET · westwoodonesports.com/events/557146','https://www.westwoodonesports.com/events/557146'],
+  ['2026-12-12','11:00 AM','Army vs Navy (East Rutherford)','2:00 PM ET · westwoodonesports.com/events/557132','https://www.westwoodonesports.com/events/557132'],
+].map(([d,pt,g,note,src]) => `<tr><td>${d}</td><td>${pt}</td><td>${g}</td><td>${note} · <a href="${src}" rel="noopener">event page</a></td></tr>`).join('');
+</script>
+</body>
+</html>

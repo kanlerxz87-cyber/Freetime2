@@ -1,0 +1,27 @@
+{
+  "generated_utc": "2026-11-25T14:19:05+00:00",
+  "timezone": "America/Los_Angeles",
+  "generator": "tools/generate_schedules.py",
+  "games_2026": 3124,
+  "games_2027": 3126,
+  "games_2028": 3067,
+  "games_2029": 3064,
+  "durations_min": {
+    "MLB_regular": 158,
+    "MLB_postseason": 185,
+    "MLB_spring": 165,
+    "MLB_allstar": 170,
+    "NFL": 183,
+    "NCAAF": 207,
+    "WW1_EXTRA": 183
+  },
+  "definition_strict": "A day is busy if any MLB (incl. Spring Training/postseason), NFL (incl. preseason/postseason/Pro Bowl/Super Bowl), or high-scope NCAAF row (Stanford/Cal regular/bowl/conference championship) airs that day. Other NCAAF and informational rows (CFP/WW1-NCAAF) are excluded.",
+  "definition_practical": "Busy = priority=high rows only (Giants/Athletics MLB, 49ers NFL, Stanford/Cal NCAAF, Westwood One national NFL). Day-level: any untimed high-priority game makes the day busy.",
+  "verification_policy": "verified=true only for rows anchored to an official source: data/all_events.json (VERIFIED rows), data/mlb_2027_bayarea.json (MLB Stats API extract), data/ncaaf_stanford_cal.json, data/westwood_one_2026.json (2026-11-25 capture). All other rows are ESTIMATES anchored to verified season boundaries.",
+  "overlays": [
+    "data/all_events.json",
+    "data/mlb_2027_bayarea.json",
+    "data/ncaaf_stanford_cal.json",
+    "data/westwood_one_2026.json"
+  ]
+}
