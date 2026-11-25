@@ -1,0 +1,18 @@
+import assert from 'node:assert/strict';
+import {readFileSync,existsSync} from 'node:fs';
+import {day,midnight,shift,intervals,mlb} from '../docs/model.mjs';
+import {games,sources} from '../docs/data.mjs';
+const m=60000;
+assert.equal(day(Date.parse('2027-01-01T07:59:00Z')),'2026-12-31');
+assert.equal(shift('2028-02-28',1),'2028-02-29');
+for(const [date,hours] of [['2027-03-14',23],['2027-11-07',25]])assert.equal(midnight(shift(date,1))-midnight(date),hours*60*m);
+const t=Date.parse('2027-01-01T00:00:00Z');
+assert.deepEqual(intervals([{start:new Date(t-m).toISOString(),minutes:4},{start:new Date(t+2*m).toISOString(),minutes:4},{start:null,minutes:10}],t,t+10*m),{busy:[[t,t+6*m]],gaps:[[t+6*m,t+10*m]]});
+const item={gamePk:1,officialDate:'2027-03-25',gameDate:'2027-03-25T17:00:00Z',status:{startTimeTBD:true},teams:{home:{team:{id:133,name:'Athletics'}},away:{team:{id:100,name:'Other'}}}};
+assert.equal(mlb({dates:[{games:[item]}]})[0].start,null);
+assert.equal(mlb({dates:[{games:[item]}]})[0].priority,true);
+assert.equal(mlb({dates:[{games:[{...item,status:{detailedState:'Cancelled'}}]}]}).length,0);
+assert.equal(new Set(games.filter(g=>g.category==='Westwood One').map(g=>g.source)).size,35);
+for(const url of [...Object.values(sources),...games.map(g=>g.source)])assert.equal(new URL(url).protocol,'https:');
+for(const [, path] of readFileSync('index.html','utf8').matchAll(/(?:href|src)="([^#"]+)"/g))assert.ok(existsSync(path),path);
+console.log('Planner logic, source URLs and local entry links passed');
