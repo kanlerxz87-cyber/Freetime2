@@ -15,12 +15,17 @@ Shared task board for Freetime2. Multiple agent sessions may work concurrently; 
 
 | Task | Status | Owner | Scope (files/dirs) | Started (UTC) | Updated (UTC) | Notes |
 |------|--------|-------|--------------------|---------------|---------------|-------|
-| T1 Research & data collection (MLB/NFL/NCAAF/Westwood One/SF radio) | in progress | arena/ab74423d-freetime2 | `data/**`, `sources/**`, `COORDINATION.md` (this row) | 2026-11-25T00:00:00Z | 2026-11-25T00:00:00Z | Collect official/verified schedules 2026-2029; flag estimates where no official schedule exists. |
-| T2 Free-time analysis & executive summary | in progress | arena/ab74423d-freetime2 | `analysis/**`, `docs/executive-summary.*` | 2026-11-25T00:00:00Z | 2026-11-25T00:00:00Z | Analysis uses broad, explicitly estimated seasonal windows where full schedules are unavailable. |
-| T3 Site build (GitHub Pages) | in progress | arena/ab74423d-freetime2 | `site/**`, `.github/workflows/**`, `README.md` | 2026-11-25T00:00:00Z | 2026-11-25T00:00:00Z | Landing page, dashboard, calendar, category subpages, source and flagged-review pages. |
-| T4 Final integration, PR, merge, deploy | unclaimed | | all (integration only after T1-T3 done) | | | Merge, re-verify, PR to main, merge, confirm Pages deploy. |
+| T1 Research & data collection (MLB/NFL/NCAAF/Westwood One/SF radio) | needs review | arena/ab74423d-freetime2 | `data/**`, `sources/**`, `COORDINATION.md` (this row) | 2026-11-25T00:00:00Z | 2026-11-25T00:00:00Z | Official schedule sample data/source log published; incomplete all-game coverage and unresolved radio/time conflicts are on Flagged for Review. |
+| T2 Free-time analysis & executive summary | needs review | arena/ab74423d-freetime2 | `analysis/**`, `docs/executive-summary.*` | 2026-11-25T00:00:00Z | 2026-11-25T00:00:00Z | Conservative season-window model finds no 7+ day run; candidate 3–4 day winter gaps are estimates, published with source links and caveats. |
+| T3 Site build (GitHub Pages) | done | arena/ab74423d-freetime2 | `site/**`, `.github/workflows/**`, `README.md` | 2026-11-25T00:00:00Z | 2026-11-25T00:00:00Z | Static landing/dashboard, daily calendar, vacation finder, schedules, radio, duration/source and Flagged for Review pages; static link/data checks pass. |
+| T4 Final integration, PR, merge, deploy | in progress | arena/ab74423d-freetime2 | all (integration only after T1-T3 done) | 2026-11-25T00:00:00Z | 2026-11-25T00:00:00Z | Same fixed Arena branch used; T1/T2 are needs review with gaps published. Rechecking build and sources before PR. |
 
 ## Log
 
 - 2026-11-25T00:00:00Z `arena/ab74423d-freetime2`: Created COORDINATION.md. Claimed T1. Repo was initial commit only.
 - 2026-11-25T00:00:00Z `arena/ab74423d-freetime2`: Claimed unowned T2 (analysis/docs) and T3 (site/workflow/README) after checking the board; same fixed Arena branch is used to comply with session branch restrictions.
+
+- 2026-11-25 `arena/ab74423d-freetime2` (T1): Inspected official 49ers, Stanford, Cal, Westwood One and MLB sources; recorded 2026 remaining/high-priority events, Westwood One upcoming 2026 listings through Jan 10 2027, and 14 official MLB March 25 2027 event rows. Reviewed MLB 2027 team schedule announcements and duration sources. Full season/all-team schedules, local radio carriage, and time conflicts are explicitly flagged; task status set to needs review.
+- 2026-11-25 `arena/ab74423d-freetime2` (T2): Applied inclusive broad season-window algorithm; no 7/14/21-day model run for 2027-2029; longest candidates are 4 days (2027 Feb 15-18; 2028 Jan 11-14 or Feb 14-17; 2029 Feb 12-15). Published provisional analysis and sources; status needs review.
+- 2026-11-25 `arena/ab74423d-freetime2` (T3): Built 9-page static site, GitHub Pages Actions workflow, source-linked tables, duration assumptions, day navigation and flagged page. `python3 scripts/check_site.py` passes. Local preview started on port 8000.
+- 2026-11-25 `arena/ab74423d-freetime2` (T4): Claimed integration after T1/T2 gaps were published on Flagged for Review and T3 completed; final source/data/site validation and PR/deploy remain.

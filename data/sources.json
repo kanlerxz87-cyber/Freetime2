@@ -1,0 +1,212 @@
+{
+  "sources": [
+    {
+      "id": "S1",
+      "name": "MLB.com - 2027 Schedule Announcement (Nationals example)",
+      "url": "https://www.mlb.com/press-release/washington-nationals-announce-2027-schedule",
+      "type": "official",
+      "accessed": "2026-11-25",
+      "notes": "Confirms MLB released 2027 schedule on 2026-07-16; Opening Day Mar 25 2027 earliest in Nationals history; season structure details."
+    },
+    {
+      "id": "S2",
+      "name": "MLB.com - 2027 Schedule Announcement (Orioles example)",
+      "url": "https://www.mlb.com/press-release/press-release-orioles-announce-2027-regular-season-schedule",
+      "type": "official",
+      "accessed": "2026-11-25",
+      "notes": "Confirms 2027 Opening Day Mar 25 at TB; season ends Sep 26 vs NYY; 162-game structure."
+    },
+    {
+      "id": "S3",
+      "name": "Wikipedia - 2027 Major League Baseball season (summary of MLB release)",
+      "url": "https://en.wikipedia.org/wiki/2027_Major_League_Baseball_season",
+      "type": "secondary",
+      "accessed": "2026-11-25",
+      "notes": "Summarizes MLB-released 2027 schedule: Mar 24 Opening Night (Netflix), Mar 25 Opening Day, season ends Sep 26, ASG Jul 13 Wrigley Field. Used as secondary pointer; key dates corroborated by MLB team press releases."
+    },
+    {
+      "id": "S4",
+      "name": "San Francisco 49ers Official Schedule",
+      "url": "https://www.49ers.com/schedule/",
+      "type": "official",
+      "accessed": "2026-11-25",
+      "notes": "Official 49ers 2026 schedule with game results and upcoming games."
+    },
+    {
+      "id": "S5",
+      "name": "Stanford Cardinal Football Official Schedule",
+      "url": "https://gostanford.com/sports/football/schedule",
+      "type": "official",
+      "accessed": "2026-11-25",
+      "notes": "Official Stanford football 2026 schedule."
+    },
+    {
+      "id": "S6",
+      "name": "California Golden Bears Football Official Schedule",
+      "url": "https://calbears.com/sports/football/schedule",
+      "type": "official",
+      "accessed": "2026-11-25",
+      "notes": "Official Cal football 2026 schedule."
+    },
+    {
+      "id": "S7",
+      "name": "Cal Bears - 2026 Schedule Announcement",
+      "url": "https://calbears.com/news/2026/1/26/california-football-announces-2026-schedule.aspx",
+      "type": "official",
+      "accessed": "2026-11-25",
+      "notes": "Official Cal announcement of 2026 football schedule."
+    },
+    {
+      "id": "S8",
+      "name": "Stanford - Complete 2026 Schedule Unveiled",
+      "url": "https://gostanford.com/news/2026/1/26/complete-2026-schedule-unveiled",
+      "type": "official",
+      "accessed": "2026-11-25",
+      "notes": "Official Stanford announcement of 2026 football schedule."
+    },
+    {
+      "id": "S9",
+      "name": "MLB.com Giants Schedule",
+      "url": "https://www.mlb.com/giants/schedule/2026-03",
+      "type": "official",
+      "accessed": "2026-11-25",
+      "notes": "Official SF Giants schedule on MLB.com."
+    },
+    {
+      "id": "S10",
+      "name": "MLB.com Athletics Schedule",
+      "url": "https://www.mlb.com/athletics/schedule/2026-03",
+      "type": "official",
+      "accessed": "2026-11-25",
+      "notes": "Official Athletics schedule on MLB.com."
+    },
+    {
+      "id": "S11",
+      "name": "Westwood One Sports - NFL Coverage",
+      "url": "https://westwoodonesports.com/",
+      "type": "official",
+      "accessed": "2026-11-25",
+      "notes": "Westwood One Sports official site; NFL primetime/national radio rights holder."
+    },
+    {
+      "id": "S12",
+      "name": "Radio-Online - Westwood One 40th Season NFL Coverage (2026)",
+      "url": "https://news.radio-online.com/articles/n49383/Westwood-One-Sets-40th-Season-of-NFL-Coverage",
+      "type": "secondary",
+      "accessed": "2026-11-25",
+      "notes": "Reports Westwood One 2026 NFL lineup: MNF, SNF, TNF, international games, Thanksgiving, Black Friday, Christmas, postseason, Super Bowl LXI. Names broadcast teams."
+    },
+    {
+      "id": "S13",
+      "name": "NFL.com - 2026 NFL Schedule",
+      "url": "https://www.nfl.com/schedules/2026/reg/",
+      "type": "official",
+      "accessed": "2026-11-25",
+      "notes": "Official NFL schedule hub."
+    },
+    {
+      "id": "S14",
+      "name": "NFL Operations - Key Dates / Schedule Release",
+      "url": "https://operations.nfl.com/gameday/nfl-schedule/",
+      "type": "official",
+      "accessed": "2026-11-25",
+      "notes": "NFL operations schedule information."
+    },
+    {
+      "id": "S15",
+      "name": "KNBR 680 / 104.5 FM - SF Giants Flagship",
+      "url": "https://www.mlb.com/giants/schedule/watch",
+      "type": "official",
+      "accessed": "2026-11-25",
+      "notes": "MLB.com confirms Giants English radio on KNBR 680 AM & 104.5 FM; Spanish on KSFN 1510 AM."
+    },
+    {
+      "id": "S16",
+      "name": "49ers Radio Affiliates - KSAN 107.7 The Bone / KNBR 680",
+      "url": "https://www.49ers.com/fans/radio-network",
+      "type": "official",
+      "accessed": "2026-11-25",
+      "notes": "49ers official radio network information (to be verified on page)."
+    },
+    {
+      "id": "S17",
+      "name": "MLB.com - 2026 Schedule",
+      "url": "https://www.mlb.com/schedule/2026-03-25",
+      "type": "official",
+      "accessed": "2026-11-25",
+      "notes": "Official MLB master schedule."
+    },
+    {
+      "id": "S18",
+      "name": "Super Bowl LXII - Atlanta (NFL)",
+      "url": "https://www.nfl.com/news/atlanta-awarded-super-bowl-lxii",
+      "type": "official",
+      "accessed": "2026-11-25",
+      "notes": "NFL announcement of Super Bowl LXII in Atlanta; date Feb 13 2028 widely reported from NFL award."
+    },
+    {
+      "id": "S20",
+      "name": "Westwood One Sports - official NFL schedule",
+      "url": "https://www.westwoodonesports.com/nfl-schedule/",
+      "type": "official",
+      "accessed": "2026-11-25",
+      "notes": "Upcoming broadcast listings inspected, including Thanksgiving, primetime, Saturday doubleheaders, 49ers-Chargers, and 49ers-Eagles listings. Event rows cite this schedule; local SF affiliate reception remains unverified."
+    },
+    {
+      "id": "S21",
+      "name": "MLB - 2025 average game time (official report)",
+      "url": "https://www.mlb.com/news/mlb-average-game-time-under-three-hours-third-straight-year",
+      "type": "official",
+      "accessed": "2026-11-25",
+      "notes": "Official MLB 2025 average nine-inning game time: 2h 38m."
+    },
+    {
+      "id": "S22",
+      "name": "NFL 2026 Official Playing Rules",
+      "url": "https://static.www.nfl.com/image/upload/fl_attachment/league/tqivdkzt9mu6wdgsh1ku.pdf",
+      "type": "official",
+      "accessed": "2026-11-25",
+      "notes": "Official game clock structure, 60 minutes regulation."
+    },
+    {
+      "id": "S23",
+      "name": "NFL Analytics - elapsed game length analysis",
+      "url": "https://nflanalytic.com/explainer-how-long-is-an-nfl-game.html",
+      "type": "secondary",
+      "accessed": "2026-11-25",
+      "notes": "Secondary 2025 play-by-play analysis, approx 3h 04m average duration."
+    },
+    {
+      "id": "S24",
+      "name": "CBS Sports - NCAA football game duration report",
+      "url": "https://www.cbssports.com/college-football/news/despite-running-fewer-plays-college-football-games-are-actually-getting-longer-so-whos-to-blame/",
+      "type": "secondary",
+      "accessed": "2026-11-25",
+      "notes": "Reports 2024 average college football game duration of 3h 27m based on NCAA game-length tracking."
+    },
+    {
+      "id": "S25",
+      "name": "MLB official 2027 schedule, March 25",
+      "url": "https://www.mlb.com/schedule/2027-03-25",
+      "type": "official",
+      "accessed": "2026-11-25",
+      "notes": "Official MLB schedule date page; opening day games, venues and listed start times. Some times TBD."
+    },
+    {
+      "id": "S26",
+      "name": "MLB official schedule - 2027 Spring Training opening listings",
+      "url": "https://www.mlb.com/schedule/2027-02-19/2027-03",
+      "type": "official",
+      "accessed": "2026-11-25",
+      "notes": "Official MLB schedule page lists Spring Training games on Feb 19, 2027; full dates are not established here."
+    },
+    {
+      "id": "S19",
+      "name": "ESPN - 49ers 2026 schedule (secondary)",
+      "url": "https://www.espn.com/nfl/team/schedule/_/name/sf/san-francisco-49ers",
+      "type": "secondary",
+      "accessed": "2026-11-25",
+      "notes": "Secondary cross-check reference only; official 49ers/NFL schedules remain primary."
+    }
+  ]
+}
