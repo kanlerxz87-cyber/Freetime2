@@ -1,0 +1,40 @@
+name: planner official data snapshot (7d4f79aa)
+
+# Fetches official schedule data (MLB Stats API, NBA CDN, NHL API, team/league/network pages)
+# for the Free Time Vacation planner and commits it to planner/data/raw/.
+# Runs only on the session branch or by manual dispatch, so it never touches main by itself.
+on:
+  workflow_dispatch:
+  push:
+    branches: [arena/7d4f79aa-freetime2]
+    paths:
+      - scripts/fetch_planner_data.py
+      - .github/workflows/planner-data.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: planner-data
+  cancel-in-progress: false
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Fetch official sources
+        run: python scripts/fetch_planner_data.py
+      - name: Commit snapshot
+        run: |
+          git config user.name "planner-data-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add planner/data/raw
+          if git diff --cached --quiet; then echo "no changes"; exit 0; fi
+          git commit -m "Official data snapshot for planner (MLB Stats API, NBA CDN, NHL API, league/team pages)"
+          git pull --rebase origin "${GITHUB_REF_NAME}"
+          git push origin "HEAD:${GITHUB_REF_NAME}"
