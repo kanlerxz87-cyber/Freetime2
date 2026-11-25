@@ -23,7 +23,7 @@
 <section class="panel">
   <h2>A. Structural estimates you must internalize</h2>
   <ol>
-    <li><strong>All game-by-game rows for 2026/2027 MLB</strong> are reconstructions anchored to verified boundaries. The official 2026/2027 master schedules exist, but this build could not fetch them programmatically; rows are ESTIMATED. Verify anything you care about on MLB.com.</li>
+    <li><strong>Most 2026/2027 MLB game rows</strong> are reconstructions anchored to verified boundaries — <em>except</em> the 2027 SF Giants/Athletics games and 16 marquee games, which are VERIFIED from the MLB Stats API, and the 2026 NFL Weeks 12–18 + Super Bowl LXI rows, VERIFIED from NFL.com. Verify anything you care about on MLB.com/NFL.com.</li>
     <li><strong>All 2028 and 2029 schedules do not exist yet</strong> (MLB ~mid-2027/2028; NFL ~May 2027/2028; ACC ~Jan/Feb each year). Every 2028/2029 row is ESTIMATED.</li>
     <li><strong>49ers Week 18 (at Arizona)</strong> — Jan 9 or 10, 2027; time TBD via NFL flex rules (Sat Jan 9 is possible).</li>
     <li><strong>NFL flex scheduling</strong> — Weeks 5–18 games can move within Sunday/Monday/Thursday slots; listed times are the announced/estimated baseline only.</li>
@@ -68,7 +68,7 @@
 <section class="panel">
   <h2>D. Data & method irregularities</h2>
   <ol>
-    <li>Twelve-thousand-plus game rows but <strong>~12,281</strong> are generated; only anchors are verified. Row counts ≠ realism — distributions are modeled (division-heavy, Fri/Sun weighting) from the balanced-schedule template.</li>
+    <li>~12,300 game rows are generated; only the anchor set and official-overlay rows are verified. Row counts ≠ realism — distributions are modeled (division-heavy, Fri/Sun weighting) from the balanced-schedule template.</li>
     <li>2026/2027 MLB team-games per club range 162–163 (plus anchors like Opening Night); international “home” games carry venue suffixes in names (e.g., “Los Angeles Rams (Melbourne…)”), creating cosmetic team-count inflation in tables.</li>
     <li>Strict “free day” requires zero untimed rows of any kind — <strong>one TBD game flips the day from FREE to BUSY</strong>. This is deliberately conservative.</li>
     <li>Vacation windows computed on day granularity; partial-day “free evenings on game days” are shown per-day on the <a href="calendar.html">Scoreboard</a> but not aggregated into multi-day windows.</li>

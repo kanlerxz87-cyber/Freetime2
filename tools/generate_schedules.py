@@ -905,18 +905,24 @@ def merge(intervals):
     return out
 
 def main():
-    all_rows = {}
+    season_pools = {}
     for year in (2026, 2027, 2028, 2029):
         rows = season_rows(year)
-        all_rows[year] = rows
+        rows = overlay(year, rows)
+        season_pools[year] = rows
+        print(year, "rows after overlay:", len(rows))
+    merged = [g for y in (2026, 2027, 2028, 2029) for g in season_pools[y]]
+    merged = global_dedup(merged)
+    merged.sort(key=lambda g: (g["date"], g["start"] or "99:99", g["id"]))
+    all_rows = {y: [r for r in merged if r["date"].startswith(str(y))] for y in (2026, 2027, 2028, 2029)}
+    for year, rows in all_rows.items():
         with open(DATA / f"games-{year}.json", "w") as f:
             json.dump(rows, f, separators=(",", ":"))
         print(year, "games:", len(rows))
-    global_pool = [r for year in (2026, 2027, 2028, 2029) for r in all_rows[year]]
+    global_pool = merged
     analysis = {}
     for year in (2026, 2027, 2028, 2029):
-        pool = [r for r in global_pool if r["date"].startswith(str(year))]
-        analysis[str(year)] = analyze(year, pool)
+        analysis[str(year)] = analyze(year, global_pool)
     with open(DATA / "vacation_analysis.json", "w") as f:
         json.dump(analysis, f, separators=(",", ":"))
     meta = {
@@ -927,11 +933,199 @@ def main():
         "durations_min": DUR,
         "definition_strict": "A day is busy if any MLB (incl. Spring Training/postseason), NFL (incl. preseason/postseason/Pro Bowl/Super Bowl), or high-scope NCAAF row (Stanford/Cal regular/bowl/conference championship) airs that day. Other NCAAF and informational rows (CFP/WW1-NCAAF) are excluded.",
         "definition_practical": "Busy = priority=high rows only (Giants/Athletics MLB, 49ers NFL, Stanford/Cal NCAAF, Westwood One national NFL). Day-level: any untimed high-priority game makes the day busy.",
-        "verification_policy": "verified=true only for rows anchored to an official source captured in data/sources.json. All generated matchups/times are ESTIMATES anchored to verified season boundaries."
+        "verification_policy": "verified=true only for rows anchored to an official source: data/all_events.json (VERIFIED rows), data/mlb_2027_bayarea.json (MLB Stats API extract), data/ncaaf_stanford_cal.json, data/westwood_one_2026.json (2026-11-25 capture). All other rows are ESTIMATES anchored to verified season boundaries.",
+        "overlays": ["data/all_events.json", "data/mlb_2027_bayarea.json", "data/ncaaf_stanford_cal.json", "data/westwood_one_2026.json"]
     }
     with open(DATA / "meta.json", "w") as f:
         json.dump(meta, f, indent=2)
     print("meta + vacation_analysis written")
+
+
+# ----------------------------------------------------------------------------- Official overlay ingestion
+import re as _re
+import json as _json
+
+def norm_team(name):
+    s = _re.sub(r'[^a-z0-9]', '', str(name).lower())
+    if s.startswith('athletics'):
+        return 'athletics'
+    if s == 'sanfranciscogiants':
+        return s
+    return s
+
+def nkey(date, away, home):
+    a, b = norm_team(away), norm_team(home)
+    return (date, tuple(sorted((a, b))))
+
+def mins_to_hhmm(mins):
+    if mins is None: return None
+    h, m = divmod(int(mins), 60)
+    return f"{h:02d}:{m:02d}"
+
+def parse_pst(t):
+    """'5:00 PM PST' -> minutes since midnight PT; '' -> None"""
+    if not t: return None
+    m = _re.match(r'(\d+):(\d+)\s*(AM|PM)', str(t).strip(), _re.I)
+    if not m: return None
+    h, mi, ap = int(m.group(1)), int(m.group(2)), m.group(3).upper()
+    if ap == 'PM' and h != 12: h += 12
+    if ap == 'AM' and h == 12: h = 0
+    return h*60 + mi
+
+def overlay_all_events_verified(year, rows):
+    """Pull VERIFIED rows from data/all_events.json (NFL 2026 W12-18 + SB LXI; MLB 2027 verified)."""
+    added = 0
+    path = ROOT / 'data' / 'all_events.json'
+    if not path.exists():
+        return rows, 0
+    events = _json.load(open(path)).get('events', [])
+    out = list(rows)
+    for e in events:
+        if e.get('status') != 'VERIFIED':
+            continue
+        if str(e.get('year')) != str(year):
+            continue
+        lg = e.get('league')
+        if lg not in ('MLB', 'NFL', 'NCAAF'):
+            continue
+        sport = 'MLB' if lg == 'MLB' else ('NFL' if lg == 'NFL' else 'NCAAF')
+        phase = e.get('phase', '')
+        if 'Spring Training' in phase: season_type = 'spring_training'; minutes = DUR['MLB_spring']
+        elif 'All-Star' in phase: season_type = 'all_star'; minutes = DUR['MLB_allstar']
+        elif 'Postseason' in phase or 'Super Bowl' in phase or 'Wild Card' in phase or 'Divisional' in phase or 'Conf Champ' in phase: season_type = 'postseason'; minutes = DUR['NFL']
+        elif 'Game (Week' in phase or 'Regular Season' in phase: season_type = 'regular'; minutes = DUR['MLB_regular'] if lg == 'MLB' else (DUR['NFL'] if lg == 'NFL' else DUR['NCAAF'])
+        else: season_type = 'regular'; minutes = DUR.get('NFL', 183)
+        if lg == 'NFL': minutes = e.get('durationMin') or DUR['NFL']
+        start = None
+        if not e.get('startTimeTBD'):
+            start = mins_to_hhmm(e.get('startMinPST')) or mins_to_hhmm(parse_pst(e.get('officialTimePST')))
+        priority = 'high' if e.get('highPriority') else 'normal'
+        ident = f"OFF-{e['id']}"
+        out.append(row(ident, sport, lg if lg != 'NCAAF' else 'NCAAF (ACC)', season_type, e['date'], start,
+                       minutes, e.get('away', ''), e.get('home', ''), priority, True,
+                       e.get('sourceUrl') or 'https://www.nfl.com/schedules/',
+                       e.get('sourceLabel') or 'Official source',
+                       note=f"VERIFIED via {e.get('sourceLabel','official source')}. {e.get('venue','')} {e.get('notes','')}".strip(),
+                       flags=['official_overlay'] + (['time_unverified'] if start is None else [])))
+        added += 1
+    return out, added
+
+def overlay_mlb_2027(rows):
+    """Replace our generated Giants/Athletics + marquee rows with the official Stats API extract."""
+    path = ROOT / 'data' / 'mlb_2027_bayarea.json'
+    if not path.exists():
+        return rows, 0
+    official = _json.load(open(path))
+    bay = official.get('bayAreaGames', [])
+    marquee = official.get('marqueeGames', [])
+    # drop generated SF/ATH regular/spring/postseason rows (they are covered by the officials)
+    def involves_ba(g):
+        t = (g['away'] + ' ' + g['home']).lower()
+        return ('giants' in t) or ('athletics' in t)
+    kept = [g for g in rows if not (g['sport'] == 'MLB' and g['season_type'] in ('regular', 'spring_training', 'postseason', 'all_star') and involves_ba(g) and not g['verified'])]
+    kept = [g for g in kept if g['id'] != 'MLB-2027-OPEN-NIGHT']
+    dropped = len(rows) - len(kept)
+    out = list(kept)
+    for g in bay + marquee:
+        phase = g.get('phase', '')
+        gt = g.get('gameType', '')
+        if 'Spring Training' in phase or gt == 'S': season_type = 'spring_training'; minutes = DUR['MLB_spring']
+        elif gt == 'A' or 'All-Star' in phase: season_type = 'all_star'; minutes = DUR['MLB_allstar']
+        elif gt == 'P' or 'Postseason' in phase: season_type = 'postseason'; minutes = DUR['MLB_postseason']
+        else: season_type = 'regular'; minutes = DUR['MLB_regular']
+        # parse PT directly from utc timestamp when possible (PDT, UTC-7 for Mar-Sep 2027)
+        start = None
+        if not g.get('startTimeTBD') and g.get('utc'):
+            try:
+                import datetime as _dt
+                utc = _dt.datetime.fromisoformat(g['utc'].replace('Z', '+00:00'))
+                pt = utc - _dt.timedelta(hours=7)  # PDT in Mar-Oct 2027 (standard approximation; flagged)
+                start = pt.strftime('%H:%M')
+            except Exception:
+                start = None
+        out.append(row(f"MLB27-{g['gamePk']}", 'MLB', 'MLB', season_type, g['date'], start,
+                       minutes, g.get('awayName', ''), g.get('homeName', ''),
+                       'high' if g.get('highPriority') else 'normal', True,
+                       g.get('sourceUrl') or 'https://portal.mlb.com/gameday',
+                       'MLB Stats API (statsapi.mlb.com) — verified 2026-11-25',
+                       note=f"{g.get('phase','')} · {g.get('venue','')} · gamePk {g.get('gamePk')}. PT converted from UTC (PDT); verify on MLB.com.",
+                       flags=['official_overlay'] + (['time_unverified'] if g.get('startTimeTBD') else ['pt_from_utc'])))
+    return out, dropped
+
+def overlay_ww1(rows):
+    """Replace hardcoded WW1 list with the verified 2026-11-25 capture (38 broadcasts)."""
+    path = ROOT / 'data' / 'westwood_one_2026.json'
+    if not path.exists():
+        return rows, 0
+    kept = [g for g in rows if g['sport'] != 'WW1']
+    data = _json.load(open(path)).get('broadcasts', [])
+    for i, b in enumerate(data):
+        kickoff = b.get('kickoffPST') or b.get('airTimePST')
+        start = mins_to_hhmm(parse_pst(kickoff))
+        priority = 'high' if b.get('is49ers') else 'normal'
+        out = row(f"WW1-{i+1:03d}", 'WW1', 'Westwood One Sports · NFL', 'regular', b['date'], start,
+                  DUR['NFL'], b.get('matchup', '').split(' at ')[0] if ' at ' in b.get('matchup', '') else b.get('matchup', ''),
+                  b.get('matchup', '').split(' at ')[-1] if ' at ' in b.get('matchup', '') else '',
+                  priority, True,
+                  b.get('sourceUrl') or 'https://www.westwoodonesports.com/nfl-schedule/',
+                  'westwoodonesports.com (official) — captured 2026-11-25',
+                  note=f"{b.get('broadcastLabel','')} · {b.get('week','')} · pregame {b.get('airTimePST','?')} · {b.get('venue','')} · SF: {b.get('sfAffiliate','')}",
+                  flags=['ww1_national', 'official_overlay'] + (['49ers'] if b.get('is49ers') else []))
+        kept.append(out)
+    return kept, len(kept)
+
+def overlay_ncaaf(year, rows):
+    """Fold verified Stanford/Cal rows in (dates verified; times TBD where absent)."""
+    path = ROOT / 'data' / 'ncaaf_stanford_cal.json'
+    if not path.exists():
+        return rows, 0
+    games = _json.load(open(path)).get('verifiedGames', [])
+    official = [g for g in games if g['date'].startswith(str(year))]
+    if not official:
+        return rows, 0
+    def involves_program(g):
+        t = (g['away'] + ' ' + g['home']).lower()
+        return ('stanford' in t) or ('california' in t) or ('cal ' in t) or ('cardinal' in t) or ('golden bears' in t)
+    out = list(rows)
+    for g in official:
+        team = g.get('team', '')
+        is_stanford = 'Stanford' in team
+        marker = 'Stanford' if is_stanford else 'California'
+        # drop our generated rows for that program on the same date
+        out = [r for r in out if not (r['date'] == g['date'] and marker in (r['away'] + ' ' + r['home']) and 'official_overlay' not in r['flags'])]
+        start = None if g.get('startTimeTBD') else mins_to_hhmm(g.get('startMinPST') or parse_pst(g.get('officialTimePST')))
+        minutes = DUR['NCAAF']
+        away, home = (g.get('matchup') or f"{g.get('opponent','')} at {team}").split(' at ') if ' at ' in (g.get('matchup') or '') else (g.get('opponent', ''), team)
+        out.append(row(f"NCAAF-OFF-{g['date']}-{'STAN' if is_stanford else 'CAL'}", 'NCAAF', 'NCAAF (ACC)', 'regular',
+                       g['date'], start, minutes, away.replace(' (Week 0)', '').strip(), home.replace(' (Legends Trophy)', '').strip(),
+                       'high', True, g.get('sourceUrl') or 'https://theacc.com/',
+                       g.get('sourceLabel') or 'Stanford/Cal official',
+                       note=f"{g.get('phase','')} · {g.get('venue','')} · radio: {g.get('radio','')}. {g.get('status')}.",
+                       flags=['official_overlay'] + (['time_unverified'] if start is None else [])))
+    return out, len(official)
+
+def overlay(year, rows):
+    rows, n1 = overlay_all_events_verified(year, rows)
+    if year == 2027:
+        rows, n2 = overlay_mlb_2027(rows)
+    else:
+        n2 = 0
+    rows = overlay_ww1(rows)[0]
+    rows, n3 = overlay_ncaaf(year, rows)
+    return rows
+
+def global_dedup(rows):
+    seen = {}
+    for g in rows:
+        key = (g['sport'],) + nkey(g['date'], g['away'], g['home'])
+        prev = seen.get(key)
+        if prev is None:
+            seen[key] = g; continue
+        keep = prev
+        if (g['verified'], g['priority'] == 'high') > (prev['verified'], prev['priority'] == 'high'):
+            keep = g
+        seen[key] = keep
+    return list(seen.values())
 
 if __name__ == "__main__":
     main()

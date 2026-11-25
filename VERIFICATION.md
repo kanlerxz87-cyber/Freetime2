@@ -64,3 +64,12 @@ Method change: root planner retained as `docs/live-planner.html`; primary delive
 ### Local checks performed
 - Python JSON parse of all data files; schema spot-checks (ids unique; priority/verified tags present; ≤15 games/day/team-day uniqueness).
 - Static analysis pass of all inline page scripts (node --check equivalent; modules) and link inventory vs NAV list; HTTP smoke test of every page + asset under a local server (all 200).
+
+### Superseding note — official overlays ingested (after cross-session merge of 00c5f5d, PRs #1–#8)
+
+- `data/mlb_2027_bayarea.json` (session 5db889e3): 380 SF/Athletics 2027 games (195 SF + 193 ATH − 8 head-to-head) + 16 marquee games, each with gamePk-linked official URLs — imported as VERIFIED rows; our generated SF/ATH 2027 rows are dropped in favor of these (except none were verified, so only estimated rows were dropped). Row times converted from UTC (PDT for Mar–Sep 2027).
+- `data/all_events.json` (session 5db889e3): 360 VERIFIED rows ingested — all remaining 2026 NFL Weeks 12–18 (with official kickoff times), Super Bowl LXI (Feb 14, 2027, verified), and 2027 MLB verified set (superseded by the richer bayArea file for SF/ATH; remainder kept).
+- `data/westwood_one_2026.json`: 38 broadcasts (Week 12 → Super Bowl LXI; pregame air time, kickoff time, venue, SF affiliate, official event URL) — replaced our earlier 35-window hand capture.
+- `data/ncaaf_stanford_cal.json`: 15 verified Stanford/Cal rows (2026 finales with official times; future non-conference dates verified, times TBD → rows marked untimed).
+- Rebuilt by `tools/generate_schedules.py` (deterministic). 2026: ~3,124 rows / 140 verified · 2027: ~3,126 rows / ~436 verified · 2028: ~3,067 rows / ~5 verified · 2029: ~3,064 rows / ~4 verified. Everything not listed as verified remains ESTIMATED.
+- Big Game 2026 corrected to 4:30 PM PT (7:30 PM ET, ACC Network). KTCT 1050 is 50 kW Class B (not a daytimer); KSFO now 810 AM (ex-KGO; 560 dark).
