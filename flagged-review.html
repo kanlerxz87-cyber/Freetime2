@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flagged for Review — Verification Audit — FREE TIME VACATION</title>
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+  <header id="site-header"></header>
+
+  <main class="container">
+    <section class="hero" style="padding:20px 24px;">
+      <h1>Flagged for Review — Unverified Items, TBD Times &amp; Schedule Irregularities</h1>
+      <p>
+        Per strict verification standards, every unconfirmed official value is left blank in official fields,
+        every projected/unreleased schedule is explicitly badged <strong>ESTIMATED</strong>, and every irregularity,
+        TBD start-time batch, press-release conflict, or radio-coverage uncertainty discovered during our
+        <strong>Nov 25, 2026</strong> primary-source audit is published transparently below.
+      </p>
+    </section>
+
+    <div class="grid grid-3 mb-2" id="flag-kpis"></div>
+
+    <div class="controls-bar">
+      <select id="flag-severity" aria-label="Filter by severity">
+        <option value="ALL">All Severities</option>
+        <option value="HIGH">HIGH Severity (Major Schedule / Radio Dependencies)</option>
+        <option value="MEDIUM">MEDIUM Severity (Flex / Bowl / ACC Dates TBA)</option>
+        <option value="LOW">LOW Severity (Notes &amp; Reception Caveats)</option>
+      </select>
+      <span class="small text-muted" id="flag-count-lbl"></span>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>ID &amp; Severity</th>
+            <th>Category &amp; Scope</th>
+            <th>Audit Finding / Irregularity</th>
+            <th>Recommended Follow-Up Action</th>
+            <th>Official Source</th>
+          </tr>
+        </thead>
+        <tbody id="flags-tbody">
+          <tr><td colspan="5" class="text-muted">Loading audit items...</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  <footer id="site-footer"></footer>
+
+  <script src="assets/common.js"></script>
+  <script src="assets/flagged.js"></script>
+</body>
+</html>

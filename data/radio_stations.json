@@ -1,0 +1,169 @@
+{
+  "verifiedDate": "2026-11-25",
+  "location": "Outer Sunset, San Francisco, CA 94122",
+  "stations": [
+    {
+      "callSign": "KNBR / KNBR-FM",
+      "frequency": "680 AM / 104.5 FM",
+      "band": "AM & FM",
+      "branding": "KNBR The Sports Leader",
+      "transmitter": "680 AM: 50,000W clear-channel (Redwood Shores) \u00b7 104.5 FM: Sutro Tower (San Francisco)",
+      "outerSunset94122": "EXCELLENT (Line-of-sight Sutro Tower FM + 50kW local clear-channel AM)",
+      "liveSports": [
+        "San Francisco Giants (MLB English Flagship \u2014 all regular/postseason + select Spring Training; extended through 2028)",
+        "San Francisco 49ers (NFL Co-Flagship \u2014 all preseason, regular season & playoff games)",
+        "Westwood One Sports NFL National Primetime (TNF, SNF, MNF, Thanksgiving, Christmas, Playoffs, Super Bowl)",
+        "Sports USA NFL Sunday 10:00 AM PST National Game of the Week"
+      ],
+      "priority": "HIGH",
+      "verified": true,
+      "sourceUrl": "https://www.thesportsleader.com/shows/",
+      "sourceLabel": "KNBR Official Schedule"
+    },
+    {
+      "callSign": "KSAN-FM",
+      "frequency": "107.7 FM",
+      "band": "FM",
+      "branding": "107.7 The Bone",
+      "transmitter": "San Bruno Mountain (South of San Francisco)",
+      "outerSunset94122": "EXCELLENT (Strong FM signal across Outer Sunset 94122)",
+      "liveSports": [
+        "San Francisco 49ers (NFL Co-Flagship \u2014 every 49ers game live with Greg Papa & Tim Ryan)"
+      ],
+      "priority": "HIGH",
+      "verified": true,
+      "sourceUrl": "https://www.49ers.com/schedule/2026/",
+      "sourceLabel": "San Francisco 49ers Official Schedule"
+    },
+    {
+      "callSign": "KTCT",
+      "frequency": "1050 AM",
+      "band": "AM",
+      "branding": "KNBR 1050 (ESPN Radio)",
+      "transmitter": "50,000W day / 35,000W night (San Mateo / Hayward shoreline)",
+      "outerSunset94122": "GOOD\u2013EXCELLENT (Strong daytime & good nighttime AM signal in 94122)",
+      "liveSports": [
+        "Stanford Cardinal Football (NCAAF Flagship \u2014 Kevin Richardson & Jason Fisk)",
+        "Stanford Cardinal Men's Basketball (Flagship)",
+        "ESPN Radio National Play-by-Play (MLB Sunday Night Baseball, MLB Postseason/World Series, NBA, College Football Playoff)",
+        "Westwood One Sports NFL / Giants / 49ers overflow when KNBR 680/104.5 has a local conflict",
+        "University of San Francisco (USF) Dons Men's Basketball"
+      ],
+      "priority": "HIGH",
+      "verified": true,
+      "sourceUrl": "https://gostanford.com/news/2026/07/30/2026-football-radio-broadcast-team-announced",
+      "sourceLabel": "Stanford Athletics Official Release"
+    },
+    {
+      "callSign": "KSFO",
+      "frequency": "810 AM",
+      "band": "AM",
+      "branding": "KSFO 810 AM (formerly KGO 810)",
+      "transmitter": "50,000W Class A clear-channel (Fremont/Dumbarton Bay shore)",
+      "outerSunset94122": "EXCELLENT (50kW salt-water path across SF Bay into 94122)",
+      "liveSports": [
+        "California Golden Bears (Cal) Football (NCAAF Flagship \u2014 Justin Allegri & Mike Pawlawski)",
+        "California Golden Bears Men's Basketball (Flagship)",
+        "San Jose Earthquakes (MLS English Flagship \u2014 2026 season verified)",
+        "San Francisco 49ers (NFL Bay Area Co-Affiliate listed on 49ers.com)"
+      ],
+      "priority": "HIGH",
+      "verified": true,
+      "sourceUrl": "https://calbears.com/sports/football/schedule/2026",
+      "sourceLabel": "Cal Athletics Official Schedule"
+    },
+    {
+      "callSign": "KNEW",
+      "frequency": "960 AM",
+      "band": "AM",
+      "branding": "Bloomberg 960 AM (A's Bay Area Affiliate)",
+      "transmitter": "5,000W (Oakland / East Bay shoreline)",
+      "outerSunset94122": "GOOD (Daytime solid; nighttime moderate AM reception in 94122)",
+      "liveSports": [
+        "Athletics (A's) MLB Bay Area Terrestrial Affiliate (Sacramento flagship is Talk 650 AM KSTE & 92.1/105.5 FM KVMX; streaming on A's Cast). NOTE: 2027 is final West Sacramento season before planned 2028 Las Vegas ballpark \u2014 2028\u20132029 Bay Area AM/FM carriage FLAGGED FOR REVIEW."
+      ],
+      "priority": "HIGH",
+      "verified": true,
+      "sourceUrl": "https://www.mlb.com/athletics/schedule/affiliates",
+      "sourceLabel": "MLB Athletics Official Affiliates"
+    },
+    {
+      "callSign": "KGMZ-FM",
+      "frequency": "95.7 FM",
+      "band": "FM",
+      "branding": "95.7 The Game",
+      "transmitter": "Sutro Tower (San Francisco)",
+      "outerSunset94122": "EXCELLENT (Direct Sutro Tower FM into Outer Sunset 94122)",
+      "liveSports": [
+        "Golden State Warriors (NBA Flagship \u2014 all preseason, regular season & playoffs; 10th straight season in 2026\u201327)",
+        "Golden State Valkyries (WNBA Flagship \u2014 local radio coverage on 95.7 The Game + Audacy App)",
+        "Fox Sports Radio & Bay Area Panthers (IFL)"
+      ],
+      "priority": "SECONDARY",
+      "verified": true,
+      "sourceUrl": "https://www.nba.com/warriors/news/warriors-announce-2026-27-television-radio-broadcast-schedules-20260824",
+      "sourceLabel": "Golden State Warriors Official Release"
+    },
+    {
+      "callSign": "KSFN",
+      "frequency": "1510 AM / 99.3 FM",
+      "band": "AM & FM",
+      "branding": "SF Giants Spanish Radio",
+      "transmitter": "San Francisco / East Bay",
+      "outerSunset94122": "MODERATE\u2013GOOD (AM daytime good; nighttime directional)",
+      "liveSports": [
+        "San Francisco Giants (MLB Spanish-language Flagship)"
+      ],
+      "priority": "HIGH",
+      "verified": true,
+      "sourceUrl": "https://www.mlb.com/giants/schedule/broadcast-affiliates",
+      "sourceLabel": "SF Giants Broadcast Affiliates"
+    },
+    {
+      "callSign": "KUFX",
+      "frequency": "98.5 FM",
+      "band": "FM",
+      "branding": "98.5 KFOX",
+      "transmitter": "Loma Prieta / South Bay",
+      "outerSunset94122": "FRINGE / FAIR (South Bay FM transmitter; variable indoor reception in Outer Sunset 94122; digital Sharks Audio Network is primary)",
+      "liveSports": [
+        "San Jose Sharks (NHL \u2014 select/regional FM listings; primary audio is Sharks Audio Network digital \u2014 FLAGGED FOR REVIEW)"
+      ],
+      "priority": "SECONDARY",
+      "verified": false,
+      "sourceUrl": "https://www.nhl.com/sharks/multimedia/sharks-audio-network",
+      "sourceLabel": "San Jose Sharks Audio Network"
+    },
+    {
+      "callSign": "KZSF",
+      "frequency": "1370 AM",
+      "band": "AM",
+      "branding": "La Kaliente 1370 AM",
+      "transmitter": "San Jose, CA",
+      "outerSunset94122": "FRINGE (South Bay AM; weak/variable in Outer Sunset 94122)",
+      "liveSports": [
+        "San Jose Earthquakes (MLS Spanish-language Flagship \u2014 2026 verified)"
+      ],
+      "priority": "SECONDARY",
+      "verified": true,
+      "sourceUrl": "https://www.sjearthquakes.com/news/news-earthquakes-announce-radio-stations-for-2026-mls-season",
+      "sourceLabel": "SJ Earthquakes Official Release"
+    },
+    {
+      "callSign": "KZSU / KALX",
+      "frequency": "90.1 FM / 90.7 FM",
+      "band": "FM (College Low-Power)",
+      "branding": "Stanford KZSU 90.1 FM & UC Berkeley KALX 90.7 FM",
+      "transmitter": "Stanford Campus (90.1) & UC Berkeley (90.7)",
+      "outerSunset94122": "MARGINAL / FRINGE (Low-power campus FM; KALX reaches parts of SF; KZSU weak west of Twin Peaks)",
+      "liveSports": [
+        "Stanford Baseball, Women's Basketball, Softball, Soccer (KZSU 90.1 FM)",
+        "Cal Baseball, Women's Basketball, Olympic sports (KALX 90.7 FM)"
+      ],
+      "priority": "SECONDARY",
+      "verified": true,
+      "sourceUrl": "https://gostanford.com/news/2017/8/31/athletics-stanford-radio.aspx",
+      "sourceLabel": "Stanford Radio Guide"
+    }
+  ]
+}

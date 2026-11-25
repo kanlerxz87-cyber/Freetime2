@@ -1,0 +1,1251 @@
+{
+  "verifiedDate": "2026-11-25",
+  "years": {
+    "2027": {
+      "year": 2027,
+      "totalDays": 365,
+      "zeroGameDaysStrict": 67,
+      "zeroGameDaysNoSpringPre": 100,
+      "zeroGameDaysHighPriority": 91,
+      "zeroGameDaysHighPriorityNoSpring": 123,
+      "strictStreaks": [
+        {
+          "startDate": "2027-01-25",
+          "endDate": "2027-01-30",
+          "days": 6,
+          "weeks": 0.86,
+          "verifiedBasis": "Official Verified Dates"
+        },
+        {
+          "startDate": "2027-02-01",
+          "endDate": "2027-02-06",
+          "days": 6,
+          "weeks": 0.86,
+          "verifiedBasis": "Official Verified Dates"
+        },
+        {
+          "startDate": "2027-02-08",
+          "endDate": "2027-02-13",
+          "days": 6,
+          "weeks": 0.86,
+          "verifiedBasis": "Official Verified Dates"
+        },
+        {
+          "startDate": "2027-01-11",
+          "endDate": "2027-01-15",
+          "days": 5,
+          "weeks": 0.71,
+          "verifiedBasis": "Official Verified Dates"
+        },
+        {
+          "startDate": "2027-01-05",
+          "endDate": "2027-01-08",
+          "days": 4,
+          "weeks": 0.57,
+          "verifiedBasis": "Official Verified Dates"
+        },
+        {
+          "startDate": "2027-01-19",
+          "endDate": "2027-01-22",
+          "days": 4,
+          "weeks": 0.57,
+          "verifiedBasis": "Official Verified Dates"
+        },
+        {
+          "startDate": "2027-02-15",
+          "endDate": "2027-02-18",
+          "days": 4,
+          "weeks": 0.57,
+          "verifiedBasis": "Official Verified Dates"
+        }
+      ],
+      "noSpringPreStreaks": [
+        {
+          "startDate": "2027-02-15",
+          "endDate": "2027-03-23",
+          "days": 37,
+          "weeks": 5.29,
+          "verifiedBasis": "Official Verified Dates"
+        },
+        {
+          "startDate": "2027-01-25",
+          "endDate": "2027-01-30",
+          "days": 6,
+          "weeks": 0.86,
+          "verifiedBasis": "Official Verified Dates"
+        },
+        {
+          "startDate": "2027-02-01",
+          "endDate": "2027-02-06",
+          "days": 6,
+          "weeks": 0.86,
+          "verifiedBasis": "Official Verified Dates"
+        },
+        {
+          "startDate": "2027-02-08",
+          "endDate": "2027-02-13",
+          "days": 6,
+          "weeks": 0.86,
+          "verifiedBasis": "Official Verified Dates"
+        },
+        {
+          "startDate": "2027-01-11",
+          "endDate": "2027-01-15",
+          "days": 5,
+          "weeks": 0.71,
+          "verifiedBasis": "Official Verified Dates"
+        },
+        {
+          "startDate": "2027-01-05",
+          "endDate": "2027-01-08",
+          "days": 4,
+          "weeks": 0.57,
+          "verifiedBasis": "Official Verified Dates"
+        },
+        {
+          "startDate": "2027-01-19",
+          "endDate": "2027-01-22",
+          "days": 4,
+          "weeks": 0.57,
+          "verifiedBasis": "Official Verified Dates"
+        }
+      ],
+      "highPriorityStreaks": [
+        {
+          "startDate": "2027-02-01",
+          "endDate": "2027-02-13",
+          "days": 13,
+          "weeks": 1.86,
+          "verifiedBasis": "Official Verified Dates"
+        },
+        {
+          "startDate": "2027-01-25",
+          "endDate": "2027-01-30",
+          "days": 6,
+          "weeks": 0.86,
+          "verifiedBasis": "Official Verified Dates"
+        },
+        {
+          "startDate": "2027-01-11",
+          "endDate": "2027-01-15",
+          "days": 5,
+          "weeks": 0.71,
+          "verifiedBasis": "Official Verified Dates"
+        },
+        {
+          "startDate": "2027-01-05",
+          "endDate": "2027-01-08",
+          "days": 4,
+          "weeks": 0.57,
+          "verifiedBasis": "Official Verified Dates"
+        },
+        {
+          "startDate": "2027-01-19",
+          "endDate": "2027-01-22",
+          "days": 4,
+          "weeks": 0.57,
+          "verifiedBasis": "Official Verified Dates"
+        },
+        {
+          "startDate": "2027-02-15",
+          "endDate": "2027-02-18",
+          "days": 4,
+          "weeks": 0.57,
+          "verifiedBasis": "Official Verified Dates"
+        },
+        {
+          "startDate": "2027-07-12",
+          "endDate": "2027-07-15",
+          "days": 4,
+          "weeks": 0.57,
+          "verifiedBasis": "Official Verified Dates"
+        }
+      ],
+      "highPriorityNoSpringStreaks": [
+        {
+          "startDate": "2027-02-15",
+          "endDate": "2027-03-24",
+          "days": 38,
+          "weeks": 5.43,
+          "verifiedBasis": "Official Verified Dates"
+        },
+        {
+          "startDate": "2027-02-01",
+          "endDate": "2027-02-13",
+          "days": 13,
+          "weeks": 1.86,
+          "verifiedBasis": "Official Verified Dates"
+        },
+        {
+          "startDate": "2027-01-25",
+          "endDate": "2027-01-30",
+          "days": 6,
+          "weeks": 0.86,
+          "verifiedBasis": "Official Verified Dates"
+        },
+        {
+          "startDate": "2027-01-11",
+          "endDate": "2027-01-15",
+          "days": 5,
+          "weeks": 0.71,
+          "verifiedBasis": "Official Verified Dates"
+        },
+        {
+          "startDate": "2027-01-05",
+          "endDate": "2027-01-08",
+          "days": 4,
+          "weeks": 0.57,
+          "verifiedBasis": "Official Verified Dates"
+        },
+        {
+          "startDate": "2027-01-19",
+          "endDate": "2027-01-22",
+          "days": 4,
+          "weeks": 0.57,
+          "verifiedBasis": "Official Verified Dates"
+        },
+        {
+          "startDate": "2027-07-12",
+          "endDate": "2027-07-15",
+          "days": 4,
+          "weeks": 0.57,
+          "verifiedBasis": "Official Verified Dates"
+        }
+      ],
+      "best1WeekStrict": [
+        {
+          "startDate": "2027-02-01",
+          "endDate": "2027-02-07",
+          "windowDays": 7,
+          "zeroGameDays": 6,
+          "gameDays": 1,
+          "highPriorityDays": 0,
+          "busyDates": [
+            "2027-02-07"
+          ]
+        },
+        {
+          "startDate": "2027-02-06",
+          "endDate": "2027-02-12",
+          "windowDays": 7,
+          "zeroGameDays": 6,
+          "gameDays": 1,
+          "highPriorityDays": 0,
+          "busyDates": [
+            "2027-02-07"
+          ]
+        },
+        {
+          "startDate": "2027-01-24",
+          "endDate": "2027-01-30",
+          "windowDays": 7,
+          "zeroGameDays": 6,
+          "gameDays": 1,
+          "highPriorityDays": 1,
+          "busyDates": [
+            "2027-01-24"
+          ]
+        },
+        {
+          "startDate": "2027-02-11",
+          "endDate": "2027-02-17",
+          "windowDays": 7,
+          "zeroGameDays": 6,
+          "gameDays": 1,
+          "highPriorityDays": 1,
+          "busyDates": [
+            "2027-02-14"
+          ]
+        },
+        {
+          "startDate": "2027-01-05",
+          "endDate": "2027-01-11",
+          "windowDays": 7,
+          "zeroGameDays": 5,
+          "gameDays": 2,
+          "highPriorityDays": 2,
+          "busyDates": [
+            "2027-01-09",
+            "2027-01-10"
+          ]
+        }
+      ],
+      "best2WeekStrict": [
+        {
+          "startDate": "2027-01-25",
+          "endDate": "2027-02-07",
+          "windowDays": 14,
+          "zeroGameDays": 12,
+          "gameDays": 2,
+          "highPriorityDays": 1,
+          "busyDates": [
+            "2027-01-31",
+            "2027-02-07"
+          ]
+        },
+        {
+          "startDate": "2027-02-01",
+          "endDate": "2027-02-14",
+          "windowDays": 14,
+          "zeroGameDays": 12,
+          "gameDays": 2,
+          "highPriorityDays": 1,
+          "busyDates": [
+            "2027-02-07",
+            "2027-02-14"
+          ]
+        },
+        {
+          "startDate": "2027-01-17",
+          "endDate": "2027-01-30",
+          "windowDays": 14,
+          "zeroGameDays": 10,
+          "gameDays": 4,
+          "highPriorityDays": 4,
+          "busyDates": [
+            "2027-01-17",
+            "2027-01-18",
+            "2027-01-23",
+            "2027-01-24"
+          ]
+        },
+        {
+          "startDate": "2027-02-08",
+          "endDate": "2027-02-21",
+          "windowDays": 14,
+          "zeroGameDays": 10,
+          "gameDays": 4,
+          "highPriorityDays": 4,
+          "busyDates": [
+            "2027-02-14",
+            "2027-02-19",
+            "2027-02-20",
+            "2027-02-21"
+          ]
+        },
+        {
+          "startDate": "2027-01-01",
+          "endDate": "2027-01-14",
+          "windowDays": 14,
+          "zeroGameDays": 9,
+          "gameDays": 5,
+          "highPriorityDays": 5,
+          "busyDates": [
+            "2027-01-02",
+            "2027-01-03",
+            "2027-01-04",
+            "2027-01-09",
+            "2027-01-10"
+          ]
+        }
+      ],
+      "best3WeekStrict": [
+        {
+          "startDate": "2027-01-24",
+          "endDate": "2027-02-13",
+          "windowDays": 21,
+          "zeroGameDays": 18,
+          "gameDays": 3,
+          "highPriorityDays": 2,
+          "busyDates": [
+            "2027-01-24",
+            "2027-01-31",
+            "2027-02-07"
+          ]
+        },
+        {
+          "startDate": "2027-01-10",
+          "endDate": "2027-01-30",
+          "windowDays": 21,
+          "zeroGameDays": 15,
+          "gameDays": 6,
+          "highPriorityDays": 6,
+          "busyDates": [
+            "2027-01-10",
+            "2027-01-16",
+            "2027-01-17",
+            "2027-01-18",
+            "2027-01-23",
+            "2027-01-24"
+          ]
+        },
+        {
+          "startDate": "2027-02-03",
+          "endDate": "2027-02-23",
+          "windowDays": 21,
+          "zeroGameDays": 14,
+          "gameDays": 7,
+          "highPriorityDays": 6,
+          "busyDates": [
+            "2027-02-07",
+            "2027-02-14",
+            "2027-02-19",
+            "2027-02-20",
+            "2027-02-21",
+            "2027-02-22",
+            "2027-02-23"
+          ]
+        },
+        {
+          "startDate": "2027-11-27",
+          "endDate": "2027-12-17",
+          "windowDays": 21,
+          "zeroGameDays": 11,
+          "gameDays": 10,
+          "highPriorityDays": 10,
+          "busyDates": [
+            "2027-11-27",
+            "2027-11-28",
+            "2027-11-29",
+            "2027-12-02",
+            "2027-12-05",
+            "2027-12-06",
+            "2027-12-09",
+            "2027-12-12",
+            "2027-12-13",
+            "2027-12-16"
+          ]
+        },
+        {
+          "startDate": "2027-12-07",
+          "endDate": "2027-12-27",
+          "windowDays": 21,
+          "zeroGameDays": 10,
+          "gameDays": 11,
+          "highPriorityDays": 11,
+          "busyDates": [
+            "2027-12-09",
+            "2027-12-12",
+            "2027-12-13",
+            "2027-12-16",
+            "2027-12-18",
+            "2027-12-19",
+            "2027-12-20",
+            "2027-12-23",
+            "2027-12-25",
+            "2027-12-26",
+            "2027-12-27"
+          ]
+        }
+      ]
+    },
+    "2028": {
+      "year": 2028,
+      "totalDays": 366,
+      "zeroGameDaysStrict": 68,
+      "zeroGameDaysNoSpringPre": 101,
+      "zeroGameDaysHighPriority": 81,
+      "zeroGameDaysHighPriorityNoSpring": 114,
+      "strictStreaks": [
+        {
+          "startDate": "2028-01-24",
+          "endDate": "2028-01-29",
+          "days": 6,
+          "weeks": 0.86,
+          "verifiedBasis": "Estimated / Pending Official Schedule Release"
+        },
+        {
+          "startDate": "2028-01-31",
+          "endDate": "2028-02-05",
+          "days": 6,
+          "weeks": 0.86,
+          "verifiedBasis": "Estimated / Pending Official Schedule Release"
+        },
+        {
+          "startDate": "2028-02-07",
+          "endDate": "2028-02-12",
+          "days": 6,
+          "weeks": 0.86,
+          "verifiedBasis": "Estimated / Pending Official Schedule Release"
+        },
+        {
+          "startDate": "2028-01-10",
+          "endDate": "2028-01-14",
+          "days": 5,
+          "weeks": 0.71,
+          "verifiedBasis": "Estimated / Pending Official Schedule Release"
+        },
+        {
+          "startDate": "2028-01-04",
+          "endDate": "2028-01-07",
+          "days": 4,
+          "weeks": 0.57,
+          "verifiedBasis": "Estimated / Pending Official Schedule Release"
+        },
+        {
+          "startDate": "2028-01-18",
+          "endDate": "2028-01-21",
+          "days": 4,
+          "weeks": 0.57,
+          "verifiedBasis": "Estimated / Pending Official Schedule Release"
+        },
+        {
+          "startDate": "2028-02-14",
+          "endDate": "2028-02-17",
+          "days": 4,
+          "weeks": 0.57,
+          "verifiedBasis": "Estimated / Pending Official Schedule Release"
+        }
+      ],
+      "noSpringPreStreaks": [
+        {
+          "startDate": "2028-02-14",
+          "endDate": "2028-03-22",
+          "days": 38,
+          "weeks": 5.43,
+          "verifiedBasis": "Estimated / Pending Official Schedule Release"
+        },
+        {
+          "startDate": "2028-01-24",
+          "endDate": "2028-01-29",
+          "days": 6,
+          "weeks": 0.86,
+          "verifiedBasis": "Estimated / Pending Official Schedule Release"
+        },
+        {
+          "startDate": "2028-01-31",
+          "endDate": "2028-02-05",
+          "days": 6,
+          "weeks": 0.86,
+          "verifiedBasis": "Estimated / Pending Official Schedule Release"
+        },
+        {
+          "startDate": "2028-02-07",
+          "endDate": "2028-02-12",
+          "days": 6,
+          "weeks": 0.86,
+          "verifiedBasis": "Estimated / Pending Official Schedule Release"
+        },
+        {
+          "startDate": "2028-01-10",
+          "endDate": "2028-01-14",
+          "days": 5,
+          "weeks": 0.71,
+          "verifiedBasis": "Estimated / Pending Official Schedule Release"
+        },
+        {
+          "startDate": "2028-01-04",
+          "endDate": "2028-01-07",
+          "days": 4,
+          "weeks": 0.57,
+          "verifiedBasis": "Estimated / Pending Official Schedule Release"
+        },
+        {
+          "startDate": "2028-01-18",
+          "endDate": "2028-01-21",
+          "days": 4,
+          "weeks": 0.57,
+          "verifiedBasis": "Estimated / Pending Official Schedule Release"
+        }
+      ],
+      "highPriorityStreaks": [
+        {
+          "startDate": "2028-01-31",
+          "endDate": "2028-02-12",
+          "days": 13,
+          "weeks": 1.86,
+          "verifiedBasis": "Estimated / Pending Official Schedule Release"
+        },
+        {
+          "startDate": "2028-01-24",
+          "endDate": "2028-01-29",
+          "days": 6,
+          "weeks": 0.86,
+          "verifiedBasis": "Estimated / Pending Official Schedule Release"
+        },
+        {
+          "startDate": "2028-01-10",
+          "endDate": "2028-01-14",
+          "days": 5,
+          "weeks": 0.71,
+          "verifiedBasis": "Estimated / Pending Official Schedule Release"
+        },
+        {
+          "startDate": "2028-01-04",
+          "endDate": "2028-01-07",
+          "days": 4,
+          "weeks": 0.57,
+          "verifiedBasis": "Estimated / Pending Official Schedule Release"
+        },
+        {
+          "startDate": "2028-01-18",
+          "endDate": "2028-01-21",
+          "days": 4,
+          "weeks": 0.57,
+          "verifiedBasis": "Estimated / Pending Official Schedule Release"
+        },
+        {
+          "startDate": "2028-02-14",
+          "endDate": "2028-02-17",
+          "days": 4,
+          "weeks": 0.57,
+          "verifiedBasis": "Estimated / Pending Official Schedule Release"
+        }
+      ],
+      "highPriorityNoSpringStreaks": [
+        {
+          "startDate": "2028-02-14",
+          "endDate": "2028-03-22",
+          "days": 38,
+          "weeks": 5.43,
+          "verifiedBasis": "Estimated / Pending Official Schedule Release"
+        },
+        {
+          "startDate": "2028-01-31",
+          "endDate": "2028-02-12",
+          "days": 13,
+          "weeks": 1.86,
+          "verifiedBasis": "Estimated / Pending Official Schedule Release"
+        },
+        {
+          "startDate": "2028-01-24",
+          "endDate": "2028-01-29",
+          "days": 6,
+          "weeks": 0.86,
+          "verifiedBasis": "Estimated / Pending Official Schedule Release"
+        },
+        {
+          "startDate": "2028-01-10",
+          "endDate": "2028-01-14",
+          "days": 5,
+          "weeks": 0.71,
+          "verifiedBasis": "Estimated / Pending Official Schedule Release"
+        },
+        {
+          "startDate": "2028-01-04",
+          "endDate": "2028-01-07",
+          "days": 4,
+          "weeks": 0.57,
+          "verifiedBasis": "Estimated / Pending Official Schedule Release"
+        },
+        {
+          "startDate": "2028-01-18",
+          "endDate": "2028-01-21",
+          "days": 4,
+          "weeks": 0.57,
+          "verifiedBasis": "Estimated / Pending Official Schedule Release"
+        }
+      ],
+      "best1WeekStrict": [
+        {
+          "startDate": "2028-01-31",
+          "endDate": "2028-02-06",
+          "windowDays": 7,
+          "zeroGameDays": 6,
+          "gameDays": 1,
+          "highPriorityDays": 0,
+          "busyDates": [
+            "2028-02-06"
+          ]
+        },
+        {
+          "startDate": "2028-02-05",
+          "endDate": "2028-02-11",
+          "windowDays": 7,
+          "zeroGameDays": 6,
+          "gameDays": 1,
+          "highPriorityDays": 0,
+          "busyDates": [
+            "2028-02-06"
+          ]
+        },
+        {
+          "startDate": "2028-01-23",
+          "endDate": "2028-01-29",
+          "windowDays": 7,
+          "zeroGameDays": 6,
+          "gameDays": 1,
+          "highPriorityDays": 1,
+          "busyDates": [
+            "2028-01-23"
+          ]
+        },
+        {
+          "startDate": "2028-02-10",
+          "endDate": "2028-02-16",
+          "windowDays": 7,
+          "zeroGameDays": 6,
+          "gameDays": 1,
+          "highPriorityDays": 1,
+          "busyDates": [
+            "2028-02-13"
+          ]
+        },
+        {
+          "startDate": "2028-01-04",
+          "endDate": "2028-01-10",
+          "windowDays": 7,
+          "zeroGameDays": 5,
+          "gameDays": 2,
+          "highPriorityDays": 2,
+          "busyDates": [
+            "2028-01-08",
+            "2028-01-09"
+          ]
+        }
+      ],
+      "best2WeekStrict": [
+        {
+          "startDate": "2028-01-24",
+          "endDate": "2028-02-06",
+          "windowDays": 14,
+          "zeroGameDays": 12,
+          "gameDays": 2,
+          "highPriorityDays": 1,
+          "busyDates": [
+            "2028-01-30",
+            "2028-02-06"
+          ]
+        },
+        {
+          "startDate": "2028-01-31",
+          "endDate": "2028-02-13",
+          "windowDays": 14,
+          "zeroGameDays": 12,
+          "gameDays": 2,
+          "highPriorityDays": 1,
+          "busyDates": [
+            "2028-02-06",
+            "2028-02-13"
+          ]
+        },
+        {
+          "startDate": "2028-01-16",
+          "endDate": "2028-01-29",
+          "windowDays": 14,
+          "zeroGameDays": 10,
+          "gameDays": 4,
+          "highPriorityDays": 4,
+          "busyDates": [
+            "2028-01-16",
+            "2028-01-17",
+            "2028-01-22",
+            "2028-01-23"
+          ]
+        },
+        {
+          "startDate": "2028-02-07",
+          "endDate": "2028-02-20",
+          "windowDays": 14,
+          "zeroGameDays": 10,
+          "gameDays": 4,
+          "highPriorityDays": 4,
+          "busyDates": [
+            "2028-02-13",
+            "2028-02-18",
+            "2028-02-19",
+            "2028-02-20"
+          ]
+        },
+        {
+          "startDate": "2028-01-01",
+          "endDate": "2028-01-14",
+          "windowDays": 14,
+          "zeroGameDays": 9,
+          "gameDays": 5,
+          "highPriorityDays": 5,
+          "busyDates": [
+            "2028-01-01",
+            "2028-01-02",
+            "2028-01-03",
+            "2028-01-08",
+            "2028-01-09"
+          ]
+        }
+      ],
+      "best3WeekStrict": [
+        {
+          "startDate": "2028-01-23",
+          "endDate": "2028-02-12",
+          "windowDays": 21,
+          "zeroGameDays": 18,
+          "gameDays": 3,
+          "highPriorityDays": 2,
+          "busyDates": [
+            "2028-01-23",
+            "2028-01-30",
+            "2028-02-06"
+          ]
+        },
+        {
+          "startDate": "2028-01-09",
+          "endDate": "2028-01-29",
+          "windowDays": 21,
+          "zeroGameDays": 15,
+          "gameDays": 6,
+          "highPriorityDays": 6,
+          "busyDates": [
+            "2028-01-09",
+            "2028-01-15",
+            "2028-01-16",
+            "2028-01-17",
+            "2028-01-22",
+            "2028-01-23"
+          ]
+        },
+        {
+          "startDate": "2028-02-02",
+          "endDate": "2028-02-22",
+          "windowDays": 21,
+          "zeroGameDays": 14,
+          "gameDays": 7,
+          "highPriorityDays": 6,
+          "busyDates": [
+            "2028-02-06",
+            "2028-02-13",
+            "2028-02-18",
+            "2028-02-19",
+            "2028-02-20",
+            "2028-02-21",
+            "2028-02-22"
+          ]
+        },
+        {
+          "startDate": "2028-11-25",
+          "endDate": "2028-12-15",
+          "windowDays": 21,
+          "zeroGameDays": 11,
+          "gameDays": 10,
+          "highPriorityDays": 10,
+          "busyDates": [
+            "2028-11-25",
+            "2028-11-26",
+            "2028-11-27",
+            "2028-11-30",
+            "2028-12-03",
+            "2028-12-04",
+            "2028-12-07",
+            "2028-12-10",
+            "2028-12-11",
+            "2028-12-14"
+          ]
+        },
+        {
+          "startDate": "2028-12-05",
+          "endDate": "2028-12-25",
+          "windowDays": 21,
+          "zeroGameDays": 10,
+          "gameDays": 11,
+          "highPriorityDays": 11,
+          "busyDates": [
+            "2028-12-07",
+            "2028-12-10",
+            "2028-12-11",
+            "2028-12-14",
+            "2028-12-16",
+            "2028-12-17",
+            "2028-12-18",
+            "2028-12-21",
+            "2028-12-23",
+            "2028-12-24",
+            "2028-12-25"
+          ]
+        }
+      ]
+    },
+    "2029": {
+      "year": 2029,
+      "totalDays": 365,
+      "zeroGameDaysStrict": 71,
+      "zeroGameDaysNoSpringPre": 105,
+      "zeroGameDaysHighPriority": 86,
+      "zeroGameDaysHighPriorityNoSpring": 120,
+      "strictStreaks": [
+        {
+          "startDate": "2029-02-12",
+          "endDate": "2029-02-20",
+          "days": 9,
+          "weeks": 1.29,
+          "verifiedBasis": "Estimated / Pending Official Schedule Release"
+        },
+        {
+          "startDate": "2029-01-22",
+          "endDate": "2029-01-27",
+          "days": 6,
+          "weeks": 0.86,
+          "verifiedBasis": "Estimated / Pending Official Schedule Release"
+        },
+        {
+          "startDate": "2029-01-29",
+          "endDate": "2029-02-03",
+          "days": 6,
+          "weeks": 0.86,
+          "verifiedBasis": "Estimated / Pending Official Schedule Release"
+        },
+        {
+          "startDate": "2029-02-05",
+          "endDate": "2029-02-10",
+          "days": 6,
+          "weeks": 0.86,
+          "verifiedBasis": "Estimated / Pending Official Schedule Release"
+        },
+        {
+          "startDate": "2029-01-08",
+          "endDate": "2029-01-12",
+          "days": 5,
+          "weeks": 0.71,
+          "verifiedBasis": "Estimated / Pending Official Schedule Release"
+        },
+        {
+          "startDate": "2029-01-02",
+          "endDate": "2029-01-05",
+          "days": 4,
+          "weeks": 0.57,
+          "verifiedBasis": "Estimated / Pending Official Schedule Release"
+        },
+        {
+          "startDate": "2029-01-16",
+          "endDate": "2029-01-19",
+          "days": 4,
+          "weeks": 0.57,
+          "verifiedBasis": "Estimated / Pending Official Schedule Release"
+        }
+      ],
+      "noSpringPreStreaks": [
+        {
+          "startDate": "2029-02-12",
+          "endDate": "2029-03-28",
+          "days": 45,
+          "weeks": 6.43,
+          "verifiedBasis": "Estimated / Pending Official Schedule Release"
+        },
+        {
+          "startDate": "2029-01-22",
+          "endDate": "2029-01-27",
+          "days": 6,
+          "weeks": 0.86,
+          "verifiedBasis": "Estimated / Pending Official Schedule Release"
+        },
+        {
+          "startDate": "2029-01-29",
+          "endDate": "2029-02-03",
+          "days": 6,
+          "weeks": 0.86,
+          "verifiedBasis": "Estimated / Pending Official Schedule Release"
+        },
+        {
+          "startDate": "2029-02-05",
+          "endDate": "2029-02-10",
+          "days": 6,
+          "weeks": 0.86,
+          "verifiedBasis": "Estimated / Pending Official Schedule Release"
+        },
+        {
+          "startDate": "2029-01-08",
+          "endDate": "2029-01-12",
+          "days": 5,
+          "weeks": 0.71,
+          "verifiedBasis": "Estimated / Pending Official Schedule Release"
+        },
+        {
+          "startDate": "2029-01-02",
+          "endDate": "2029-01-05",
+          "days": 4,
+          "weeks": 0.57,
+          "verifiedBasis": "Estimated / Pending Official Schedule Release"
+        },
+        {
+          "startDate": "2029-01-16",
+          "endDate": "2029-01-19",
+          "days": 4,
+          "weeks": 0.57,
+          "verifiedBasis": "Estimated / Pending Official Schedule Release"
+        }
+      ],
+      "highPriorityStreaks": [
+        {
+          "startDate": "2029-01-29",
+          "endDate": "2029-02-10",
+          "days": 13,
+          "weeks": 1.86,
+          "verifiedBasis": "Estimated / Pending Official Schedule Release"
+        },
+        {
+          "startDate": "2029-02-12",
+          "endDate": "2029-02-20",
+          "days": 9,
+          "weeks": 1.29,
+          "verifiedBasis": "Estimated / Pending Official Schedule Release"
+        },
+        {
+          "startDate": "2029-01-22",
+          "endDate": "2029-01-27",
+          "days": 6,
+          "weeks": 0.86,
+          "verifiedBasis": "Estimated / Pending Official Schedule Release"
+        },
+        {
+          "startDate": "2029-01-08",
+          "endDate": "2029-01-12",
+          "days": 5,
+          "weeks": 0.71,
+          "verifiedBasis": "Estimated / Pending Official Schedule Release"
+        },
+        {
+          "startDate": "2029-01-02",
+          "endDate": "2029-01-05",
+          "days": 4,
+          "weeks": 0.57,
+          "verifiedBasis": "Estimated / Pending Official Schedule Release"
+        },
+        {
+          "startDate": "2029-01-16",
+          "endDate": "2029-01-19",
+          "days": 4,
+          "weeks": 0.57,
+          "verifiedBasis": "Estimated / Pending Official Schedule Release"
+        }
+      ],
+      "highPriorityNoSpringStreaks": [
+        {
+          "startDate": "2029-02-12",
+          "endDate": "2029-03-28",
+          "days": 45,
+          "weeks": 6.43,
+          "verifiedBasis": "Estimated / Pending Official Schedule Release"
+        },
+        {
+          "startDate": "2029-01-29",
+          "endDate": "2029-02-10",
+          "days": 13,
+          "weeks": 1.86,
+          "verifiedBasis": "Estimated / Pending Official Schedule Release"
+        },
+        {
+          "startDate": "2029-01-22",
+          "endDate": "2029-01-27",
+          "days": 6,
+          "weeks": 0.86,
+          "verifiedBasis": "Estimated / Pending Official Schedule Release"
+        },
+        {
+          "startDate": "2029-01-08",
+          "endDate": "2029-01-12",
+          "days": 5,
+          "weeks": 0.71,
+          "verifiedBasis": "Estimated / Pending Official Schedule Release"
+        },
+        {
+          "startDate": "2029-01-02",
+          "endDate": "2029-01-05",
+          "days": 4,
+          "weeks": 0.57,
+          "verifiedBasis": "Estimated / Pending Official Schedule Release"
+        },
+        {
+          "startDate": "2029-01-16",
+          "endDate": "2029-01-19",
+          "days": 4,
+          "weeks": 0.57,
+          "verifiedBasis": "Estimated / Pending Official Schedule Release"
+        }
+      ],
+      "best1WeekStrict": [
+        {
+          "startDate": "2029-02-12",
+          "endDate": "2029-02-18",
+          "windowDays": 7,
+          "zeroGameDays": 7,
+          "gameDays": 0,
+          "highPriorityDays": 0,
+          "busyDates": []
+        },
+        {
+          "startDate": "2029-01-29",
+          "endDate": "2029-02-04",
+          "windowDays": 7,
+          "zeroGameDays": 6,
+          "gameDays": 1,
+          "highPriorityDays": 0,
+          "busyDates": [
+            "2029-02-04"
+          ]
+        },
+        {
+          "startDate": "2029-02-03",
+          "endDate": "2029-02-09",
+          "windowDays": 7,
+          "zeroGameDays": 6,
+          "gameDays": 1,
+          "highPriorityDays": 0,
+          "busyDates": [
+            "2029-02-04"
+          ]
+        },
+        {
+          "startDate": "2029-01-21",
+          "endDate": "2029-01-27",
+          "windowDays": 7,
+          "zeroGameDays": 6,
+          "gameDays": 1,
+          "highPriorityDays": 1,
+          "busyDates": [
+            "2029-01-21"
+          ]
+        },
+        {
+          "startDate": "2029-01-02",
+          "endDate": "2029-01-08",
+          "windowDays": 7,
+          "zeroGameDays": 5,
+          "gameDays": 2,
+          "highPriorityDays": 2,
+          "busyDates": [
+            "2029-01-06",
+            "2029-01-07"
+          ]
+        }
+      ],
+      "best2WeekStrict": [
+        {
+          "startDate": "2029-02-05",
+          "endDate": "2029-02-18",
+          "windowDays": 14,
+          "zeroGameDays": 13,
+          "gameDays": 1,
+          "highPriorityDays": 1,
+          "busyDates": [
+            "2029-02-11"
+          ]
+        },
+        {
+          "startDate": "2029-01-22",
+          "endDate": "2029-02-04",
+          "windowDays": 14,
+          "zeroGameDays": 12,
+          "gameDays": 2,
+          "highPriorityDays": 1,
+          "busyDates": [
+            "2029-01-28",
+            "2029-02-04"
+          ]
+        },
+        {
+          "startDate": "2029-01-29",
+          "endDate": "2029-02-11",
+          "windowDays": 14,
+          "zeroGameDays": 12,
+          "gameDays": 2,
+          "highPriorityDays": 1,
+          "busyDates": [
+            "2029-02-04",
+            "2029-02-11"
+          ]
+        },
+        {
+          "startDate": "2029-01-14",
+          "endDate": "2029-01-27",
+          "windowDays": 14,
+          "zeroGameDays": 10,
+          "gameDays": 4,
+          "highPriorityDays": 4,
+          "busyDates": [
+            "2029-01-14",
+            "2029-01-15",
+            "2029-01-20",
+            "2029-01-21"
+          ]
+        },
+        {
+          "startDate": "2029-01-01",
+          "endDate": "2029-01-14",
+          "windowDays": 14,
+          "zeroGameDays": 9,
+          "gameDays": 5,
+          "highPriorityDays": 5,
+          "busyDates": [
+            "2029-01-01",
+            "2029-01-06",
+            "2029-01-07",
+            "2029-01-13",
+            "2029-01-14"
+          ]
+        }
+      ],
+      "best3WeekStrict": [
+        {
+          "startDate": "2029-01-29",
+          "endDate": "2029-02-18",
+          "windowDays": 21,
+          "zeroGameDays": 19,
+          "gameDays": 2,
+          "highPriorityDays": 1,
+          "busyDates": [
+            "2029-02-04",
+            "2029-02-11"
+          ]
+        },
+        {
+          "startDate": "2029-01-16",
+          "endDate": "2029-02-05",
+          "windowDays": 21,
+          "zeroGameDays": 17,
+          "gameDays": 4,
+          "highPriorityDays": 3,
+          "busyDates": [
+            "2029-01-20",
+            "2029-01-21",
+            "2029-01-28",
+            "2029-02-04"
+          ]
+        },
+        {
+          "startDate": "2029-01-02",
+          "endDate": "2029-01-22",
+          "windowDays": 21,
+          "zeroGameDays": 14,
+          "gameDays": 7,
+          "highPriorityDays": 7,
+          "busyDates": [
+            "2029-01-06",
+            "2029-01-07",
+            "2029-01-13",
+            "2029-01-14",
+            "2029-01-15",
+            "2029-01-20",
+            "2029-01-21"
+          ]
+        },
+        {
+          "startDate": "2029-02-08",
+          "endDate": "2029-02-28",
+          "windowDays": 21,
+          "zeroGameDays": 12,
+          "gameDays": 9,
+          "highPriorityDays": 9,
+          "busyDates": [
+            "2029-02-11",
+            "2029-02-21",
+            "2029-02-22",
+            "2029-02-23",
+            "2029-02-24",
+            "2029-02-25",
+            "2029-02-26",
+            "2029-02-27",
+            "2029-02-28"
+          ]
+        },
+        {
+          "startDate": "2029-11-24",
+          "endDate": "2029-12-14",
+          "windowDays": 21,
+          "zeroGameDays": 11,
+          "gameDays": 10,
+          "highPriorityDays": 10,
+          "busyDates": [
+            "2029-11-24",
+            "2029-11-25",
+            "2029-11-26",
+            "2029-11-29",
+            "2029-12-02",
+            "2029-12-03",
+            "2029-12-06",
+            "2029-12-09",
+            "2029-12-10",
+            "2029-12-13"
+          ]
+        }
+      ]
+    }
+  }
+}

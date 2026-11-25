@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2027–2029 Vacation Windows — FREE TIME VACATION</title>
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+  <header id="site-header"></header>
+
+  <main class="container">
+    <section class="hero" style="padding:22px 26px;">
+      <h1>2027, 2028 &amp; 2029 Vacation Window Finder (1-Week, 2-Week &amp; 3-Week+)</h1>
+      <p>
+        Compare every zero-game streak and best low-impact 7-day, 14-day, and 21-day vacation block in
+        <strong>2027</strong> (official MLB &amp; NFL playoff dates verified), <strong>2028</strong> (estimated + SF Oracle Park All-Star alert),
+        and <strong>2029</strong> (estimated). Click any date in the 12-month heatmap to jump straight to its exact PST free-time scoreboard.
+      </p>
+    </section>
+
+    <div class="controls-bar">
+      <div style="display:flex;gap:8px;flex-wrap:wrap;" id="year-tabs">
+        <button class="btn active-tab" data-year="2027">2027 (Verified MLB &amp; NFL Playoffs)</button>
+        <button class="btn" data-year="2028">2028 (Estimated + SF All-Star Host)</button>
+        <button class="btn" data-year="2029">2029 (Estimated)</button>
+      </div>
+      <select id="heatmap-mode" aria-label="Heatmap Filter Mode">
+        <option value="strict">Heatmap: Strict (All 30 MLB incl. Spring + All NFL + Stanford/Cal + WW1)</option>
+        <option value="noSpring">Heatmap: Regular + Postseason Only (Skip MLB Spring Training &amp; NFL Preseason)</option>
+        <option value="highPriority">Heatmap: High-Priority Bay Area Radio Only</option>
+      </select>
+    </div>
+
+    <!-- Year KPI Strip -->
+    <div class="grid grid-4 mb-2" id="vac-kpis"></div>
+
+    <!-- Year-Specific Strategic Note -->
+    <div id="vac-note"></div>
+
+    <!-- Continuous Zero-Game Streaks Tables -->
+    <h2 class="section-title">100% Zero-Game Continuous Vacation Streaks</h2>
+    <div class="grid grid-2">
+      <div class="card">
+        <div class="card-header">
+          <h3>Regular Season + Postseason Only (Excl. Spring/Preseason)</h3>
+          <span class="badge badge-free">MULTI-WEEK WINDOWS</span>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Window Dates</th>
+                <th>Length</th>
+                <th>Verification</th>
+                <th>Inspect</th>
+              </tr>
+            </thead>
+            <tbody id="tbody-nospring"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <h3>Strict All-Sports (Incl. MLB Spring Training &amp; Pro Bowl)</h3>
+          <span class="badge badge-verified">100% ZERO GAMES</span>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Window Dates</th>
+                <th>Length</th>
+                <th>Verification</th>
+                <th>Inspect</th>
+              </tr>
+            </thead>
+            <tbody id="tbody-strict"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Best 1-Week, 2-Week, 3-Week Rolling Windows (Strict Mode) -->
+    <h2 class="section-title">Best 1-Week (7d), 2-Week (14d) &amp; 3-Week (21d) Windows Under Strict Mode</h2>
+    <p class="text-muted small" style="margin-top:-8px;">
+      Even when counting EVERY MLB Spring Training game and EVERY NFL Playoff / Pro Bowl date, these are the cleanest 1-, 2-, and 3-week stretches of the year (ranked by fewest game days).
+    </p>
+    <div class="grid grid-3" id="rolling-windows-grid"></div>
+
+    <!-- Interactive 12-Month Heatmap -->
+    <h2 class="section-title">Full 12-Month Interactive Calendar Heatmap (<span id="heatmap-year-lbl">2027</span>)</h2>
+    <div class="small text-muted mb-2" style="display:flex;flex-wrap:wrap;gap:14px;">
+      <span><span class="badge badge-free">Green</span> Zero tracked games (Free all day)</span>
+      <span><span class="badge badge-hp">Orange</span> High-Priority Bay Area / Westwood One</span>
+      <span><span class="badge badge-busy">Red</span> Other MLB / NFL games</span>
+      <span>Click any day to open exact PST free-time intervals.</span>
+    </div>
+    <div class="year-heatmap" id="year-heatmap"></div>
+  </main>
+
+  <footer id="site-footer"></footer>
+
+  <script src="assets/common.js"></script>
+  <script src="assets/vacation.js"></script>
+</body>
+</html>

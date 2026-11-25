@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>All Verified &amp; Estimated Schedules (2026–2029) — FREE TIME VACATION</title>
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+  <header id="site-header"></header>
+
+  <main class="container">
+    <section class="hero" style="padding:20px 24px;">
+      <h1>Master Schedule Explorer (MLB, NFL, Westwood One, Stanford &amp; Cal)</h1>
+      <p>
+        Every single verified and projected game from <strong>Nov 25, 2026 through Dec 31, 2029</strong>.
+        Official times are displayed strictly in <strong>PST (UTC-8)</strong> and left <strong>blank</strong> whenever unconfirmed/TBD;
+        estimated times are clearly badged. <strong>Every row links directly to an official primary source URL.</strong>
+      </p>
+    </section>
+
+    <div class="controls-bar">
+      <select id="f-year" aria-label="Filter by year">
+        <option value="ALL">All Years (2026–2029)</option>
+        <option value="2026">2026 (Nov–Dec Verified)</option>
+        <option value="2027" selected>2027 (Verified MLB + NFL Playoffs)</option>
+        <option value="2028">2028 (Estimated + Official NCAAF)</option>
+        <option value="2029">2029 (Estimated + Official NCAAF)</option>
+      </select>
+
+      <select id="f-league" aria-label="Filter by league">
+        <option value="ALL">All Leagues (MLB, NFL, NCAAF)</option>
+        <option value="MLB">MLB (All 30 Clubs + Giants &amp; A's)</option>
+        <option value="NFL">NFL (All 32 Clubs + 49ers + WW1)</option>
+        <option value="NCAAF">NCAAF (Stanford &amp; Cal)</option>
+      </select>
+
+      <select id="f-priority" aria-label="Filter by priority">
+        <option value="ALL">All Priority Levels</option>
+        <option value="HP">High Priority Only (Giants, A's, 49ers, Stanford, Cal, WW1)</option>
+        <option value="WW1">Westwood One Sports NFL Only</option>
+      </select>
+
+      <select id="f-status" aria-label="Filter by verification status">
+        <option value="ALL">All Statuses (Verified + Estimated)</option>
+        <option value="VERIFIED">Fully Verified (Date &amp; Time)</option>
+        <option value="VERIFIED_DATE_TIME_TBD">Verified Date · Time TBD</option>
+        <option value="ESTIMATED">Estimated (Unreleased Schedule)</option>
+      </select>
+
+      <input type="search" id="f-search" placeholder="Search team, venue, station..." style="min-width:220px;flex:1;" />
+
+      <button class="btn btn-sm" id="btn-export-csv">Export Filtered CSV</button>
+    </div>
+
+    <div class="card-header mb-2">
+      <div class="small text-muted" id="results-summary">Loading schedule...</div>
+      <div style="display:flex;gap:8px;align-items:center;" id="pager-top"></div>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Date (PST)</th>
+            <th>League / Phase</th>
+            <th>Matchup / Event</th>
+            <th>Official Time (PST)</th>
+            <th>Est. Time (PST)</th>
+            <th>Avg Length</th>
+            <th>SF 94122 Radio &amp; Priority</th>
+            <th>Status</th>
+            <th>Official Source</th>
+          </tr>
+        </thead>
+        <tbody id="sched-tbody">
+          <tr><td colspan="9" class="text-muted">Loading events...</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card-header mt-2">
+      <div class="small text-muted" id="results-summary-bottom"></div>
+      <div style="display:flex;gap:8px;align-items:center;" id="pager-bottom"></div>
+    </div>
+  </main>
+
+  <footer id="site-footer"></footer>
+
+  <script src="assets/common.js"></script>
+  <script src="assets/schedules.js"></script>
+</body>
+</html>
