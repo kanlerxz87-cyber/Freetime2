@@ -1,13 +1,13 @@
 #!/usr/bin/env node
-// Build check for the GitHub Pages site in docs/.
-// 1. Every internal href/src resolves to a file in docs/ (and #Fx anchors to a known flag).
+// Build check for the scoreboard site in scoreboard/ (served at /scoreboard/).
+// 1. Every internal href/src resolves to a file in scoreboard/ (and #Fx anchors to a known flag).
 // 2. Every JSON file parses, every JS file parses.
 // 3. Every data row in snapshot.json has an https source_url, and every flag has a source.
 // Exit code 1 on any failure, so a broken site cannot be published silently.
 import { readFileSync, readdirSync, existsSync, statSync } from "node:fs";
 import { join, dirname, resolve } from "node:path";
 
-const root = resolve(new URL("..", import.meta.url).pathname, "docs");
+const root = resolve(new URL("..", import.meta.url).pathname, "scoreboard");
 const problems = [];
 const ok = [];
 
@@ -57,13 +57,13 @@ for (const f of htmlFiles) {
     if (raw.startsWith("#")) continue;
     const [pathPart, hash] = raw.split("#");
     const target = resolve(dirname(f), pathPart.split("?")[0]);
-    if (!target.startsWith(root)) { problems.push("Link escapes docs/: " + raw + " in " + f); continue; }
-    if (!existsSync(target)) { problems.push("Broken internal link: " + raw + " in " + f.replace(root, "docs")); continue; }
+    if (!target.startsWith(root)) { problems.push("Link escapes scoreboard/: " + raw + " in " + f); continue; }
+    if (!existsSync(target)) { problems.push("Broken internal link: " + raw + " in " + f.replace(root, "scoreboard")); continue; }
     if (hash && /flagged\.html$/.test(pathPart) && /^F\d+$/.test(hash) && !flagIds.has(hash)) {
-      problems.push("Broken flag anchor: " + raw + " in " + f.replace(root, "docs"));
+      problems.push("Broken flag anchor: " + raw + " in " + f.replace(root, "scoreboard"));
     }
   }
-  ok.push("links checked " + f.replace(root, "docs"));
+  ok.push("links checked " + f.replace(root, "scoreboard"));
 }
 
 for (const line of ok) console.log("  ✓ " + line);
