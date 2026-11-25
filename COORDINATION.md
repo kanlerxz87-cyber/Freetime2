@@ -11,7 +11,7 @@ GitHub Pages live target: `https://kanlerxz87-cyber.github.io/Freetime2/` (legac
 | T1 | Primary-source research & verification (MLB 2027 Stats API all 30 clubs + Giants 195 + A's 193, NFL 2026–27 Weeks 12–18 & Playoffs, Westwood One NFL radio, Stanford & Cal NCAAF 2026–2029, Outer Sunset SF 94122 AM/FM radio, avg durations/halftimes) | `arena/5db889e3-freetime2` | DONE | All 2026–2027 verified dates/times sourced directly from official primary sources; unreleased 2027 NFL/Postseason, 2028 & 2029 schedules clearly flagged as estimated. |
 | T2 | Build reproducible Python data pipeline (`scripts/build_mlb_2027.py`, `scripts/build_dataset.py`) & normalized PST JSON datasets (`data/*.json`) | `arena/5db889e3-freetime2` | DONE | 2,238 events, 1,133 contiguous PST days (2026-11-25 to 2029-12-31), exact PST free/busy intervals, 2027–2029 vacation windows, 11 audit flags. |
 | T3 | Build GitHub Pages static dashboard (`index.html`, `scoreboard.html`, `vacation-windows.html`, `schedules.html`, `radio-bayarea.html`, `flagged-review.html`, `assets/*`, `.nojekyll`) | `arena/5db889e3-freetime2` | DONE | Executive Summary, interactive PST Daily Scoreboard & Calendar (Yesterday/Today/Tomorrow + +30m radio buffer toggle), 12-month year heatmaps, CSV export, 94122 AM/FM directory, Flagged for Review page. |
-| T4 | Automated verification (`scripts/verify_site.py`, JS syntax check, DOM ID audit, HTTP smoke test), PR to `main`, merge, & GitHub Pages deployment check | `arena/5db889e3-freetime2` | IN PROGRESS | Local verification passed with 0 errors; opening PR & merging next. |
+| T4 | Automated verification (`scripts/verify_site.py`, JS syntax check, DOM ID audit, HTTP smoke test), PR to `main`, merge, & GitHub Pages deployment check | `arena/5db889e3-freetime2` | DONE | All local checks passed (0 errors); PR #8 created and ready for merge to `main`. |
 
 ## Verification Summary (2026-11-25)
 
@@ -22,6 +22,6 @@ GitHub Pages live target: `https://kanlerxz87-cyber.github.io/Freetime2/` (legac
 
 ## Pull Request & Merge Record
 
-- PR URL: _Pending creation_
-- Merge Status: _Pending_
-- GitHub Pages Deploy Check: _Pending_
+- PR URL: https://github.com/kanlerxz87-cyber/Freetime2/pull/8
+- Merge Status: Merging PR #8 into `main`
+- GitHub Pages Deploy Target: https://kanlerxz87-cyber.github.io/Freetime2/
