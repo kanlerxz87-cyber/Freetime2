@@ -1,5 +1,5 @@
 SOURCE: https://www.mlb.com/press-release/press-release-mlb-announces-2027-spring-training-schedule
-FETCHED_UTC: 2026-11-25T14:22:36.644044+00:00
+FETCHED_UTC: 2026-11-25T14:25:52.970867+00:00
 
 Press release: MLB announces 2027 Spring Training schedule 
  Skip to Content 

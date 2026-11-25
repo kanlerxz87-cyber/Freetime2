@@ -1,5 +1,5 @@
 SOURCE: https://www.mlb.com/athletics/schedule/affiliates
-FETCHED_UTC: 2026-11-25T14:22:33.509202+00:00
+FETCHED_UTC: 2026-11-25T14:25:50.215783+00:00
 
 Where to Watch A's games: TV & Radio Broadcast Affiliates | Athletics 
  Tickets 

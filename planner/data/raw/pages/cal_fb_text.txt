@@ -1,5 +1,5 @@
 SOURCE: https://calbears.com/sports/football/schedule/text
-FETCHED_UTC: 2026-11-25T14:22:32.186749+00:00
+FETCHED_UTC: 2026-11-25T14:25:47.985913+00:00
 
 California Golden Bears Athletics 2026 Football Schedule
  Overall 3-8 0.273 

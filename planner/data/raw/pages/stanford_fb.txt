@@ -1,5 +1,5 @@
 SOURCE: https://gostanford.com/sports/football/schedule
-FETCHED_UTC: 2026-11-25T14:22:31.434865+00:00
+FETCHED_UTC: 2026-11-25T14:25:47.025105+00:00
 
 Football 2026 - Stanford Cardinal - Official Athletics Website 
  Skip To Main Content 

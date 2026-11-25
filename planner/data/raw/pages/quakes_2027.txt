@@ -1,5 +1,5 @@
 SOURCE: https://www.sjearthquakes.com/news/san-jose-earthquakes-announce-2027-major-league-soccer-sprint-season-schedule-presented-by-habbas-law
-FETCHED_UTC: 2026-11-25T14:22:36.120321+00:00
+FETCHED_UTC: 2026-11-25T14:25:52.305963+00:00
 
 San Jose Earthquakes Announce 2027 Major League Soccer Sprint Season Schedule Presented by Habbas Law | San Jose Earthquakes 
  Skip to main content 

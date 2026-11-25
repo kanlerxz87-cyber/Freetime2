@@ -1,5 +1,5 @@
 SOURCE: https://www.mlb.com/press-release/press-release-giants-announce-tentative-2027-regular-season-schedule
-FETCHED_UTC: 2026-11-25T14:22:37.555182+00:00
+FETCHED_UTC: 2026-11-25T14:25:53.630858+00:00
 
 Press release: Giants announce tentative 2027 regular season schedule 
  Skip to Content 

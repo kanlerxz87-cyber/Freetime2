@@ -1,5 +1,5 @@
 SOURCE: https://www.mlb.com/news/mlb-average-game-time-under-three-hours-third-straight-year
-FETCHED_UTC: 2026-11-25T14:22:40.902761+00:00
+FETCHED_UTC: 2026-11-25T14:25:57.793504+00:00
 
 MLB average game time under three hours for third straight year 
  Skip to Content 

@@ -1,5 +1,5 @@
 SOURCE: https://www.mercedesbenzstadium.com/events/super-bowl-lxii
-FETCHED_UTC: 2026-11-25T14:22:38.800498+00:00
+FETCHED_UTC: 2026-11-25T14:25:54.947284+00:00
 
 Super Bowl LXII, February 13, 2028 | Event at Mercedes-Benz Stadium 
  About
