@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Daily Scoreboard &amp; PST Free-Time Calendar — FREE TIME VACATION</title>
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+  <header id="site-header"></header>
+
+  <main class="container">
+    <section class="hero" style="padding:20px 24px;">
+      <h1>Daily Sports Scoreboard &amp; Exact PST Free-Time Calendar</h1>
+      <p>
+        Navigate day-by-day, month-by-month, or year-by-year from <strong>Nov 25, 2026 through Dec 31, 2029</strong>.
+        Every day shows exact <strong>PST (UTC-8)</strong> free-time windows calculated from researched average game durations &amp; halftimes,
+        with High-Priority flags for Giants, Athletics, 49ers, Stanford, Cal, and Westwood One Sports.
+      </p>
+    </section>
+
+    <!-- Scoreboard Navigation Bar -->
+    <div class="controls-bar">
+      <button class="btn" id="btn-prev" title="Previous Day">&larr; Yesterday</button>
+      <button class="btn btn-primary" id="btn-today" title="Jump to Reference Today (Nov 25, 2026)">Today (Nov 25, 2026)</button>
+      <button class="btn" id="btn-next" title="Next Day">Tomorrow &rarr;</button>
+
+      <input type="date" id="date-picker" min="2026-11-25" max="2029-12-31" value="2026-11-25" aria-label="Select date" />
+
+      <select id="filter-mode" aria-label="Free-Time Filter Mode">
+        <option value="strict">Mode: Strict (All 30 MLB + All NFL + Stanford/Cal + WW1)</option>
+        <option value="noSpring">Mode: Regular + Postseason Only (Skip Spring Training &amp; Preseason)</option>
+        <option value="highPriority">Mode: High-Priority Bay Area Radio Only (SF/ATH/49ers/STAN/CAL/WW1)</option>
+      </select>
+
+      <label class="toggle-label" title="Add 30 min pregame and 30 min postgame radio broadcast buffer around every game">
+        <input type="checkbox" id="chk-buffer" />
+        <span>+30m Pre/Post Radio Buffer</span>
+      </label>
+    </div>
+
+    <!-- Main 2-Column Scoreboard Layout -->
+    <div class="cal-layout">
+      <!-- Left: Interactive Monthly Calendar -->
+      <div class="card">
+        <div class="card-header">
+          <button class="btn btn-sm" id="cal-prev-month">&lsaquo;</button>
+          <div style="display:flex;gap:6px;align-items:center;">
+            <select id="cal-month-select" aria-label="Month"></select>
+            <select id="cal-year-select" aria-label="Year">
+              <option value="2026">2026</option>
+              <option value="2027">2027</option>
+              <option value="2028">2028</option>
+              <option value="2029">2029</option>
+            </select>
+          </div>
+          <button class="btn btn-sm" id="cal-next-month">&rsaquo;</button>
+        </div>
+
+        <div class="cal-grid" id="cal-grid"></div>
+
+        <div class="mt-2 small text-muted" style="display:flex;flex-wrap:wrap;gap:10px;">
+          <span><span class="badge badge-free">FREE</span> Zero games</span>
+          <span><span class="badge badge-hp">HP</span> Bay Area / WW1</span>
+          <span><span class="badge badge-busy">BUSY</span> Other MLB/NFL</span>
+        </div>
+
+        <div class="mt-2">
+          <div class="kpi-label mb-2" style="margin-bottom:6px;">Quick Jump Milestones</div>
+          <div style="display:flex;flex-wrap:wrap;gap:6px;">
+            <button class="btn btn-sm jump-btn" data-date="2026-11-26">Thanksgiving '26</button>
+            <button class="btn btn-sm jump-btn" data-date="2026-11-28">Stan &amp; Cal Finale</button>
+            <button class="btn btn-sm jump-btn" data-date="2026-12-25">Christmas NFL '26</button>
+            <button class="btn btn-sm jump-btn" data-date="2027-02-14">Super Bowl LXI</button>
+            <button class="btn btn-sm jump-btn" data-date="2027-02-15">Feb 15 Free Start</button>
+            <button class="btn btn-sm jump-btn" data-date="2027-02-19">MLB Spring '27</button>
+            <button class="btn btn-sm jump-btn" data-date="2027-03-25">MLB Opening Day '27</button>
+            <button class="btn btn-sm jump-btn" data-date="2027-07-14">All-Star Off Day '27</button>
+            <button class="btn btn-sm jump-btn" data-date="2028-02-13">Super Bowl LXII (Est)</button>
+            <button class="btn btn-sm jump-btn" data-date="2028-07-11">2028 SF All-Star (Est)</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Selected Day Scoreboard & Exact PST Free-Time Panel -->
+      <div>
+        <div class="card mb-2" id="day-header-panel">
+          Loading daily PST free-time analysis...
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h2 id="games-heading">Scheduled Broadcasts</h2>
+            <span class="small text-muted" id="games-sub"></span>
+          </div>
+          <div id="games-list">Loading...</div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer id="site-footer"></footer>
+
+  <script src="assets/common.js"></script>
+  <script src="assets/scoreboard.js"></script>
+</body>
+</html>

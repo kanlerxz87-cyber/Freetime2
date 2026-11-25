@@ -1,0 +1,78 @@
+{
+  "projectTitle": "FREE TIME VACATION \u2014 SF Bay Area Live Sports Radio Calendar (2026\u20132029)",
+  "location": "Outer Sunset, San Francisco, CA 94122",
+  "timezoneDisplay": "PST (UTC-8, fixed year-round per specification; PDT offset noted during Daylight Saving months)",
+  "lastVerifiedDate": "2026-11-25",
+  "coverageStart": "2026-11-25",
+  "coverageEnd": "2029-12-31",
+  "totalDaysCovered": 1133,
+  "totalEventsIndexed": 2238,
+  "verifiedEventsCount": 736,
+  "estimatedEventsCount": 1502,
+  "durations": [
+    {
+      "category": "MLB Regular Season / Spring Training",
+      "avgMinutes": 158,
+      "display": "2h 38m",
+      "halftimeMinutes": 0,
+      "basis": "2025 official MLB pace-of-play average (2:38 for 9-inning games; 2024 was 2:36, 2023 was 2:40).",
+      "sourceUrl": "https://www.mlb.com/news/mlb-pace-of-play-rule-changes"
+    },
+    {
+      "category": "MLB Postseason / All-Star Game",
+      "avgMinutes": 185,
+      "display": "3h 05m",
+      "halftimeMinutes": 0,
+      "basis": "Extended national broadcast commercial breaks & postseason pitching changes.",
+      "sourceUrl": "https://www.mlb.com/postseason"
+    },
+    {
+      "category": "NFL Regular Season",
+      "avgMinutes": 190,
+      "display": "3h 10m",
+      "halftimeMinutes": 13,
+      "basis": "NFL average game length ~3h 10m\u20133h 12m including official 12\u201313 minute halftime.",
+      "sourceUrl": "https://operations.nfl.com/the-rules/nfl-rulebook/"
+    },
+    {
+      "category": "NFL Playoffs (Wild Card \u2013 Conf. Champ.)",
+      "avgMinutes": 195,
+      "display": "3h 15m",
+      "halftimeMinutes": 13,
+      "basis": "Slightly longer national broadcast windows & overtime possibility.",
+      "sourceUrl": "https://operations.nfl.com/the-rules/nfl-rulebook/"
+    },
+    {
+      "category": "NFL Super Bowl",
+      "avgMinutes": 225,
+      "display": "3h 45m",
+      "halftimeMinutes": 28,
+      "basis": "Includes extended 25\u201330 minute Super Bowl Halftime Show.",
+      "sourceUrl": "https://www.nfl.com/super-bowl/"
+    },
+    {
+      "category": "NCAAF (Stanford & Cal)",
+      "avgMinutes": 200,
+      "display": "3h 20m",
+      "halftimeMinutes": 20,
+      "basis": "NCAA FBS average ~3h 20m\u20133h 24m including official 20-minute halftime.",
+      "sourceUrl": "https://www.ncaa.org/sports/football"
+    },
+    {
+      "category": "Westwood One Sports NFL Radio Buffer",
+      "avgMinutes": 30,
+      "display": "+30\u201345m pregame",
+      "halftimeMinutes": 13,
+      "basis": "Verified directly from westwoodonesports.com/nfl-schedule/: live pregame starts 30\u201345 min before kickoff (75 min for MNF).",
+      "sourceUrl": "https://www.westwoodonesports.com/nfl-schedule/"
+    }
+  ],
+  "keyFindings": {
+    "strictReality": "Under the STRICTEST rule (counting all 30 MLB teams' Spring Training starting Feb 19 AND NFL Playoffs through Super Bowl Feb 14), there is NO continuous 14-day or 21-day zero-game window in 2027, 2028, or 2029 because the gap between the Super Bowl and MLB Spring Training is only 4\u20137 days.",
+    "best2027Strict": "Feb 15\u201318, 2027 (4 consecutive 100% zero-game days, VERIFIED) and Feb 1\u201318, 2027 (18-day stretch containing ONLY Pro Bowl Games + Super Bowl LXI \u2014 16 zero-game days!).",
+    "best2027NoSpring": "Feb 15 \u2013 Mar 23, 2027 = 37 CONSECUTIVE DAYS (5+ WEEKS, VERIFIED!) completely free of MLB Regular Season, NFL, Stanford/Cal NCAAF, and Westwood One NFL!",
+    "best2028NoSpring": "Feb 14 \u2013 Mar 22, 2028 = ~38 CONSECUTIVE DAYS (5+ WEEKS, ESTIMATED pending 2028 MLB & Super Bowl LXII confirmation).",
+    "best2029NoSpring": "Feb 12 \u2013 Mar 28, 2029 = ~45 CONSECUTIVE DAYS (6+ WEEKS, ESTIMATED pending 2029 schedules).",
+    "midSummerAlert": "MLB All-Star Break yields 1 full zero-game Wednesday (Jul 14, 2027 VERIFIED; Jul 12, 2028 EST; Jul 11, 2029 EST). Watch July 2028 closely: Oracle Park hosts the 2028 All-Star Game alongside the 2028 LA Summer Olympics!"
+  }
+}

@@ -1,82 +1,135 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Free Time Vacation — Bay Area Sports Radio 2026–2029</title>
-<meta name="description" content="Find the windows with no live MLB/NFL/NCAAF games on Bay Area AM/FM radio — 2026 through 2029 — with day-by-day PT busy/free math, every game table, and everything estimated vs verified honestly labeled.">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='88'>◈</text></svg>">
-<style>
-:root{color-scheme:light;--ink:#162d28;--muted:#526960;--line:#d9e4dc;--paper:#f4f7f3;--green:#134d40;--gold:#a76e26}
-*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
-.shell{width:min(1180px,94%);margin:auto}
-header{border-bottom:1px solid var(--line);background:#fff}
-.top{display:flex;justify-content:space-between;align-items:center;min-height:64px;flex-wrap:wrap;gap:10px}
-.brand{font-weight:850;font-size:19px;text-decoration:none;color:var(--ink)}.brand em{font-style:normal;color:#417865}
-.logo{color:#377c65;margin-right:6px}
-.top a{color:var(--muted);text-decoration:none;font-size:14px;font-weight:600}.top a:hover{color:var(--green)}
-.hero{margin:26px 0;background:radial-gradient(ellipse at 92% 8%,#386753,transparent 55%),#173b32;color:#fff;border-radius:22px;padding:clamp(28px,5vw,64px)}
-.hero h1{font-size:clamp(30px,5.4vw,58px);line-height:1.04;letter-spacing:-.045em;max-width:900px;margin:14px 0;font-weight:850}
-.hero p{max-width:740px;color:#d6e8dc;margin:0 0 18px}
-.eyebrow{letter-spacing:.13em;font-size:11px;font-weight:800;text-transform:uppercase;color:#b6e4cd}
-.cta{display:inline-block;padding:12px 18px;border-radius:10px;text-decoration:none;font-weight:800;margin:4px 8px 4px 0}
-.cta.primary{background:#b6e4cd;color:#0d2b23}.cta.ghost{border:1px solid #5d8a77;color:#dff2e6}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:14px;margin:16px 0}
-.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px}
-.card h3{margin:6px 0 8px;letter-spacing:-.02em}
-.kpi{font-size:30px;font-weight:850;letter-spacing:-.04em;color:var(--green)}
-.small{font-size:13px;color:var(--muted)}
-a{color:#14634f}
-.notice{border-left:4px solid var(--gold);background:#fffaf0;padding:10px 14px;border-radius:8px;margin:16px 0}
-footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;border-top:1px solid var(--line);padding:18px 0 30px;margin-top:26px;color:var(--muted);font-size:12px}
-table{border-collapse:collapse;width:100%;font-size:14px}th,td{border-bottom:1px solid var(--line);padding:8px 10px;text-align:left}th{background:#eef4ef;font-size:11px;text-transform:uppercase;letter-spacing:.05em}
-.panel{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px;margin:14px 0;overflow:auto}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FREE TIME VACATION — SF Bay Area Live Sports Radio Calendar (2026–2029)</title>
+  <link rel="stylesheet" href="assets/styles.css" />
 </head>
 <body>
-<header><div class="shell top"><a class="brand" href="./"><span class="logo">◈</span>Free Time <em>Vacation</em></a><nav><a href="./docs/index.html">Dashboard →</a></nav></div></header>
+  <header id="site-header"></header>
 
-<main class="shell">
-<section class="hero">
-  <div class="eyebrow">BAY AREA AM/FM · 2026–2029 · OUTER SUNSET 94122 · PACIFIC TIME</div>
-  <h1>The honest map of when the radio is quiet.</h1>
-  <p>Every MLB game · every NFL game · every Stanford &amp; Cal game · every Westwood One national NFL broadcast — counted, day by day, 2026 through 2029. No 2–3-week fully-free vacation exists. The defensible answer is the <strong>January–February lull</strong>: 4–11-day strict islands, or a ~40-day practical run. Everything on this site is labeled <strong>VERIFIED</strong> (official source) or <strong>ESTIMATED</strong> (reconstruction) — never blurred.</p>
-  <a class="cta primary" href="./docs/executive-summary.html">Read the Executive Summary →</a>
-  <a class="cta ghost" href="./docs/calendar.html">Open the Scoreboard</a>
-  <a class="cta ghost" href="./docs/index.html">Browse the Dashboard</a>
-</section>
+  <main class="container">
+    <section class="hero">
+      <h1>Executive Summary: When Are ZERO Bay Area Live Sports on AM/FM Radio?</h1>
+      <p>
+        Verified vacation planning dashboard for <strong>Outer Sunset, San Francisco (94122)</strong> covering
+        <strong>all 30 MLB clubs</strong> (SF Giants &amp; Athletics High Priority),
+        <strong>all NFL games</strong> (SF 49ers &amp; Westwood One Sports High Priority), and
+        <strong>Stanford Cardinal &amp; Cal Golden Bears NCAAF</strong> (High Priority) from
+        <strong>Nov 25, 2026 through Dec 31, 2029</strong> — with exact <strong>PST (UTC-8)</strong> daily free-time intervals.
+      </p>
+      <div class="meta-strip" id="meta-strip">
+        <span class="meta-pill">Last Verified: <strong>Nov 25, 2026</strong></span>
+        <span class="meta-pill">Display Timezone: <strong>PST (UTC-8)</strong></span>
+        <span class="meta-pill">Coverage: <strong>1,133 Days (Nov 2026 – Dec 2029)</strong></span>
+      </div>
+      <div class="mt-2" style="display:flex;flex-wrap:wrap;gap:10px;">
+        <a class="btn btn-primary" href="scoreboard.html">Open Daily Scoreboard &amp; PST Free-Time Calendar &rarr;</a>
+        <a class="btn btn-green" href="vacation-windows.html">Explore 2027–2029 Vacation Windows</a>
+        <a class="btn" href="radio-bayarea.html">Outer Sunset 94122 AM/FM Directory</a>
+        <a class="btn" href="flagged-review.html">Flagged for Review (Audit)</a>
+      </div>
+    </section>
 
-<div class="notice"><strong>Before you plan:</strong> MLB 2026/2027 master schedules are officially released, but game-level rows here are <em>estimated reconstructions</em> anchored to verified season boundaries (the build environment couldn’t machine-import the official grid). 2028/2029 schedules don’t exist yet at all. Every row that matters is one click from its official source — or it’s on the <a href="./docs/flagged.html">Flagged for Review</a> page.</div>
+    <!-- Critical Headline Finding -->
+    <div class="callout green">
+      <strong>BOTTOM LINE FOR 1-WEEK, 2-WEEK &amp; 3-WEEK VACATION PLANNING:</strong><br/>
+      <strong>1) Regular Season + Postseason Only (Skipping MLB Spring Training Exhibitions):</strong>
+      Your golden vacation window is <strong>mid-February through late March every single year</strong> —
+      <strong>37 consecutive completely game-free days in 2027 (Mon, Feb 15 – Tue, Mar 23, 2027 — VERIFIED OFFICIAL!)</strong>,
+      ~<strong>38 days in 2028</strong> (Feb 14 – Mar 22, 2028, Est.), and ~<strong>45 days in 2029</strong> (Feb 12 – Mar 28, 2029, Est.).
+      Notably, KNBR 680/104.5 does <em>not</em> air every weekday Spring Training game over AM/FM radio.<br/>
+      <strong>2) Strictest All-Sports Mode (Counting All 30 MLB Teams' Spring Training + NFL Playoffs + Pro Bowl):</strong>
+      Because Super Bowl LXI (<strong>Sun, Feb 14, 2027</strong>) finishes just <strong>4 days</strong> before MLB Spring Training opens (<strong>Fri, Feb 19, 2027</strong>),
+      there is <strong>NO continuous 14-day or 21-day 100% zero-game streak</strong> in 2027, 2028, or 2029.
+      The best strict low-impact 2-week &amp; 3-week stretches fall in <strong>late January – mid-February</strong>
+      (e.g., <strong>Feb 1 – Feb 18, 2027 = 18 days with 16 zero-game days</strong> and only Pro Bowl + Super Bowl;
+      <strong>Feb 1 – Feb 13, 2027 = 13 consecutive days with ZERO High-Priority Bay Area / Westwood One broadcasts</strong>).
+    </div>
 
-<section class="grid">
-  <div class="card"><div class="eyebrow">BEST LONG-BREAK BET</div><div class="kpi">~40 days</div><div class="small">Practical window, Jan 11 → Feb 19, 2027 (similar runs 2028/2029). Super Bowl Feb 14 ends the NFL; MLB hasn’t started. Strictly speaking MLB spring counts, so this is “no Bay Area/national games” territory.</div></div>
-  <div class="card"><div class="eyebrow">STRICTEST POSSIBLE</div><div class="kpi">4–11 days</div><div class="small">February islands between Super Bowl and MLB Spring Training: Feb 9–19, 2026 (11d, verified boundaries) · ~Feb 15–18, 2027 · ~Feb 14–17, 2028 · ~Feb 12–17, 2029 — all estimated except 2026.</div></div>
-  <div class="card"><div class="eyebrow">TOTAL COVERAGE</div><div class="kpi">12,300+</div><div class="small">Game rows 2026–2029 — all 30 MLB clubs, all 32 NFL teams, Stanford/Cal, Westwood One national windows, anchors, postseasons, All-Star/Pro Bowl games.</div></div>
-</section>
+    <!-- Top Year-by-Year Vacation Summary KPIs -->
+    <h2 class="section-title">Best 2027, 2028 &amp; 2029 Vacation Windows at a Glance</h2>
+    <div class="grid grid-3" id="year-summary-cards"></div>
 
-<section class="panel">
-  <h2>What’s inside</h2>
-  <table>
-    <thead><tr><th>Section</th><th>What you’ll find</th></tr></thead>
-    <tbody>
-      <tr><td><a href="./docs/executive-summary.html">Executive Summary</a></td><td>The vacation answer in one page: windows ranked, free-day counts, month-by-month free days.</td></tr>
-      <tr><td><a href="./docs/calendar.html">Scoreboard Calendar</a></td><td>MLB/NFL-style scoreboard + month calendar with prev/today/next navigation; per-day PT busy blocks, free-time ranges and hour grid; click any day to see every game.</td></tr>
-      <tr><td><a href="./docs/windows.html">Vacation Windows</a></td><td>Every ≥3-day strict/practical window 2026–2029 with day counts and confidence.</td></tr>
-      <tr><td><a href="./docs/mlb.html">MLB — All 30 Clubs</a></td><td>~2,900 game rows per season (spring training → postseason), Giants/A’s flagged high-priority, CSV export.</td></tr>
-      <tr><td><a href="./docs/nfl.html">NFL</a></td><td>Preseason → Super Bowl; 2026 49ers verified from the official release; every other row estimated.</td></tr>
-      <tr><td><a href="./docs/ncaaf.html">NCAAF — Stanford & Cal</a></td><td>2026 official results + Big Game; future years estimated; bowl/CFP context.</td></tr>
-      <tr><td><a href="./docs/westwood.html">Westwood One Radio</a></td><td>Every verified national NFL window Nov 2026–Jan 2027 + the weekly TNF/SNF/MNF template for 2027–2029.</td></tr>
-      <tr><td><a href="./docs/radio.html">AM/FM 94122</a></td><td>Station-by-station reception audit for the Outer Sunset: KNBR 680/104.5, KSFO 810, KNEW 960, KSAN 107.7, KTCT 1050, KIQI 1010.</td></tr>
-      <tr><td><a href="./docs/sources.html">Sources</a></td><td>Official-first source registry with links; duration model; not-verifiable list.</td></tr>
-      <tr><td><a href="./docs/methodology.html">Methodology</a></td><td>Definitions (strict/practical), daily interval math, durations, failure modes, how to reproduce.</td></tr>
-      <tr><td><a href="./docs/flagged.html">Flagged for Review</a></td><td>Every estimate/TBD/irregularity consolidated — read it before booking travel.</td></tr>
-      <tr><td><a href="./docs/live-planner.html">Live MLB Feed (beta)</a></td><td>Legacy planner that reads MLB’s official Stats API in your browser; approximate free-time model.</td></tr>
-    </tbody>
-  </table>
-</section>
+    <!-- Today's Live Free-Time Snapshot -->
+    <h2 class="section-title">Today's PST Free-Time Snapshot <span class="badge badge-verified" id="today-date-badge">Wed, Nov 25, 2026</span></h2>
+    <div class="card" id="today-snapshot">
+      Loading today's PST free-time breakdown...
+    </div>
 
-<p class="small">All times Pacific · PST/PDT handled as PT calendar dates · Built 2026-11-25 · Data generated deterministically (<code>tools/generate_schedules.py</code>) · Repository: <a href="https://github.com/kanlerxz87-cyber/Freetime2">kanlerxz87-cyber/Freetime2</a></p>
-</main>
-<footer class="shell"><span>FREE TIME VACATION · Pacific Time · ESTIMATED ≠ announced.</span><span><a href="./docs/index.html">Dashboard</a> · <a href="./VERIFICATION.md">VERIFICATION.md</a></span></footer>
+    <!-- High-Priority Coverage Matrix -->
+    <h2 class="section-title">What Counts as "On Air" (Tracked Coverage &amp; Priority Rules)</h2>
+    <div class="grid grid-2">
+      <div class="card">
+        <div class="card-header">
+          <h3>High-Priority Bay Area Radio Broadcasts</h3>
+          <span class="badge badge-hp">HIGH PRIORITY</span>
+        </div>
+        <ul style="margin:0;padding-left:18px;font-size:0.9rem;color:var(--text-muted);">
+          <li><strong style="color:var(--text)">San Francisco Giants (MLB)</strong> — KNBR 680 AM / 104.5 FM (all 195 official 2027 games verified via MLB Stats API; Spanish KSFN 1510 AM).</li>
+          <li><strong style="color:var(--text)">Athletics / A's (MLB)</strong> — KNEW 960 AM Bay Area / KSTE 650 AM Sacramento / A's Cast (all 193 official 2027 games verified; 2028+ Vegas AM/FM flagged).</li>
+          <li><strong style="color:var(--text)">San Francisco 49ers (NFL)</strong> — KSAN 107.7 FM, KNBR 104.5 FM / 680 AM, KSFO 810 AM (all remaining 2026 games verified).</li>
+          <li><strong style="color:var(--text)">Stanford Cardinal (NCAAF)</strong> — KNBR / KTCT 1050 AM (2026 finale vs SMU + bowl eligibility + 2027–2029 official non-conf/ACC opponents).</li>
+          <li><strong style="color:var(--text)">California Golden Bears / Cal (NCAAF)</strong> — KSFO 810 AM (2026 finale vs Pitt + 2027–2029 official non-conf/ACC opponents).</li>
+          <li><strong style="color:var(--text)">Westwood One Sports NFL Radio</strong> — KNBR 680 AM / 104.5 FM (TNF, SNF, MNF, Thanksgiving, Christmas, Saturdays, ALL NFL Playoffs &amp; Super Bowl).</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <h3>Full-League Coverage &amp; Key Alerts</h3>
+          <span class="badge badge-verified">ALL 30 MLB · ALL 32 NFL</span>
+        </div>
+        <ul style="margin:0;padding-left:18px;font-size:0.9rem;color:var(--text-muted);">
+          <li><strong style="color:var(--text)">All 30 MLB Clubs (2,905 official 2027 games)</strong> — Spring Training (Feb 19 – Mar 23), Opening Night (Mar 24), Regular Season (Mar 25 – Sep 26), All-Star Break (Jul 12–15), Field of Dreams (Aug 12), and Postseason (Est. Sep 28 – Oct 30).</li>
+          <li><strong style="color:var(--text)">All 32 NFL Clubs</strong> — Verified Weeks 12–18 (Nov 25, 2026 – Jan 10, 2027), Playoffs (Jan 16–31), Super Bowl LXI (Feb 14, 2027), plus clearly labeled 2027–2029 projections.</li>
+          <li><strong style="color:var(--amber)">July 2028 Oracle Park All-Star &amp; LA Olympics Alert:</strong> SF Giants officially host the 2028 MLB All-Star Game at Oracle Park alongside the 2028 Los Angeles Summer Olympics (Jul 14–30, 2028) — watch for a potential extended July 2028 MLB break!</li>
+          <li><strong style="color:var(--text)">Secondary Bay Area AM/FM Sports:</strong> Golden State Warriors &amp; Valkyries (95.7 FM KGMZ), SJ Earthquakes (KSFO 810 AM), SJ Sharks (KUFX 98.5 FM / digital) are documented in the <a href="radio-bayarea.html">Radio Directory</a>.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Researched Average Game Durations & Halftimes -->
+    <h2 class="section-title">Researched Average Game Durations &amp; Halftimes (PST Free-Time Engine)</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>League / Event Type</th>
+            <th>Avg Duration</th>
+            <th>Halftime</th>
+            <th>Research Basis</th>
+            <th>Official Source</th>
+          </tr>
+        </thead>
+        <tbody id="durations-tbody"></tbody>
+      </table>
+    </div>
+
+    <!-- Companion Multi-Session Views -->
+    <h2 class="section-title">Companion Reference Views in This Repository</h2>
+    <div class="grid grid-3">
+      <div class="card">
+        <h3>Live MLB API Planner SPA</h3>
+        <p class="small text-muted mt-1">Original browser-live MLB Stats API single-page planner preserved intact.</p>
+        <a class="btn btn-sm mt-1" href="planner.html">Open planner.html &rarr;</a>
+      </div>
+      <div class="card">
+        <h3>Verified Data Library (/docs/)</h3>
+        <p class="small text-muted mt-1">Supplementary deep-dive library: <a href="docs/calendar.html">scoreboard calendar</a> (prev/today/next), <a href="docs/mlb.html">MLB tables (CSV export)</a>, <a href="docs/nfl.html">NFL</a>, <a href="docs/ncaaf.html">NCAAF</a>, <a href="docs/westwood.html">Westwood One</a>, <a href="docs/executive-summary.html">Executive Summary</a>, <a href="docs/windows.html">Vacation Windows</a>, <a href="docs/sources.html">full source registry</a>, <a href="docs/methodology.html">model card</a>, <a href="docs/flagged.html">Flagged for Review</a>.</p>
+        <a class="btn btn-sm mt-1" href="docs/index.html">Open /docs/ &rarr;</a>
+      </div>
+      <div class="card">
+        <h3>Scoreboard Snapshot (/scoreboard/)</h3>
+        <p class="small text-muted mt-1">Self-contained scoreboard with live MLB feed and cross-checked snapshot audit.</p>
+        <a class="btn btn-sm mt-1" href="scoreboard/index.html">Open /scoreboard/ &rarr;</a>
+      </div>
+    </div>
+  </main>
+
+  <footer id="site-footer"></footer>
+
+  <script src="assets/common.js"></script>
+  <script src="assets/home.js"></script>
 </body>
 </html>

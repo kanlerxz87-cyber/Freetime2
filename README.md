@@ -1,42 +1,55 @@
-# Free Time Vacation
+# FREE TIME VACATION — SF Bay Area Live Sports Radio Calendar (2026–2029)
 
-**Bay Area over-the-air sports radio, 2026–2029: when is the dial empty?**
+Live GitHub Pages Dashboard: **https://kanlerxz87-cyber.github.io/Freetime2/**
 
-Live site: **https://kanlerxz87-cyber.github.io/Freetime2/**
+A verified, source-linked static dashboard for **Outer Sunset, San Francisco (ZIP 94122)** that identifies exact **PST (UTC-8)** daily free-time windows and optimal **2027, 2028, and 2029** vacation stretches when **zero tracked live Bay Area AM/FM radio sports** are on air.
 
-This project maps every MLB game (all 30 clubs — spring training, regular season, All-Star, postseason), every NFL game (preseason, regular season, playoffs, Pro Bowl, Super Bowl), Stanford/Cal NCAAF, and every Westwood One national NFL radio broadcast — day by day, 2026 through 2029 — and computes the days with **zero** live games on San Francisco AM/FM radio.
+## Executive Summary (Verified Nov 25, 2026)
 
-## Straight answer
+- **Regular Season + Postseason Only (Skipping MLB Spring Training Exhibitions):**
+  - **2027 (VERIFIED OFFICIAL DATES):** **Mon, Feb 15 – Tue, Mar 23, 2027 = 37 consecutive game-free days (5+ weeks)** between Super Bowl LXI (Sun, Feb 14, 2027) and MLB Opening Night (Wed, Mar 24, 2027).
+  - **2028 (ESTIMATED):** **Mon, Feb 14 – Wed, Mar 22, 2028 = ~38 consecutive days** (pending official 2028 MLB & Super Bowl LXII date confirmation; **note:** SF Giants officially host the **2028 MLB All-Star Game at Oracle Park in July 2028** alongside the **2028 LA Summer Olympics**!).
+  - **2029 (ESTIMATED):** **Mon, Feb 12 – Wed, Mar 28, 2029 = ~45 consecutive days** (after Super Bowl LXIII in Las Vegas).
+- **Strictest All-Sports Mode (Counting All 30 MLB Teams' Spring Training + NFL Playoffs + Pro Bowl):**
+  - Because Super Bowl LXI (Feb 14, 2027) ends just **4 days** before MLB Spring Training begins (Feb 19, 2027), there is **no continuous 14-day or 21-day 100% zero-game streak** in 2027–2029.
+  - Best strict low-impact 2–3 week window in 2027: **Feb 1 – Feb 18, 2027** (18 days with **16 zero-game days**, interrupted only by Pro Bowl Games & Super Bowl LXI), including **13 consecutive days (Feb 1–13)** with zero High-Priority Bay Area / Westwood One broadcasts.
 
-There is **no 2–3-week fully-free vacation window** in 2026, 2027, 2028 or 2029. The only strict gaps are the February islands between the Super Bowl and MLB Spring Training (4–11 days, 2026 boundaries verified; future years estimated). The best practical (Bay Area/national-only) break is the **January → mid-February lull, ~40 days** each year (e.g., **Jan 11 → Feb 19, 2027**).
+## Primary Dashboard Pages (Session `5db889e3`, Repo Root `/`)
 
-## How to use
+- **`index.html`** — Executive Summary, 2027–2029 vacation KPI cards, today's PST free-time snapshot, and researched average game durations/halftimes table.
+- **`scoreboard.html`** — Interactive MLB/NFL-style Daily Scoreboard & Monthly Calendar (Nov 25, 2026 – Dec 31, 2029) with Yesterday/Today/Tomorrow buttons, visual 24-hour PST timeline, exact PST free-time windows, filter modes, and optional +30m pre/post radio buffer.
+- **`vacation-windows.html`** — Deep 2027, 2028, and 2029 Vacation Window Finder with 1-week, 2-week, and 3-week rankings and a clickable 12-month calendar heatmap.
+- **`schedules.html`** — Searchable, filterable, CSV-exportable master schedule tables covering all 2,238 verified & estimated events (including all 195 SF Giants + 193 Athletics + 2,905 all-MLB 2027 daily counts, all remaining 2026 NFL Weeks 12–18 & Playoffs, Westwood One, Stanford & Cal) with per-row official source links.
+- **`radio-bayarea.html`** — Outer Sunset SF (94122) AM/FM Sports Radio Reception Directory (KNBR 680/104.5, KSAN 107.7, KTCT 1050, KSFO 810, KNEW 960, KGMZ 95.7, etc.) and verified 2026–27 Westwood One Sports NFL schedule.
+- **`flagged-review.html`** — Transparent verification audit listing all 11 flagged irregularities, unreleased future schedules, TBD start times, historical NCAAF press-release conflicts, and radio reception caveats.
 
-- **[Executive Summary](https://kanlerxz87-cyber.github.io/Freetime2/docs/executive-summary.html)** — the answer, windows ranked, free days by month.
-- **[Scoreboard Calendar](https://kanlerxz87-cyber.github.io/Freetime2/docs/calendar.html)** — pick any day 2026–2029 (prev/today/next + month grid); PT busy blocks, free-time ranges, every game that day.
-- **[MLB tables](https://kanlerxz87-cyber.github.io/Freetime2/docs/mlb.html)** · **[NFL](https://kanlerxz87-cyber.github.io/Freetime2/docs/nfl.html)** · **[NCAAF](https://kanlerxz87-cyber.github.io/Freetime2/docs/ncaaf.html)** · **[Westwood One](https://kanlerxz87-cyber.github.io/Freetime2/docs/westwood.html)** · **[AM/FM 94122 dial audit](https://kanlerxz87-cyber.github.io/Freetime2/docs/radio.html)**
-- **[Vacation Windows](https://kanlerxz87-cyber.github.io/Freetime2/docs/windows.html)** · **[Sources](https://kanlerxz87-cyber.github.io/Freetime2/docs/sources.html)** · **[Methodology](https://kanlerxz87-cyber.github.io/Freetime2/docs/methodology.html)** · **[VERIFIED 2026 tables](https://kanlerxz87-cyber.github.io/Freetime2/docs/schedules.html)**
-- **[Flagged for Review](https://kanlerxz87-cyber.github.io/Freetime2/docs/flagged.html)** — every estimated/TBD/irregular row, consolidated. **Read it before booking anything.**
+## Companion Multi-Session Views (Preserved Intact)
 
-## Honesty rules
+- **`planner.html`** (Session `9636f11d`) — Browser-live MLB Stats API single-page planner (`docs/app.mjs`, `docs/model.mjs`, `docs/data.mjs`).
+- **`docs/index.html`** (Session `b1591c47`) — Supplementary verified-data pages (`docs/executive-summary.html`, `windows.html`, `schedules.html`, `radio.html`, `methodology.html`, `flagged.html`, `VERIFICATION.md`).
+- **`scoreboard/index.html`** (Session `a2ab7210`) — Self-contained scoreboard with verified snapshot (`scoreboard/data/snapshot.json`, `scoreboard/schedule.html`, `mlb.html`, `nfl.html`, `ncaaf.html`, `radio.html`, `research.html`, `flagged.html`).
 
-- **VERIFIED** = row traced to an official source (link in-row or on the Sources page).
-- **ESTIMATED** = deterministic reconstruction anchored to verified season boundaries. 2026/2027 MLB game-level rows are ESTIMATED (official master schedules exist but could not be machine-imported in the build environment); **all 2028/2029 rows are ESTIMATED** because those schedules are not released.
-- **TBD** = unpublished; deliberately never filled in.
-- See [VERIFICATION.md](./VERIFICATION.md) for the line-by-line log and [COORDINATION.md](./COORDINATION.md) for the task board.
-
-## Reproduce / develop
+## Reproducing & Verifying Locally
 
 ```bash
-python3 tools/generate_schedules.py   # regenerates data/games-*.json + vacation_analysis.json + meta.json (deterministic)
-python3 -m http.server 8000           # then open http://127.0.0.1:8000/
+python3 scripts/build_mlb_2027.py
+python3 scripts/build_dataset.py
+python3 scripts/verify_site.py
+node scripts/test.mjs
+node scripts/check-links.mjs
 ```
 
-No build step; static site. Pages source: repository root of `main`.
+Coordination board: `COORDINATION.md`.
 
-## Key caveats
+## Deep-Dive Verified Data Library (`docs/` — extended by this session)
 
-- Durations: MLB ~158 min, NFL ~183 min, NCAAF ~207 min (researched averages — see Sources).
-- March → October: a game airs nearly every day — "free" means before first pitch / between / after last out, per-day only.
-- Westwood One national windows are a subset of NFL dates; KNBR pre-emption by 49ers local rights is assumed but not programmatically verified.
-- Times are Pacific (America/Los_Angeles); “PST” in the UI means PT.
+The `docs/` library now also ships a parallel full dataset build (`tools/generate_schedules.py`, deterministic) and pages:
+
+- **`docs/calendar.html`** — MLB/NFL-style scoreboard calendar (2026–2029): month grid, prev/today/next day navigation, per-day PT busy blocks with exact free-time ranges, hour-by-hour busy grid, click any day for every game + radio call + source link.
+- **`docs/mlb.html`** — all 30 clubs 2026–2029 (~2,900 game rows/season) with high-priority flags + CSV export. **2027 SF Giants & Athletics fixtures (and 16 marquee games) are VERIFIED official rows from the MLB Stats API** (ingested from `data/mlb_2027_bayarea.json`); all other generated rows are labeled ESTIMATED.
+- **`docs/nfl.html`**, **`docs/ncaaf.html`**, **`docs/westwood.html`** — same pattern; verified SF 49ers 2026 + officially remaining 2026 NFL weeks 12–18 and 2026–27 playoffs/Super Bowl LXI (from `data/nfl_2026_remaining.json` / `data/all_events.json`) appear as VERIFIED rows.
+- **`docs/executive-summary.html` / `docs/windows.html`** — computed from `data/vacation_analysis.json`.
+- **`docs/sources.html` / `docs/methodology.html` / `docs/flagged.html`** — source registry, model card, consolidated flags.
+- **`docs/live-planner.html`** — preserved browser-live MLB Stats API planner.
+
+Rebuild: `python3 tools/generate_schedules.py` (deterministic; imports the verified official overlays from this repo where present).
