@@ -1,0 +1,71 @@
+{
+  "timezone": "America/Los_Angeles (PST/PDT as applicable; site displays PT)",
+  "note": "2026 game-level rows verified against official club/league pages listed in sources.json. Times shown as published (PT where source states PT; ET converted where noted). TBD/TBA rows are flagged, not filled in.",
+  "forty_niners_2026_regular": [
+    {"week": 1, "date": "2026-09-10", "day": "Thu", "opponent": "Los Angeles Rams (Melbourne Cricket Ground)", "time_pt": "5:35 PM PT (8:35 PM ET, Netflix)", "source": "49ERS-2026"},
+    {"week": 2, "date": "2026-09-20", "day": "Sun", "opponent": "Miami Dolphins (Levi's Stadium)", "time_pt": "1:25 PM PT", "source": "49ERS-2026"},
+    {"week": 3, "date": "2026-09-27", "day": "Sun", "opponent": "Arizona Cardinals (Levi's Stadium)", "time_pt": "1:05 PM PT", "source": "49ERS-2026"},
+    {"week": 4, "date": "2026-10-04", "day": "Sun", "opponent": "Denver Broncos (Levi's Stadium)", "time_pt": "1:25 PM PT", "source": "49ERS-2026"},
+    {"week": 5, "date": "2026-10-11", "day": "Sun", "opponent": "at Seattle Seahawks", "time_pt": "1:25 PM PT", "source": "49ERS-2026"},
+    {"week": 6, "date": "2026-10-19", "day": "Mon", "opponent": "Washington Commanders (Levi's Stadium)", "time_pt": "5:15 PM PT", "source": "49ERS-2026"},
+    {"week": 7, "date": "2026-10-25", "day": "Sun", "opponent": "at Atlanta Falcons", "time_pt": "10:00 AM PT", "source": "49ERS-2026"},
+    {"week": 8, "date": null, "day": null, "opponent": "BYE", "time_pt": null, "source": "49ERS-2026"},
+    {"week": 9, "date": "2026-11-08", "day": "Sun", "opponent": "Las Vegas Raiders (Levi's Stadium)", "time_pt": "1:25 PM PT", "source": "49ERS-2026"},
+    {"week": 10, "date": "2026-11-15", "day": "Sun", "opponent": "at Dallas Cowboys", "time_pt": "1:25 PM PT", "source": "49ERS-2026"},
+    {"week": 11, "date": "2026-11-22", "day": "Sun", "opponent": "Minnesota Vikings (Estadio Banorte, Mexico City)", "time_pt": "5:20 PM PT", "source": "49ERS-2026"},
+    {"week": 12, "date": "2026-11-29", "day": "Sun", "opponent": "Seattle Seahawks (Levi's Stadium)", "time_pt": "1:25 PM PST", "source": "49ERS-2026"},
+    {"week": 13, "date": "2026-12-06", "day": "Sun", "opponent": "at New York Giants", "time_pt": "10:00 AM PT", "source": "49ERS-2026"},
+    {"week": 14, "date": "2026-12-13", "day": "Sun", "opponent": "Los Angeles Rams (Levi's Stadium)", "time_pt": "1:25 PM PT", "source": "49ERS-2026"},
+    {"week": 15, "date": "2026-12-17", "day": "Thu", "opponent": "at Los Angeles Chargers", "time_pt": "5:15 PM PT", "source": "49ERS-2026"},
+    {"week": 16, "date": "2026-12-27", "day": "Sun", "opponent": "at Kansas City Chiefs", "time_pt": "1:25 PM PT", "source": "49ERS-2026"},
+    {"week": 17, "date": "2027-01-03", "day": "Sun", "opponent": "Philadelphia Eagles (Levi's Stadium)", "time_pt": "5:20 PM PT", "source": "49ERS-2026"},
+    {"week": 18, "date": "2027-01-10", "day": "Sun", "opponent": "at Arizona Cardinals", "time_pt": "TBD — not confirmed on 49ers.com at fetch time; do not treat as verified", "source": "FLAGGED-UNVERIFIED"}
+  ],
+  "forty_niners_2026_preseason": [
+    {"date": "2026-08-13", "opponent": "Tennessee Titans (Levi's Stadium)", "status": "secondary-summary — confirm on 49ers.com printable schedule before relying on time", "source": "FLAGGED-UNVERIFIED"},
+    {"date": "2026-08-20", "opponent": "at Los Angeles Chargers", "status": "secondary-summary — confirm on 49ers.com printable schedule before relying on time", "source": "FLAGGED-UNVERIFIED"},
+    {"date": "2026-08-27", "opponent": "at Las Vegas Raiders", "status": "secondary-summary — confirm on 49ers.com printable schedule before relying on time", "source": "FLAGGED-UNVERIFIED"}
+  ],
+  "stanford_2026": [
+    {"date": "2026-08-29", "opponent": "Hawai'i (home)", "time": "4:00 PM PT", "source": "STANFORD-2026"},
+    {"date": "2026-09-04", "opponent": "Miami (home)", "time": "6:00 PM PT", "source": "STANFORD-2026"},
+    {"date": "2026-09-19", "opponent": "at Duke", "time": "1:00 PM PT", "source": "STANFORD-2026"},
+    {"date": "2026-09-26", "opponent": "Georgia Tech (home)", "time": "7:30 PM PT", "source": "STANFORD-2026"},
+    {"date": "2026-10-03", "opponent": "at Wake Forest", "time": "TBA at announcement; later published — see gostanford.com", "source": "STANFORD-2026"},
+    {"date": "2026-10-10", "opponent": "at Notre Dame", "time": "12:30 PM PT", "source": "STANFORD-2026"},
+    {"date": "2026-10-17", "opponent": "Elon (home, Reunion Homecoming)", "time": "4:30 PM PT", "source": "STANFORD-2026"},
+    {"date": "2026-10-23", "opponent": "NC State (home)", "time": "7:30 PM PT", "source": "STANFORD-2026"},
+    {"date": "2026-10-31", "opponent": "at Louisville", "time": "TBA at announcement; later published — see gostanford.com", "source": "STANFORD-2026"},
+    {"date": "2026-11-14", "opponent": "at Virginia Tech", "time": "TBA at announcement; later published — see gostanford.com", "source": "STANFORD-2026"},
+    {"date": "2026-11-21", "opponent": "at California — 129th Big Game", "time": "TBA at announcement; later published — see gostanford.com", "source": "STANFORD-2026"},
+    {"date": "2026-11-28", "opponent": "SMU (home)", "time": "12:30 PM PT (later update)", "source": "STANFORD-2026"}
+  ],
+  "cal_2026": [
+    {"date": "2026-09-05", "opponent": "UCLA (home)", "time": "7:30 PM PT", "source": "CAL-2026"},
+    {"date": "2026-09-12", "opponent": "at Syracuse", "time": "12:30 PM PT", "source": "CAL-2026"},
+    {"date": "2026-09-19", "opponent": "Wagner (home)", "time": "12:30 PM PT", "source": "CAL-2026"},
+    {"date": "2026-09-25", "opponent": "Clemson (home)", "time": "7:30 PM PT", "source": "CAL-2026"},
+    {"date": "2026-10-03", "opponent": "at UNLV", "time": "12:30 PM PT", "source": "CAL-2026"},
+    {"date": "2026-10-10", "opponent": "Virginia Tech (home)", "time": "12:30 PM PT", "source": "CAL-2026"},
+    {"date": "2026-10-17", "opponent": "Wake Forest (home)", "time": "7:30 PM PT", "source": "CAL-2026"},
+    {"date": "2026-10-24", "opponent": "at SMU", "time": "9:00 AM PT", "source": "CAL-2026"},
+    {"date": "2026-10-31", "opponent": "at NC State", "time": "9:00 AM PT", "source": "CAL-2026"},
+    {"date": "2026-11-14", "opponent": "at Virginia", "time": "12:30 PM PT", "source": "CAL-2026"},
+    {"date": "2026-11-21", "opponent": "Stanford (home) — Big Game", "time": "4:30 PM PT", "source": "CAL-2026"},
+    {"date": "2026-11-28", "opponent": "Pittsburgh (home)", "time": "4:30 PM PT", "source": "CAL-2026"}
+  ],
+  "mlb_2026_boundaries": [
+    {"event": "Spring Training begins", "date": "2026-02-20", "source": "MLB-2026-SPRING"},
+    {"event": "Opening Night (Giants vs Yankees)", "date": "2026-03-25", "source": "MLB-2026-OPENING"},
+    {"event": "Traditional Opening Day", "date": "2026-03-26", "source": "MLB-2026-OPENING"},
+    {"event": "Athletics opener (at Blue Jays)", "date": "2026-03-27", "source": "MLB-2026-OPENING"},
+    {"event": "All-Star Game (Philadelphia)", "date": "2026-07-14", "source": "secondary-summary — confirm on MLB.com master schedule"},
+    {"event": "Regular-season finale", "date": "2026-09-27", "source": "secondary-summary of MLB master schedule — confirm on MLB.com"},
+    {"event": "Wild Card Series begins", "date": "2026-09-29", "source": "secondary-summary — confirm on MLB.com postseason release"},
+    {"event": "World Series Game 1 / possible Game 7", "date": "2026-10-23 / 2026-10-31", "source": "secondary-summary — confirm on MLB.com postseason release"}
+  ],
+  "mlb_2027_boundaries": [
+    {"event": "Opening Day (league-wide, per club releases)", "date": "2027-03-25", "source": "MLB-2027-ORIOLES / MLB-2027-BREWERS / MLB-2027-RAYS"},
+    {"event": "Regular-season final series (Orioles/Nationals examples)", "date": "2027-09-24 to 2027-09-26", "source": "MLB-2027-ORIOLES / MLB-2027-BREWERS"}
+  ]
+}

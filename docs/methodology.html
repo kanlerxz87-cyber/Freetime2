@@ -1,0 +1,14 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Methodology & Day Planner | Freetime2</title><link rel="stylesheet" href="assets/style.css"></head><body>
+<header><a href="index.html">Freetime2 — Bay Area Sports Radio Free-Time Planner</a></header>
+<nav><a href="index.html">Dashboard</a><a href="executive-summary.html">Executive Summary</a><a href="windows.html">Vacation Windows</a><a href="schedules.html">2026 Schedules</a><a href="radio.html">Bay Area Radio</a><a href="methodology.html">Methodology & Day Planner</a><a href="flagged.html">Flagged for Review</a></nav>
+<main><h1>Methodology & Day Planner</h1>
+<div class="card"><h2>How free time is calculated</h2><ol><li>Mark season blocks busy (MLB Spring Training→World Series; NFL preseason→Super Bowl; NCAAF regular season→CFP title).</li><li>For specific verified game dates, add game blocks: start time + average duration.</li><li>Free = minutes outside all blocks (PT). For vacation purposes, any date inside a season block = NOT free, even if hourly gaps exist.</li></ol>
+<h3>Average durations (researched, not user guesses)</h3><table><tr><th>Sport</th><th>Avg real-time duration</th><th>Halftime</th><th>Notes</th></tr>
+<tr><td>MLB regular season</td><td>~170 min (2h50m)</td><td>—</td><td>2024 pitch-clock era; postseason ~185 min</td></tr>
+<tr><td>NFL</td><td>~192 min (3h12m)</td><td>~12 min</td><td>60-min clock; range ~3h02m–3h12m</td></tr>
+<tr><td>NCAAF</td><td>~204 min (3h24m)</td><td>~20 min</td><td>Longer than NFL (clock rules + halftime)</td></tr></table>
+<p class="small">Your suggested 150/180-min figures understate current averages; the planner uses researched values. Add pregame/postgame buffers separately if you want conservative estimates.</p></div>
+<div class="card"><h2>Day Planner — pick any day (PT)</h2>
+<p><button class="btn" onclick="step(-1)">← Yesterday</button> <button class="btn" onclick="step(1)">Tomorrow →</button> <input type="date" id="dateInput"> <button class="btn secondary" onclick="renderDay()">Go</button></p>
+<div id="dayDetail"></div><h3>Month calendar (click a day)</h3><div id="cal"></div>
+<p class="small">Calendar colors: green=FREE, red=BUSY (season block), yellow=GAME DAY (specific verified game). 2027–2029 blocks are ESTIMATED — see Flagged page.</p></div></main><footer>Freetime2 • Times in PT (America/Los_Angeles) unless noted • ESTIMATED blocks are not confirmed schedules • See <a href="flagged.html">Flagged for Review</a></footer><script src="assets/app.js"></script></body></html>
