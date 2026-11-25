@@ -81,4 +81,8 @@ Live GitHub Pages Target: https://kanlerxz87-cyber.github.io/Freetime2/
 ## Pull request / merge record
 
 - PRs #1 (9636f11d), #3 (b1591c47), #4 (b1591c47), #5 (a2ab7210), #6 (a2ab7210), #8 (5db889e3) merged to main before this session.
-- PR for this session: opened from `arena/458f184e-freetime2` after the merge commit; merge result appended below.
+- **Session arena-458f184e PR: https://github.com/kanlerxz87-cyber/Freetime2/pull/9 — MERGED 2026-11-25T14:20:52Z (merge commit `ebd6dd8`).**
+  - Branch rebased/merged latest main (`00c5f5d`); zero files discarded; root unified dashboard extended (link to `/docs/` library).
+  - Checks re-run clean at `64cc2dc`: `python3 scripts/verify_site.py` PASS, `node scripts/test.mjs` PASS, `node scripts/check-links.mjs` PASS, `node --check` on touched JS PASS, JSON parse PASS, all pages HTTP 200 locally.
+  - **GitHub Pages: `status: built` for commit `ebd6dd8`** (source `main` /, https enforced) — deploy confirmed live at https://kanlerxz87-cyber.github.io/Freetime2/ (root unified dashboard + `/docs/` library + `/scoreboard/`). Total duration ~24.7s.
+  - Official verified overlays ingested (2027 Giants/Athletics via MLB Stats API, 2026 NFL Weeks 12–18, Super Bowl LXI verified, 38 WW1 broadcasts, Stanford/Cal verified rows); all other rows labeled ESTIMATED.
