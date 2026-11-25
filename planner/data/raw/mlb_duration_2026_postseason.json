@@ -1,0 +1,1 @@
+{"source":"https://statsapi.mlb.com/api/v1/schedule?sportId=1&season=2026&gameType=F,D,L,W&hydrate=gameInfo,linescore&fields=dates,games,gamePk,gameType,status,detailedState,gameInfo,gameDurationMinutes,linescore,currentInning,scheduledInnings","games_with_duration":41,"mean_all":182.0,"mean_nine_inning":180.2,"nine_inning_games":38}

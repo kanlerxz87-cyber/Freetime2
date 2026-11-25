@@ -1,0 +1,89 @@
+SOURCE: https://calbears.com/sports/football/schedule/text
+FETCHED_UTC: 2026-11-25T14:22:32.186749+00:00
+
+California Golden Bears Athletics 2026 Football Schedule
+ Overall 3-8 0.273 
+ Conference 2-6 0.250 
+ Streak L5 
+ Home 2-4 
+ Away 1-4 
+ Neutral 0-0 
+ Date 
+ Time 
+ At 
+ Opponent 
+ Location 
+ Tournament 
+ Result 
+ Sep 5 (Sat)
+ 7:30 PM
+ Home 
+ UCLA
+ Berkeley, Calif. (Databricks Field at California Memorial Stadium)
+ L 24-45
+ Sep 12 (Sat)
+ 12:30 PM
+ Away 
+ Syracuse
+ Syracuse, N.Y. (JMA Wireless Dome)
+ W 21-18
+ Sep 19 (Sat)
+ 12:30 PM
+ Home 
+ Wagner
+ Berkeley, Calif. (Databricks Field at California Memorial Stadium)
+ W 49-7
+ Sep 25 (Fri)
+ 7:30 PM
+ Home 
+ Clemson
+ Berkeley, Calif. (Databricks Field at California Memorial Stadium)
+ L 10-24
+ Oct 3 (Sat)
+ 12:30 PM
+ Away 
+ UNLV
+ Las Vegas, Nev. (Allegiant Stadium)
+ L 31-39
+ Oct 10 (Sat)
+ 12:30 PM
+ Home 
+ Virginia Tech
+ Berkeley, Calif. (Databricks Field at California Memorial Stadium)
+ W 25-20
+ Oct 17 (Sat)
+ 7:30 PM
+ Home 
+ Wake Forest
+ Berkeley, Calif. (Databricks Field at California Memorial Stadium)
+ L 7-41
+ Oct 24 (Sat)
+ 9 AM
+ Away 
+ SMU
+ Dallas, Texas (Gerald J. Ford Stadium)
+ L 20-59
+ Oct 31 (Sat)
+ 9 AM
+ Away 
+ NC State
+ Raleigh, NC 
+ L 10-31
+ Nov 14 (Sat)
+ 12:30 PM
+ Away 
+ Virginia
+ Charlottesville, Va. (Scott Stadium)
+ L 7-36
+ Nov 21 (Sat)
+ 4:30 PM
+ Home 
+ Stanford
+ Berkeley, Calif. (Databricks Field at California Memorial Stadium)
+ L 28-44
+ Nov 28 (Sat)
+ 4:30 PM
+ Home 
+ Pittsburgh
+ Berkeley, Calif. (Databricks Field at California Memorial Stadium)
+ -
