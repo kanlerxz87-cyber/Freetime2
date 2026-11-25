@@ -1,0 +1,8 @@
+export const zone='America/Los_Angeles';
+export const day = t => new Intl.DateTimeFormat('en-CA',{timeZone:zone,year:'numeric',month:'2-digit',day:'2-digit'}).format(t);
+export const clock = t => new Intl.DateTimeFormat('en-US',{timeZone:zone,hour:'numeric',minute:'2-digit',timeZoneName:'short'}).format(t);
+export function shift(d,n){return new Date(Date.parse(d+'T12:00:00Z')+n*86400000).toISOString().slice(0,10)}
+export function midnight(d){const t=Date.parse(d+'T08:00:00Z');return new Intl.DateTimeFormat('en-GB',{timeZone:zone,hour:'2-digit',hourCycle:'h23'}).format(t)==='01'?t-3600000:t}
+export const mlbUrl=(a,b)=>`https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=${a}&endDate=${b}`;
+export function mlb(data){return data.dates.flatMap(d=>d.games.filter(g=>g.status.detailedState!=='Cancelled').map(g=>({date:g.officialDate,title:`${g.teams.away.team.name} at ${g.teams.home.team.name}`,category:'MLB',detail:g.seriesDescription,start:g.status.startTimeTBD||/Postponed|Suspended|TBD/.test(g.status.detailedState)?null:g.gameDate,minutes:158,priority:[g.teams.away.team.id,g.teams.home.team.id].some(id=>[133,137].includes(id)),source:`https://statsapi.mlb.com/api/v1/schedule?gamePk=${g.gamePk}`})))}
+export function intervals(events,a,b){const busy=[];for(const [s,e] of events.map(row=>[Date.parse(row.start),Date.parse(row.start)+row.minutes*60000]).filter(([s,e])=>s<b&&e>a).map(([s,e])=>[Math.max(s,a),Math.min(e,b)]).sort((x,y)=>x[0]-y[0])){const last=busy.at(-1);if(last&&s<=last[1])last[1]=Math.max(last[1],e);else busy.push([s,e])}const gaps=[];let cursor=a;for(const [s,e] of busy){if(s>cursor)gaps.push([cursor,s]);cursor=e}if(cursor<b)gaps.push([cursor,b]);return {busy,gaps}}

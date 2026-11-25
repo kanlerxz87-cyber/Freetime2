@@ -14,14 +14,20 @@ A verified, source-linked static dashboard for **Outer Sunset, San Francisco (ZI
   - Because Super Bowl LXI (Feb 14, 2027) ends just **4 days** before MLB Spring Training begins (Feb 19, 2027), there is **no continuous 14-day or 21-day 100% zero-game streak** in 2027–2029.
   - Best strict low-impact 2–3 week window in 2027: **Feb 1 – Feb 18, 2027** (18 days with **16 zero-game days**, interrupted only by Pro Bowl Games & Super Bowl LXI), including **13 consecutive days (Feb 1–13)** with zero High-Priority Bay Area / Westwood One broadcasts.
 
-## Pages & Features
+## Primary Dashboard Pages (Session `5db889e3`, Repo Root `/`)
 
 - **`index.html`** — Executive Summary, 2027–2029 vacation KPI cards, today's PST free-time snapshot, and researched average game durations/halftimes table.
 - **`scoreboard.html`** — Interactive MLB/NFL-style Daily Scoreboard & Monthly Calendar (Nov 25, 2026 – Dec 31, 2029) with Yesterday/Today/Tomorrow buttons, visual 24-hour PST timeline, exact PST free-time windows, filter modes, and optional +30m pre/post radio buffer.
 - **`vacation-windows.html`** — Deep 2027, 2028, and 2029 Vacation Window Finder with 1-week, 2-week, and 3-week rankings and a clickable 12-month calendar heatmap.
-- **`schedules.html`** — Searchable, filterable, CSV-exportable master schedule tables covering all verified & estimated events with per-row official source links.
+- **`schedules.html`** — Searchable, filterable, CSV-exportable master schedule tables covering all 2,238 verified & estimated events (including all 195 SF Giants + 193 Athletics + 2,905 all-MLB 2027 daily counts, all remaining 2026 NFL Weeks 12–18 & Playoffs, Westwood One, Stanford & Cal) with per-row official source links.
 - **`radio-bayarea.html`** — Outer Sunset SF (94122) AM/FM Sports Radio Reception Directory (KNBR 680/104.5, KSAN 107.7, KTCT 1050, KSFO 810, KNEW 960, KGMZ 95.7, etc.) and verified 2026–27 Westwood One Sports NFL schedule.
-- **`flagged-review.html`** — Transparent verification audit listing all unreleased future schedules, TBD start times, historical NCAAF press-release conflicts, and radio reception caveats.
+- **`flagged-review.html`** — Transparent verification audit listing all 11 flagged irregularities, unreleased future schedules, TBD start times, historical NCAAF press-release conflicts, and radio reception caveats.
+
+## Companion Multi-Session Views (Preserved Intact)
+
+- **`planner.html`** (Session `9636f11d`) — Browser-live MLB Stats API single-page planner (`docs/app.mjs`, `docs/model.mjs`, `docs/data.mjs`).
+- **`docs/index.html`** (Session `b1591c47`) — Supplementary verified-data pages (`docs/executive-summary.html`, `windows.html`, `schedules.html`, `radio.html`, `methodology.html`, `flagged.html`, `VERIFICATION.md`).
+- **`scoreboard/index.html`** (Session `a2ab7210`) — Self-contained scoreboard with verified snapshot (`scoreboard/data/snapshot.json`, `scoreboard/schedule.html`, `mlb.html`, `nfl.html`, `ncaaf.html`, `radio.html`, `research.html`, `flagged.html`).
 
 ## Reproducing & Verifying Locally
 
@@ -29,4 +35,8 @@ A verified, source-linked static dashboard for **Outer Sunset, San Francisco (ZI
 python3 scripts/build_mlb_2027.py
 python3 scripts/build_dataset.py
 python3 scripts/verify_site.py
+node scripts/test.mjs
+node scripts/check-links.mjs
 ```
+
+Coordination board: `COORDINATION.md`.
