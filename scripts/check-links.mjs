@@ -7,7 +7,8 @@
 import { readFileSync, readdirSync, existsSync, statSync } from "node:fs";
 import { join, dirname, resolve } from "node:path";
 
-const root = resolve(new URL("..", import.meta.url).pathname, "scoreboard");
+const repo = resolve(new URL("..", import.meta.url).pathname);
+const root = resolve(repo, "scoreboard");
 const problems = [];
 const ok = [];
 
@@ -57,7 +58,7 @@ for (const f of htmlFiles) {
     if (raw.startsWith("#")) continue;
     const [pathPart, hash] = raw.split("#");
     const target = resolve(dirname(f), pathPart.split("?")[0]);
-    if (!target.startsWith(root)) { problems.push("Link escapes scoreboard/: " + raw + " in " + f); continue; }
+    if (!target.startsWith(repo)) { problems.push("Link escapes the repository: " + raw + " in " + f); continue; }
     if (!existsSync(target)) { problems.push("Broken internal link: " + raw + " in " + f.replace(root, "scoreboard")); continue; }
     if (hash && /flagged\.html$/.test(pathPart) && /^F\d+$/.test(hash) && !flagIds.has(hash)) {
       problems.push("Broken flag anchor: " + raw + " in " + f.replace(root, "scoreboard"));

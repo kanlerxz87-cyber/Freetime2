@@ -1,0 +1,41 @@
+{
+  "definition": "FREE = no MLB (all 30 clubs incl. Spring Training/postseason), no NFL (incl. preseason/postseason/Super Bowl), no Stanford/Cal NCAAF (incl. bowls/CFP), no Westwood One national NFL radio game on air. Westwood One games are a subset of NFL dates, so they never extend a busy block beyond the NFL block. Other Westwood One properties (NCAA basketball, golf, soccer, etc.) and other Bay Area sports radio (e.g. Warriors/Sharks) are OUTSIDE this core definition and listed as flagged additional risks.",
+  "strict_vs_practical": "STRICT = all 30 MLB clubs incl. Spring Training count as busy. PRACTICAL = only Giants/Athletics/49ers/Stanford/Cal/Westwood One national count; other clubs' Spring Training ignored. The practical Feb window is the only 2-3+ week candidate.",
+  "windows": [
+    {
+      "id": "W-2026-FEB", "label": "Feb 9-19, 2026 (strict) / Feb 9-Mar 24, 2026 (practical)", "status": "VERIFIED-BOUNDARIES",
+      "strict": {"start": "2026-02-09", "end": "2026-02-19", "days": 11, "why": "After Super Bowl LX (Feb 8, 2026) and before Spring Training (Feb 20, 2026). Bounded by verified dates."},
+      "practical": {"start": "2026-02-09", "end": "2026-03-24", "days": 44, "why": "Extends to Opening Night Mar 25 if other clubs' Spring Training is ignored. Giants/A's Spring Training games would still occur in this span — check club schedules."},
+      "sources": ["SB-DATES", "MLB-2026-SPRING", "MLB-2026-OPENING"]
+    },
+    {
+      "id": "W-2027-FEB", "label": "Feb 15-18, 2027 (strict, ESTIMATED Spring Training start) / Feb 15-Mar 24, 2027 (practical)", "status": "MIXED-VERIFIED-ESTIMATED",
+      "strict": {"start": "2027-02-15", "end": "2027-02-18", "days": 4, "why": "After Super Bowl LXI (Feb 14, 2027, verified host/date with Feb 15 discrepancy flagged) and before ESTIMATED 2027 Spring Training start (~Feb 19, pattern-based, NOT released)."},
+      "practical": {"start": "2027-02-15", "end": "2027-03-24", "days": 38, "why": "Extends to Opening Day Mar 25, 2027 (verified via MLB club releases) if other clubs' Spring Training ignored."},
+      "sources": ["SB-DATES", "MLB-2027-ORIOLES"]
+    },
+    {
+      "id": "W-2028-FEB", "label": "Feb 14-17, 2028 (strict, ESTIMATED) / Feb 14-Mar 2028 (practical, ESTIMATED Opening Day)", "status": "ESTIMATED",
+      "strict": {"start": "2028-02-14", "end": "2028-02-17", "days": 4, "why": "After Super Bowl LXII (Feb 13, 2028, announced host/date) and before ESTIMATED Spring Training start. No official 2028 MLB schedule released at build time."},
+      "practical": {"start": "2028-02-14", "end": "2028-03-23", "days": 39, "why": "ESTIMATED to late-March Opening Day pattern. Must be re-verified when MLB releases 2028 schedule."},
+      "sources": ["SB-DATES"]
+    },
+    {
+      "id": "W-2029-FEB", "label": "Feb 12-15, 2029 (strict, ESTIMATED) / Feb 12-Mar 2029 (practical, ESTIMATED)", "status": "ESTIMATED",
+      "strict": {"start": "2029-02-12", "end": "2029-02-15", "days": 4, "why": "After Super Bowl LXIII (Feb 11, 2029, announced host/date) and before ESTIMATED Spring Training start. No official 2029 schedules released."},
+      "practical": {"start": "2029-02-12", "end": "2029-03-22", "days": 39, "why": "ESTIMATED to late-March Opening Day pattern. Must be re-verified when schedules release."},
+      "sources": ["SB-DATES"]
+    }
+  ],
+  "busy_blocks_estimated_future": {
+    "note": "2027-2029 NFL/NCAAF/MLB game-by-game schedules NOT released at build time. Blocks below are ESTIMATES from official season-structure patterns (NFL 18-week regular season Sep-Jan + playoffs Jan-Feb; NCAAF late Aug-early Dec + bowls/CFP Dec-Jan; MLB late Mar-late Sep + postseason Oct). Do NOT book non-refundable travel on estimated blocks without re-checking official releases.",
+    "nfl": "Preseason early-mid Aug; regular season early-mid Sep to early Jan; playoffs mid-Jan to mid-Feb (Super Bowl dates above).",
+    "ncaaf": "Regular season late Aug to late Nov/early Dec (Stanford/Cal 2026 pattern: Aug 29-Nov 28); bowls/CFP mid-Dec to late Jan (2026-27 CFP title Jan 25, 2027 verified).",
+    "mlb": "Spring Training mid-late Feb to late Mar; regular season late Mar to late Sep (2027: Mar 25-Sep 26 verified); postseason late Sep/early Oct to late Oct."
+  },
+  "daily_free_time_method": {
+    "avg_durations_min": {"MLB_regular": 170, "MLB_postseason": 185, "NFL": 192, "NCAAF": 204, "note": "Research-based averages (see DUR-* sources). User-suggested 150/180 understates current averages; site uses researched values and shows the math. Add pregame/postgame buffer separately if desired."},
+    "halftime_min": {"NFL": 12, "NCAAF": 20},
+    "example": "1:05 PM PT NFL kickoff + 192 min = ~4:17 PM PT expected end (before OT/delays). 7:05 PM PT MLB first pitch + 170 min = ~9:55 PM PT expected end. Free = minutes outside all such blocks on that date."
+  }
+}

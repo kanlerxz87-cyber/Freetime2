@@ -35,8 +35,8 @@
 
   async function renderNCAAF() {
     const s = await snapshot();
-    const stan = s.events.filter((e) => e.category === "NCAAF" && e.id.indexOf("STAN") > -1);
-    const cal = s.events.filter((e) => e.category === "NCAAF" && e.id.indexOf("CAL") > -1);
+    const stan = s.events.filter((e) => e.category === "NCAAF" && (e.id.indexOf("STAN") > -1 || e.id.indexOf("BIG") > -1));
+    const cal = s.events.filter((e) => e.category === "NCAAF" && (e.id.indexOf("CAL") > -1 || e.id.indexOf("BIG") > -1));
     $("stanTable").querySelector("thead").innerHTML = EVENT_HEAD;
     $("stanTable").querySelector("tbody").innerHTML = eventRows(stan);
     $("calTable").querySelector("thead").innerHTML = EVENT_HEAD;

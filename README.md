@@ -1,38 +1,35 @@
-# Free Time Vacation Planner
+# Free Time Vacation
 
-A static GitHub Pages site (`docs/`) that shows when a Bay Area sports fan is free: which MLB, NFL and college games are on, and which Pacific-time blocks are free.
+[Open the GitHub Pages planner](https://kanlerxz87-cyber.github.io/Freetime2/).
 
-**Live site:** https://kanlerxz87-cyber.github.io/Freetime2/
+The planner shows vacation candidates, a 2026–2029 daily scoreboard in Pacific time, an AM/FM reference for San Francisco ZIP 94122, and a coverage audit. It does not certify game-free days. The strongest preliminary candidate is February 15–18, 2027, between the published Super Bowl and listed spring games. A full week is not verified.
 
-## Pages
+The scoreboard reads MLB's official Stats API directly in the browser and keeps a sourced snapshot of selected football dates and Westwood One network listings. It separates confirmed starts from estimated ends and does not assume local radio carriage. Unverified times are blank; unknown starts and incomplete coverage are called out. See **Flagged for Review** before making travel decisions.
 
-| Page | What it shows |
-|---|---|
-| `index.html` | Executive summary, verified facts, what is not verified, and live MLB runs with no Giants/Athletics games |
-| `schedule.html` | Daily scoreboard with yesterday / today / tomorrow buttons, timeline and free-time blocks |
-| `mlb.html` | All 30 MLB clubs (Giants and Athletics flagged high priority) |
-| `nfl.html` | Westwood One national NFL radio slate and 49ers 2026 games |
-| `ncaaf.html` | Stanford and Cal 2026 games and results |
-| `radio.html` | Where games air, with verified and unverified station facts |
-| `research.html` | Game-length averages, verification method and source list |
-| `flagged.html` | Flagged for Review: conflicts and open items, with source links |
+Run `node scripts/test.mjs` and `node --check docs/app.mjs` locally, then serve the repository root over HTTP to preview. No build dependencies are required.
 
-## Data
+## Supplementary verified-data pages (session b1591c47)
 
-- `docs/data/snapshot.json`: hand-verified rows, each with `source_url`, plus the 13 flags (`irregularities`).
-- `docs/data/mlb-teams.json`: the 30 MLB clubs from the MLB Stats API.
-- MLB games are loaded live in the browser from `statsapi.mlb.com` (official MLB Stats API).
+- `docs/index.html` — dashboard + source registry (official sources with links)
+- `docs/executive-summary.html` — strict vs practical vacation windows
+- `docs/windows.html` — 2026–2029 windows + busy blocks
+- `docs/schedules.html` — 2026 49ers / Stanford / Cal tables (official sources)
+- `docs/radio.html` — KNBR 680/104.5 + Westwood One 2026 slate
+- `docs/methodology.html` — Day Planner (yesterday/tomorrow, PT free-time math)
+- `docs/flagged.html` — Flagged for Review
+- `data/sources.json`, `data/schedules_2026.json`, `data/windows_2026_2029.json` — structured data
+- `VERIFICATION.md` — line-by-line verification log
 
-Nothing is inferred. A value that could not be confirmed from an official source is blank or labelled UNVERIFIED. Times are Pacific.
+Key caveat: 2027–2029 NFL/NCAAF/MLB game-by-game schedules were not released at build time; future blocks are ESTIMATED and must be re-verified. See `VERIFICATION.md`.
 
-## Build check
+## Scoreboard site, verified snapshot (session a2ab7210)
 
-```sh
-node scripts/check-links.mjs
-```
+A second, self-contained site lives in `scoreboard/` (served at [`/Freetime2/scoreboard/`](https://kanlerxz87-cyber.github.io/Freetime2/scoreboard/)):
 
-The check fails if any internal link is broken, any JSON or JS file does not parse, or any data row lacks an https source link.
+- `scoreboard/index.html`: executive summary, verified facts and open items, live 2027 MLB runs with no Giants/Athletics game
+- `scoreboard/schedule.html`: day-by-day scoreboard (yesterday / today / tomorrow) with PT timeline and free blocks; a day is never shown as FREE unless every category is covered
+- `scoreboard/mlb.html`, `nfl.html`, `ncaaf.html`, `radio.html`, `research.html`, `flagged.html`
+- `scoreboard/data/snapshot.json`: 76 hand-verified rows, each with a source link, and 13 flags
+- Build check: `node scripts/check-links.mjs` (internal links, JSON/JS parse, every row has a source)
 
-## Coordination
-
-Parallel sessions coordinate on `COORDINATION.md`. Read it before starting work.
+Coordination board: `COORDINATION.md`.
