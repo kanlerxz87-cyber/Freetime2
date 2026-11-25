@@ -1,31 +1,14 @@
-# COORDINATION.md — Freetime2 Shared Task Board
+# Coordination
 
-> **Protocol:** Before starting, every session reads this file. Claim a task by writing your
-> session ID and file scope, then commit and push that claim immediately. Never start a task
-> another session has claimed. Keep scopes non-overlapping. If a task requires changing a file
-> owned by another session, log the request here instead of editing it. Make small, frequent
-> commits; run `git pull --rebase` before every push. When a task is finished, record sources,
-> verification, and irregularities, then mark it done. Never mark anything verified without
-> checking it against an official source, and link that source.
+Read this board before work. Claim a non-overlapping file scope with session ID and timestamp; commit and push the claim. Do not edit another session's files; log requests here. Make small commits and pull --rebase before pushing. Resolve and record conflicts without discarding others' work. Claims idle for 60 minutes without a commit can be taken over with a handoff note. Record official sources, verification and irregularities, and publish needs-review items on the Flagged for Review page. Shared outputs belong to the integration session.
 
-## Sessions
-
-| Session ID | Branch | Scope (files) | Status |
-|---|---|---|---|
-| 1427c27a | `arena/1427c27a-freetime2` | `COORDINATION.md`, `README.md`, `index.html`, `calendar.html`, `mlb.html`, `nfl.html`, `ncaaf.html`, `radio.html`, `methodology.html`, `flagged.html`, `assets/*`, `data/*`, `.nojekyll` | **active — sole session; claimed all tasks below** |
-
-## Task board
-
-| # | Task | Status | Owner | Files touched | Sources / verification | Irregularities |
-|---|---|---|---|---|---|---|
-| 1 | Research official 2026 schedules (MLB, NFL, Stanford, Cal, Westwood One, KNBR) | done | 1427c27a | `assets/data.js`, `data/schedules.json`, `methodology.html` | MLB.com press releases (2026 schedule Aug 26 2025; spring training Jan 21 2026; All-Star page; World Series FAQ); media.nfl.com 2026 schedule (May 14 2026); 49ers.com schedule; gostanford.com 2026 schedule; calbears.com 2026 schedule; westwoodonesports.com NFL schedule; thesportsleader.com KNBR schedules; mlb.com Giants/Athletics broadcast partners | See Flagged for Review page |
-| 2 | Research 2027–2029 status (released vs. estimated) | done | 1427c27a | `assets/data.js`, `flagged.html` | MLB 2027 announced Jul 16 2026 (mlb.com press releases); MLB 2028/2029 not announced (mlbschedule.net status check Oct 2026; MLB 2029 154-game plan is a bargaining proposal only, AP Oct 8 2026); NFL 2027 not released (status check Nov 24 2026; May 2027 projected) | 2028/2029 all ESTIMATED |
-| 3 | Research game durations + halftimes | done | 1427c27a | `methodology.html`, `assets/data.js` | MLB 2:38 avg 2025 (MLB pace-of-play report via Lines.com); NFL 3:12 avg; NCAAF 3:27 avg 2024 FBS; NFL halftime 12 min; NCAA halftime 20 min | User estimates (150/180) updated to verified averages |
-| 4 | Build GitHub Pages site (landing + subpages, tables, calendar scoreboard) | in progress | 1427c27a | `*.html`, `assets/*` | All rows carry official source links; unverified left blank + flagged | — |
-| 5 | Vacation-window analysis 2027–2029 (1/2/3-week free windows) | in progress | 1427c27a | `index.html`, `calendar.html` | Derived from verified season windows; estimates labeled | Spring-training treatment documented |
-| 6 | Final integration: re-verify, check links/build, enable Pages, PR to main, merge | pending | 1427c27a | all | — | — |
+| Task | Status | Owner | Scope | Sources / verification / irregularities |
+|---|---|---|---|---|
+| Integration and research prototype | needs review | 1427c27a (claimed 2026-11-25) | README.md, COORDINATION.md, *.html, assets/*, .nojekyll | Source links appear alongside transcribed rows. Selected 49ers kickoffs checked against [49ers](https://www.49ers.com/schedule/), national on-air listings checked against [Westwood One](https://www.westwoodonesports.com/nfl-schedule/). Date, time, matchup and priority were checked for each of these transcribed rows. Westwood One local carriage is not verified. |
+| Complete all MLB, NFL and college games; local radio survey; vacation windows | needs review | 1427c27a | same integration scope | Not complete. [MLB](https://www.mlb.com/schedule), [NFL](https://www.nfl.com/schedules/), [Stanford](https://gostanford.com/sports/football/schedule), [Cal](https://calbears.com/sports/football/schedule). No free days or 1/2/3-week windows verified. No fabricated fixtures. Duration references are nonofficial. See Flagged for Review. |
+| Site validation / publishing | in progress | 1427c27a | same integration scope | Local static links and JS syntax checked; external links, automated visual tests, final Pages deployment need verification. |
 
 ## Handoff / conflict log
 
-- 2026-11-25 — Session 1427c27a created this board and claimed all tasks (sole session).
-  No other sessions active. No conflicts.
+- 2026-11-25: Session 1427c27a claimed integration and all tasks. Current Arena branch is fixed; separate session-named branches cannot be created. No conflicts observed. Claim pushed in commit 597f66e.
+- This is a deliberately incomplete research prototype, not a verified comprehensive schedule. Source changes and flex scheduling require periodic re-verification.
