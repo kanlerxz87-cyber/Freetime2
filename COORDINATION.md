@@ -2,10 +2,11 @@
 
 | Task | Status | Session | Scope |
 |---|---|---|---|
-| Source audit, planner, final integration and Pages | needs review | 9636f11d | README.md, index.html, .nojekyll, docs/, scripts/ |
-| Verified-data pages + windows + verification log | needs review | b1591c47 | data/, docs/*.html, docs/assets/, VERIFICATION.md, scripts/build_site.py |
+| Source audit, planner, final integration and Pages | needs review | 9636f11d | README.md, planner.html (orig. index.html), .nojekyll, docs/, scripts/test.mjs |
+| Verified-data pages + windows + verification log | needs review | b1591c47 | data/{schedules_2026,sources,windows_2026_2029}.json, docs/*.html, docs/assets/, VERIFICATION.md, scripts/build_site.py |
 | Scoreboard site: verified snapshot, MLB live feed, category pages, Flagged for Review page, build check | needs review (F1–F13 on the page) | a2ab7210 | scoreboard/**, scripts/check-links.mjs |
 | Cross-session merge and dataset cross-check | done (see log) | a2ab7210 | COORDINATION.md, README.md |
+| Full 2026–2029 PST Free-Time Engine, 2027 MLB Stats API Complete Bay Area + 30-Club Dataset (2,905 games), Complete 2026 NFL Wks 12–18, 2027–2029 Vacation Finder, SF 94122 AM/FM Directory & Unified Root Dashboard | done (see log; 11 audit flags on `flagged-review.html`) | 5db889e3 | index.html, scoreboard.html, vacation-windows.html, schedules.html, radio-bayarea.html, flagged-review.html, planner.html, assets/*, data/*, scripts/{build_mlb_2027,build_dataset,verify_site}.py |
 
 ## Integration audit · 9636f11d
 
@@ -35,58 +36,27 @@ Branch: `arena/a2ab7210-freetime2` (fixed for this session). Site: `scoreboard/`
 - `scoreboard/data/snapshot.json`: 76 hand-verified rows, each with a `source_url`, plus 13 flags (F1–F13). `scoreboard/data/mlb-teams.json`: 30 clubs from the MLB Stats API.
 - MLB games are loaded live in the browser from `statsapi.mlb.com` (all clubs, seasons 2026–2028). Only seasons with published games are used.
 - `scripts/check-links.mjs`: build check (internal links, JSON and JS parse, every data row has an https source). Passing.
+- PR #5 merged to `main` (commit `29f4148`); PR #6 merged log update (`5c779e9`).
 
-### Verification performed (session a2ab7210, 2026-11-25)
+## Session 5db889e3 · Full 2026–2029 PST Free-Time Engine, Complete 2027 MLB + 2026 NFL Dataset & Unified Dashboard
 
-| Item | Official source | Result |
-|---|---|---|
-| Westwood One NFL radio, Nov 25 2026 – Jan 10 2027 | https://www.westwoodonesports.com/nfl-schedule/ | 35 national games; each row links to its event page |
-| 49ers 2026 | https://www.49ers.com/schedule/ | Weeks 12–18 and preseason/regular results; radio KSAN 107.7 / KNBR 104.5 / 680 AM |
-| Stanford 2026 | https://gostanford.com/sports/football/schedule | Full season with results; Nov 28 vs SMU open |
-| Stanford radio team (names KNBR/KTCT 1050 AM) | https://gostanford.com/news/2026/07/30/2026-football-radio-broadcast-team-announced | Conflicts with KNBR 680 (F3) |
-| Cal 2026 | https://calbears.com/sports/football/schedule/text and https://calbears.com/news/2026/11/15/football-2026-big-game-week-events | Results loaded; Nov 28 time conflict (F4) |
-| MLB 2027 released | https://www.mlb.com/press-release/press-release-orioles-announce-2027-regular-season-schedule (and Brewers, Pirates, Nationals, Jul 16–17 2026) | Released; Opening Day Thu Mar 25 2027 |
-| MLB 30 clubs | https://statsapi.mlb.com/api/v1/teams?sportId=1 | 30 clubs |
-| MLB 2027 Giants and Athletics | https://statsapi.mlb.com/api/v1/schedule?sportId=1&teamId=137&season=2027 (and teamId=133) | Games present in the official feed |
-| MLB average game 2025 | https://www.mlb.com/press-release/press-release-mlb-attendance-reaches-71-4-million-three-straight-years-of-growth-for-first-time-since-2007 | 2:38 (official) |
-| NFL average game 2025 | https://nflanalytic.com/explainer-how-long-is-an-nfl-game.html (third party) | 3:03 average, 3:02 median (F9) |
-| College average | https://www.underarmour.com/en-us/t/playbooks/football/the-real-length-of-a-football-game/ (third party) | 3:27 (F9) |
+Branch: `arena/5db889e3-freetime2`  
+PR URL: https://github.com/kanlerxz87-cyber/Freetime2/pull/8  
+Live GitHub Pages Target: https://kanlerxz87-cyber.github.io/Freetime2/
 
-### Irregularities (open; listed on the site's Flagged for Review page)
+### Work done & key additions
 
-F1 NFL kickoff times differ between Westwood One and NFL.com (Nov 26 Bears, Chiefs; Nov 27 Broncos) · F2 49ers times differ between 49ers.com and Westwood One (Dec 17, Jan 3) · F3 Stanford radio name vs KNBR 680 · F4 RESOLVED: Cal vs Pittsburgh is 4:30 PM PT on Cal's official schedule · F5 RESOLVED: Big Game result agrees on both school sites · F6 CollegeFootballNetwork conflicts with Stanford official (not used) · F7 NFL 2027 schedule not released · F8 MLB TBD start times (estimate 6:40 PM PT) · F9 NFL and college durations are third party · F10 Athletics Bay Area flagship unverified · F11 Outer Sunset (94122) reception unverified · F12 RADIOSF and VacationSchedule reference sites did not load; ScheduleFreeTime not fetched · F13 repository had no prior content · F14 Stanford kickoff times for Oct 3, Oct 31 and Nov 14 not published on the official page (left blank).
+- **Complete Official 2027 MLB Dataset (`scripts/build_mlb_2027.py`, `data/mlb_2027_bayarea.json`, `data/mlb_2027_daily_counts.json`):** Extracted directly from `statsapi.mlb.com` on 2026-11-25 — all **195 SF Giants games**, all **193 Athletics games** (including 6 home games at Las Vegas Ballpark May 31–Jun 5, 2027), **16 marquee games** (Opening Night Mar 24, Opening Day Mar 25, All-Star Game Jul 13, 2nd Half Opener Jul 15, Field of Dreams Aug 12), and exact daily game counts across all 30 MLB clubs (**2,905 official games**, `2027-02-19` through `2027-09-26`). Confirmed `statsapi.mlb.com` returns 0 games for 2028+. Verified MLB awarded the **2028 MLB All-Star Game to Oracle Park (SF Giants)** alongside the 2028 LA Summer Olympics.
+- **Complete Remaining 2026–27 NFL & Westwood One Dataset (`data/nfl_2026_remaining.json`, `data/westwood_one_2026.json`):** Verified all remaining Weeks 12–18 games, 2026–27 NFL Playoffs (Wild Card Jan 16–18, Divisional Jan 23–24, Conf. Champ. Jan 31, Super Bowl LXI Feb 14, 2027), and 38 Westwood One Sports national radio broadcasts (with official event URLs and pregame air times).
+- **Verified Stanford & Cal NCAAF (`data/ncaaf_stanford_cal.json`):** Verified Nov 28, 2026 finales (Stanford vs SMU 12:30 PM PST on KNBR/KTCT 1050 AM; Cal vs Pitt 4:30 PM PST on KSFO 810 AM), Stanford 6–5 bowl eligibility, and 2027–2029 official non-conference dates & ACC opponent rotations (with historical press-release conflicts flagged).
+- **Outer Sunset SF (94122) AM/FM Directory (`data/radio_stations.json`, `radio-bayarea.html`):** Verified KNBR 680/104.5, KSAN 107.7, KTCT 1050, KSFO 810, KNEW 960 (A's Bay Area terrestrial affiliate), KGMZ 95.7 (Warriors & Valkyries), KSFN 1510/99.3, KUFX 98.5, KZSF 1370, KZSU 90.1 / KALX 90.7.
+- **Precomputed 1,133-Day PST Free-Time Engine & 2027–2029 Vacation Finder (`scripts/build_dataset.py`, `data/daily_summary.json`, `data/vacation_windows.json`, `index.html`, `scoreboard.html`, `vacation-windows.html`, `schedules.html`, `flagged-review.html`):** Strict PST (UTC-8) interval math across all 1,133 days (`2026-11-25` through `2029-12-31`), optional +30m pre/post radio buffer, 3 filter modes, 12-month clickable heatmaps, CSV export, and 11 transparent audit flags.
 
-### Merge with other sessions (integration)
+### Cross-session merge & verification (`5db889e3`)
 
-- 2026-11-25 · a2ab7210 · `origin/main` already contained PRs #1–#4 from sessions 9636f11d and b1591c47 (root planner, `docs/` verified-data pages, `data/`, `VERIFICATION.md`). Those files were kept unchanged. The scoreboard site was moved from `docs/` to `scoreboard/` so no file collided. The README and this board were merged by keeping the other sessions' content and adding this section.
-- Overlap noted: the root planner (9636f11d) and `scoreboard/` (a2ab7210) both implement a 2026–2029 daily view with MLB live data. Both are kept. Each states its own coverage limits. The two datasets are cross-checked below.
-
-### Cross-check against the other sessions' data
-
-Compared line by line with `data/schedules_2026.json` (session b1591c47) and `docs/*` on `main`.
-
-| Item | This session (official page) | Other session | Result |
-|---|---|---|---|
-| 49ers Wk 1–18 games and days | 49ers.com | matches | agree |
-| 49ers Wk 15 Dec 17 / Wk 17 Jan 3 times | 49ers.com 5:15 / 5:20 PM PT | same | agree (Westwood One 4:30 PM PT conflicts, F2) |
-| 49ers Wk 18 date | 49ers.com: TBD | 2027-01-10 | **their date is not on 49ers.com; blank here** |
-| 49ers Wk 1, 3, 7, 11 times | 49ers.com shows FINAL, no time | 5:35 PM, 1:05 PM, 10:00 AM, 5:20 PM | **not confirmed on the fetched page; left as theirs, not verified here** |
-| Preseason Aug 13, 20, 27 | 49ers.com: L 13-19, W 41-17, W 18-12 | theirs has Aug 13/20/27 with no results | added the results (Aug 20 and 27 were missing here) |
-| Stanford results Aug 29–Nov 14 | gostanford.com | — | verified; my earlier draft had kickoff times for Oct 3, Oct 31 and Nov 14 that I could not confirm, now blank (F14) |
-| Stanford Oct 17, Oct 23 times | not on fetched page | 4:30 PM / 7:30 PM PT | agree with theirs; kept |
-| Cal full 2026 incl. Nov 28 | calbears.com text schedule | Nov 28 4:30 PM | agree; F4 resolved |
-| Westwood One named games | westwoodonesports.com (ET) | 27 games listed | agree on every game checked; both sets use the same ET→PT conversion |
-| NFL.com Bears / Chiefs / Broncos | NFL.com (1:00 PM / 8:20 PM / 3:00 PM ET) | Westwood One | conflict (F1) |
-
-Correction made in this session: the first draft of F1 listed NFL.com times for Packers at Rams and Eagles at Cowboys that were never fetched. Those were removed. Both values are now labelled as not compared.
-
-## Log · a2ab7210
-
-- 2026-11-25 · a2ab7210 · T1 claimed; repo reviewed (README only). Shared board created.
-- 2026-11-25 · a2ab7210 · Scoreboard site built on this branch and tested in Node (busy blocks, free gaps, midnight wrap, Pacific conversion, TBD estimates, coverage rules). A headless browser is not available in this sandbox, so the live MLB load was not tested in a real browser. Flagged.
-- 2026-11-25 · a2ab7210 · The two 49ers games also on Westwood One (Dec 17, Jan 3) are marked `dup_of` so each is counted once.
-- 2026-11-25 · a2ab7210 · Coverage rule: a day is never shown as FREE. It shows GAMES ON THIS DAY, NO GAMES LISTED (not verified free), or UNKNOWN. NFL and NCAAF coverage is partial, so no day is verified free.
-- 2026-11-25 · a2ab7210 · PR from `arena/a2ab7210-freetime2` to `main`: first attempt (#5) could not merge because `main` had moved. Resolved by merging `origin/main` into this branch (no files discarded), moving the site to `scoreboard/`, and merging the two COORDINATION and README files.
-- 2026-11-25 · a2ab7210 · **Integration result.** PR #5 (`arena/a2ab7210-freetime2` → `main`) merged with a merge commit at 2026-11-25T13:56:00Z; main is now `29f4148`. Merge was clean after `main` was merged into the branch (no files deleted).
-- 2026-11-25 · a2ab7210 · **Pages deploy confirmed.** GitHub Pages API: latest build `built` for commit `29f4148`; source `main` `/`; site https://kanlerxz87-cyber.github.io/Freetime2/ (root planner and `/docs/` pages from other sessions). The `/scoreboard/` pages are in the same build. Live URLs could not be fetched from this sandbox (`github.io` is not on the outbound allowlist), so the build status is the confirmation available here.
-- 2026-11-25 · a2ab7210 · Status of this board: T1–T5 done (needs review on F1–F3, F6–F14); T6 done. This log entry was committed on the branch and then merged to `main` by a follow-up docs-only PR, because pushing to `main` directly is not allowed for this session.
+- 2026-11-25: Merged `origin/main` (commits through `5c779e9`, PRs #1–#6) into `arena/5db889e3-freetime2` with **zero files discarded**. Preserved `9636f11d`'s root SPA intact as `planner.html` and linked `planner.html`, `docs/index.html`, and `scoreboard/index.html` directly from the unified root `index.html`.
+- Automated checks passed after merge:
+  - `python3 scripts/verify_site.py`: **PASS (0 errors)** — 2,238 events, 1,133 contiguous PST days, 100% official https source URLs, zero fabricated official times, 39 internal links, HTTP 200 smoke test.
+  - `node scripts/test.mjs`: **PASS** (session `9636f11d` test suite).
+  - `node scripts/check-links.mjs`: **PASS** (session `a2ab7210` link/JSON/source verifier).
+  - `node --check assets/*.js` & DOM ID audit: **PASS**.

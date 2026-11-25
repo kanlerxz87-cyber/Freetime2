@@ -1,0 +1,116 @@
+{
+  "verifiedDate": "2026-11-25",
+  "count": 11,
+  "items": [
+    {
+      "id": "FLAG-001",
+      "severity": "HIGH",
+      "category": "MLB 2027 \u2014 Unreleased Home Start Times",
+      "scope": "SF Giants (104 games) & Athletics (27 games) in 2027",
+      "issue": "Official 2027 MLB game dates and opponents are verified from MLB Stats API, but Giants home games at Oracle Park and several road series (e.g., CWS, LAD, TOR, CHC, BOS, CLE, DET) currently carry startTimeTBD=true with API placeholder timestamps (10:33Z / 08:33Z / 07:33Z). Official time columns are left blank; PST free-time intervals use clearly labeled ballpark estimates.",
+      "actionRequired": "Re-verify first-pitch times once SF Giants & MLB publish finalized 2027 start times (typically Jan\u2013Feb 2027).",
+      "sourceUrl": "https://www.mlb.com/giants/schedule/2027-03",
+      "sourceLabel": "MLB Giants Official 2027 Schedule"
+    },
+    {
+      "id": "FLAG-002",
+      "severity": "HIGH",
+      "category": "MLB 2028 & 2029 \u2014 Unreleased Schedules",
+      "scope": "All 30 MLB clubs (2028 & 2029 seasons)",
+      "issue": "MLB Stats API (statsapi.mlb.com) confirmed 0 scheduled games for 2028 and 2029 as of Nov 25, 2026. All 2028 and 2029 MLB dates/windows on this site are clearly labeled ESTIMATED.",
+      "actionRequired": "Replace estimates upon official MLB schedule releases (expected July 2027 for 2028, July 2028 for 2029).",
+      "sourceUrl": "https://www.mlb.com/schedule",
+      "sourceLabel": "MLB Official Schedule Hub"
+    },
+    {
+      "id": "FLAG-003",
+      "severity": "HIGH",
+      "category": "MLB 2028 All-Star Game at Oracle Park SF \u2014 Date & LA Olympics Coordination",
+      "scope": "July 2028 (San Francisco Giants host 98th MLB All-Star Game)",
+      "issue": "MLB officially awarded the 2028 All-Star Game to Oracle Park (San Francisco) in August 2026, noting coordination with the 2028 Los Angeles Summer Olympics (July 14\u201330, 2028). Exact All-Star break dates and whether MLB pauses for Olympic baseball are not yet announced.",
+      "actionRequired": "Monitor MLB 2028 schedule release for exact July 2028 All-Star / Olympic break dates \u2014 this could create an unusual July vacation window!",
+      "sourceUrl": "https://www.mlb.com/news/giants-hosts-of-2028-mlb-all-star-game",
+      "sourceLabel": "MLB Official 2028 All-Star Announcement"
+    },
+    {
+      "id": "FLAG-004",
+      "severity": "HIGH",
+      "category": "NFL 2027\u20132029 \u2014 Unreleased Schedules & 18-Game Expansion Risk",
+      "scope": "2027\u201328, 2028\u201329, and 2029\u201330 NFL Seasons + Super Bowls LXII & LXIII exact dates",
+      "issue": "NFL regular-season schedules release each May (May 2027 for 2027\u201328). Super Bowl LXII (Atlanta, 2028) and Super Bowl LXIII (Las Vegas, 2029) host venues are official, but exact dates (planned Feb 13, 2028 / est. Feb 11, 2029) remain subject to potential NFL 18-game regular season expansion.",
+      "actionRequired": "Update after each May NFL schedule release; verify if Super Bowl moves to Presidents' Day weekend (shrinking or eliminating the Feb gap before MLB Spring Training).",
+      "sourceUrl": "https://www.nfl.com/news/super-bowl-lxiv-to-be-held-in-nashville-s-new-nissan-stadium-in-2030",
+      "sourceLabel": "NFL Official Future Super Bowls"
+    },
+    {
+      "id": "FLAG-005",
+      "severity": "MEDIUM",
+      "category": "NFL 2026\u201327 Flex Windows & Pro Bowl Games Date",
+      "scope": "2026 NFL Weeks 16, 17, 18 Saturday Flex Slots + 2027 Pro Bowl Games",
+      "issue": "In NFL Weeks 16 (Dec 26) and 17 (Jan 2), two of four designated games flex to Saturday; Week 18 (Jan 9\u201310, including 49ers at Cardinals) flexes after Week 17. The 2027 Pro Bowl Games date/format has not been formally dated on nfl.com (estimated Sun Feb 7, 2027).",
+      "actionRequired": "Update exact flex matchups once NFL announces Weeks 16\u201318 flex assignments in Dec 2026 / Jan 2027.",
+      "sourceUrl": "https://www.nfl.com/schedules",
+      "sourceLabel": "NFL Official Schedules"
+    },
+    {
+      "id": "FLAG-006",
+      "severity": "MEDIUM",
+      "category": "NCAAF 2026\u201327 \u2014 Stanford Bowl Game TBA",
+      "scope": "Stanford Cardinal (6\u20135 as of Nov 25, 2026)",
+      "issue": "Stanford defeated Cal 44\u201328 in the 129th Big Game (Nov 21, 2026) to become bowl-eligible at 6\u20135 before hosting SMU on Nov 28. Bowl selection occurs Sunday Dec 6, 2026; placeholder date Dec 26, 2026 is estimated.",
+      "actionRequired": "Replace placeholder with official bowl date, opponent, and kickoff time on Dec 6, 2026.",
+      "sourceUrl": "https://gostanford.com/sports/football/schedule",
+      "sourceLabel": "Stanford Official Schedule"
+    },
+    {
+      "id": "FLAG-007",
+      "severity": "MEDIUM",
+      "category": "NCAAF 2027\u20132029 \u2014 ACC Conference Dates TBA & Historical Non-Conference Conflicts",
+      "scope": "Stanford Cardinal & Cal Golden Bears (2027\u20132029)",
+      "issue": "Official ACC opponents are confirmed, but exact weekly dates/byes release each January. Historical press release conflicts detected: (1) Cal's 2020 release listed Wyoming on Sep 2, 2028 and Minnesota on Sep 1, 2029, whereas 2024 releases booked UCLA on Sep 2, 2028 and Wisconsin on Sep 1, 2029; (2) Stanford's 2016 release booked Boston College on Sep 2, 2028 & Sep 15, 2029 prior to Stanford joining the ACC alongside BC.",
+      "actionRequired": "Verify finalized annual schedules upon each January ACC release.",
+      "sourceUrl": "https://calbears.com/news/2026/9/16/california-football-announces-2027-conference-opponents",
+      "sourceLabel": "Cal Athletics 2027 ACC Release"
+    },
+    {
+      "id": "FLAG-008",
+      "severity": "HIGH",
+      "category": "Bay Area AM/FM Radio \u2014 Athletics 2028\u20132029 Relocation & KNEW 960 AM Carriage",
+      "scope": "Athletics (A's) terrestrial AM/FM radio in Outer Sunset SF (94122)",
+      "issue": "The Athletics play in West Sacramento (Sutter Health Park) plus 6 games at Las Vegas Ballpark (May 31\u2013Jun 5, 2027) during 2027, with KNEW 960 AM listed as Bay Area terrestrial affiliate and KSTE 650 AM in Sacramento. Beginning 2028 (planned Las Vegas Strip ballpark), Bay Area AM/FM terrestrial radio carriage is unconfirmed.",
+      "actionRequired": "Confirm whether A's retain a Bay Area AM/FM station in 2027 and post-2028 Las Vegas relocation.",
+      "sourceUrl": "https://www.mlb.com/athletics/schedule/affiliates",
+      "sourceLabel": "MLB Athletics Radio Affiliates"
+    },
+    {
+      "id": "FLAG-009",
+      "severity": "LOW",
+      "category": "Bay Area AM/FM Radio \u2014 MLB Spring Training Terrestrial Broadcast Coverage",
+      "scope": "KNBR 680/104.5 (Giants) & KNEW 960 / KSTE 650 (A's) in Feb\u2013Mar",
+      "issue": "Not every MLB Cactus League Spring Training game airs live on over-the-air Bay Area AM/FM radio; KNBR typically broadcasts weekend and select weekday Giants Spring games on 680/104.5 while other weekday games are webcast-only on sfgiants.com. Strict mode counts all Spring Training games; 'Regular + Postseason Only' mode excludes Spring Training.",
+      "actionRequired": "Check KNBR's official 2027 Spring Training broadcast schedule upon release in Feb 2027.",
+      "sourceUrl": "https://www.thesportsleader.com/shows/",
+      "sourceLabel": "KNBR Official Programming"
+    },
+    {
+      "id": "FLAG-010",
+      "severity": "LOW",
+      "category": "Outer Sunset SF (94122) \u2014 Fringe FM Reception & Non-Core Sports",
+      "scope": "San Jose Sharks (KUFX 98.5 FM / Sharks Audio Network) & Campus Stations (KZSU 90.1 / KALX 90.7)",
+      "issue": "KUFX 98.5 FM broadcasts from Loma Prieta (South Bay) with fringe indoor reception in Outer Sunset 94122; the Sharks prioritize their digital Sharks Audio Network. Golden State Warriors (95.7 FM KGMZ), Valkyries (95.7 FM), and SJ Earthquakes (KSFO 810 AM) are documented in the Bay Area Radio Directory as secondary Bay Area live sports outside the core MLB/NFL/Stanford/Cal free-time calculation.",
+      "actionRequired": "If you also want NBA/WNBA/NHL/MLS excluded from vacation windows, note Warriors run Oct\u2013Jun (95.7 FM) and Valkyries run May\u2013Sep (95.7 FM).",
+      "sourceUrl": "https://www.nba.com/warriors/radio-network",
+      "sourceLabel": "Warriors Radio Network"
+    },
+    {
+      "id": "FLAG-011",
+      "severity": "LOW",
+      "category": "Prior Reference Sites Unavailable (HTTP 404)",
+      "scope": "buffedlizard55-lab.github.io/{VacationSchedule,ScheduleFreeTime,RADIOSF}",
+      "issue": "The three historical GitHub Pages reference URLs returned 404/fetch errors during audit; this dashboard was built cleanly from verified 2026\u20132029 official primary sources.",
+      "actionRequired": "None \u2014 all requirements implemented natively in this repository.",
+      "sourceUrl": "https://github.com/kanlerxz87-cyber/Freetime2",
+      "sourceLabel": "Freetime2 Repository"
+    }
+  ]
+}
