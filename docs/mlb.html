@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MLB · All 30 Clubs 2026–2029 — Free Time Vacation</title>
+<meta name="description" content="Every MLB game 2026–2029 — all 30 clubs, spring training, regular season, All-Star and postseason — with free/busy planning for Bay Area radio listeners.">
+<link rel="stylesheet" href="assets/site.css">
+<script type="module" src="assets/site.js"></script>
+<style>.pager{display:flex;gap:8px;align-items:center;margin:8px 0}</style>
+</head>
+<body>
+<header><div class="shell">
+  <div class="top"><a class="brand" href="../index.html"><span class="logo">◈</span>Free Time <em>Vacation</em></a><small>94122 · PACIFIC TIME</small></div>
+  <nav data-site-nav aria-label="Sections"></nav>
+</div></header>
+
+<main class="shell">
+<section class="hero">
+  <div class="eyebrow">MLB · ALL 30 CLUBS · 2026–2029 · ALL GAMES</div>
+  <h1>Every MLB game, one filter away.</h1>
+  <p>Spring Training, regular season, All-Star Game and postseason for 2026, 2027, 2028 and 2029. Giants and Athletics rows are flagged <strong>high priority</strong>. Times are Pacific. Rows tagged <span class="tag ver">VERIFIED</span> trace to an official source in the row’s Source column; everything else is a clearly labeled reconstruction — see <a href="flagged.html">Flagged for Review</a> before booking travel.</p>
+</section>
+
+<div class="callout"><strong>Read me first.</strong> MLB officially released the 2026 and 2027 master schedules, and the 2028/2029 schedules do not exist yet. This environment cannot machine-import MLB’s official per-game feeds, so <strong>every matchup/date/time row below is an ESTIMATED reconstruction anchored to the verified season boundaries</strong> (Opening Night/Day, All-Star, season finale, postseason windows). Season boundaries themselves are verified and tagged. Always confirm the specific game on <a href="https://www.mlb.com/schedule">MLB.com/schedule</a> or <a href="https://www.mlb.com/giants/schedule">Giants schedule</a> / <a href="https://www.mlb.com/athletics/schedule">Athletics schedule</a>.</div>
+
+<section class="panel" aria-label="Filters">
+  <div class="controls">
+    <label>Year <select id="year"><option>2026</option><option selected>2027</option><option>2028</option><option>2029</option></select></label>
+    <label>Club <select id="club"><option value="">All 30 clubs</option></select></label>
+    <label>Type <select id="type"><option value="">All types</option><option value="spring_training">Spring Training</option><option value="regular">Regular season</option><option value="all_star">All-Star</option><option value="postseason">Postseason</option><option value="bowl">Bowl</option></select></label>
+    <label>Priority <select id="priority"><option value="">All</option><option value="high">High priority (Giants/A’s)</option><option value="normal">Normal</option></select></label>
+    <label>Search <input id="q" type="search" placeholder="team, city, stadium…" style="min-width:180px"></label>
+    <button id="csv" class="button secondary" type="button">Download CSV</button>
+  </div>
+  <p class="small" id="counts">Loading…</p>
+  <div class="table">
+    <table id="tbl"><thead><tr><th>Date</th><th>Start (PT)</th><th>Matchup</th><th>Type</th><th>Priority</th><th>Status</th><th>Source</th></tr></thead>
+    <tbody id="rows"></tbody></table>
+  </div>
+  <div class="pager"><button id="more" type="button">Show 300 more</button><span class="small" id="shown"></span></div>
+</section>
+
+<section class="panel">
+  <h2>Verify on official sources</h2>
+  <p class="small">Per-row verification is always one click away. Official team schedules:</p>
+  <div class="table"><table><thead><tr><th>Club</th><th>Official schedule</th></tr></thead><tbody id="verify"></tbody></table></div>
+</section>
+</main>
+<footer class="shell"><span>FREE TIME VACATION · All times Pacific · Rows marked ESTIMATED are planning aids, not announcements.</span><span><a href="flagged.html">Flagged for Review</a> · <a href="sources.html">Sources</a></span></footer>
+
+<script type="module">
+import { injectNav, esc, loadAll, downloadCsv, seasonTypeLabel } from './assets/site.js';
+injectNav('MLB · All 30 Clubs');
+const CLUBS = ["Arizona Diamondbacks","Atlanta Braves","Baltimore Orioles","Boston Red Sox","Chicago Cubs","Chicago White Sox","Cincinnati Reds","Cleveland Guardians","Colorado Rockies","Detroit Tigers","Houston Astros","Kansas City Royals","Los Angeles Angels","Los Angeles Dodgers","Miami Marlins","Milwaukee Brewers","Minnesota Twins","New York Mets","New York Yankees","Athletics (Sacramento)","Philadelphia Phillies","Pittsburgh Pirates","San Diego Padres","San Francisco Giants","Seattle Mariners","St. Louis Cardinals","Tampa Bay Rays","Texas Rangers","Toronto Blue Jays","Washington Nationals"];
+const clubSel = document.getElementById('club');
+for(const c of CLUBS){ const o=document.createElement('option'); o.value=c; o.textContent=c; clubSel.appendChild(o); }
+const verify = document.getElementById('verify');
+const teamSlugs = {"Arizona Diamondbacks":"dbacks","Atlanta Braves":"braves","Baltimore Orioles":"orioles","Boston Red Sox":"redsox","Chicago Cubs":"cubs","Chicago White Sox":"whitesox","Cincinnati Reds":"reds","Cleveland Guardians":"guardians","Colorado Rockies":"rockies","Detroit Tigers":"tigers","Houston Astros":"astros","Kansas City Royals":"royals","Los Angeles Angels":"angels","Los Angeles Dodgers":"dodgers","Miami Marlins":"marlins","Milwaukee Brewers":"brewers","Minnesota Twins":"twins","New York Mets":"mets","New York Yankees":"yankees","Athletics (Sacramento)":"athletics","Philadelphia Phillies":"phillies","Pittsburgh Pirates":"pirates","San Diego Padres":"padres","San Francisco Giants":"giants","Seattle Mariners":"mariners","St. Louis Cardinals":"cardinals","Tampa Bay Rays":"rays","Texas Rangers":"rangers","Toronto Blue Jays":"bluejays","Washington Nationals":"nationals"};
+verify.innerHTML = CLUBS.map(c => `<tr><td>${esc(c)}</td><td><a href="https://www.mlb.com/${teamSlugs[c]}/schedule">mlb.com/${teamSlugs[c]}/schedule</a></td></tr>`).join('');
+
+let rows = [], filtered = [], shown = 0;
+const $ = id => document.getElementById(id);
+
+async function reload(){
+  const y = $('year').value;
+  rows = (await loadAll()).filter(r => r.sport === 'MLB' && r.date.startsWith(y));
+  apply();
+}
+function apply(){
+  const club = $('club').value, type = $('type').value, pr = $('priority').value, q = $('q').value.trim().toLowerCase();
+  filtered = rows.filter(r =>
+    (!club || r.away === club || r.home.startsWith(club) || r.home.includes(club)) &&
+    (!type || r.season_type === type) &&
+    (!pr || r.priority === pr) &&
+    (!q || (r.title + ' ' + (r.note||'') + ' ' + r.away + ' ' + r.home).toLowerCase().includes(q))
+  );
+  filtered.sort((a,b)=> (a.date+ (a.start||'99')).localeCompare(b.date + (b.start||'99')));
+  shown = 0;
+  $('rows').innerHTML = '';
+  $('more').style.display = filtered.length > 300 ? '' : 'none';
+  renderMore();
+  const hi = filtered.filter(r=>r.priority==='high').length, ver = filtered.filter(r=>r.verified).length;
+  $('counts').innerHTML = `<strong>${filtered.length.toLocaleString()}</strong> games (${hi.toLocaleString()} high priority · ${ver.toLocaleString()} verified rows) in <strong>${esc($('year').value)}</strong>. ESTIMATED rows are not confirmations.`;
+}
+function renderMore(){
+  const slice = filtered.slice(shown, shown + 300);
+  const html = slice.map(r => {
+    const badge = r.verified ? '<span class="tag ver">VERIFIED</span>' : '<span class="tag est">ESTIMATED</span>';
+    const pr = r.priority === 'high' ? '<span class="tag good">HIGH</span>' : 'normal';
+    const time = r.start ? esc(r.start) : '<span class="tag flag">TBD</span>';
+    return `<tr><td>${esc(r.date)}</td><td>${time}</td><td>${esc(r.title)}<div class="small">${esc(r.note||'')}</div></td><td>${esc(seasonTypeLabel(r.season_type))}</td><td>${pr}</td><td>${badge}${(r.flags||[]).filter(f=>['time_unverified','tbd','flex_scheduling'].includes(f)).map(f=>` <span class="tag flag">${esc(f)}</span>`).join('')}</td><td><a href="${esc(r.source)}" rel="noopener">${esc(r.source_label)}</a></td></tr>`;
+  }).join('');
+  $('rows').insertAdjacentHTML('beforeend', html);
+  shown += slice.length;
+  $('shown').textContent = `Showing ${shown.toLocaleString()} of ${filtered.length.toLocaleString()}`;
+  $('more').style.display = shown < filtered.length ? '' : 'none';
+}
+['year','club','type','priority','q'].forEach(id => { const el = $(id); el.addEventListener('input', id === 'year' ? reload : apply); el.addEventListener('change', id === 'year' ? reload : apply); });
+$('more').addEventListener('click', renderMore);
+$('csv').addEventListener('click', () => {
+  const data = [['date','start_pt','away','home','type','priority','status','source']].concat(
+    filtered.map(r => [r.date, r.start||'TBD', r.away, r.home, r.season_type, r.priority, r.verified?'verified':'estimated', r.source]));
+  downloadCsv(`freetime-mlb-${$('year').value}.csv`, data);
+});
+reload();
+</script>
+</body>
+</html>

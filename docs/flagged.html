@@ -1,17 +1,97 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Flagged for Review | Freetime2</title><link rel="stylesheet" href="assets/style.css"></head><body>
-<header><a href="index.html">Freetime2 — Bay Area Sports Radio Free-Time Planner</a></header>
-<nav><a href="index.html">Dashboard</a><a href="executive-summary.html">Executive Summary</a><a href="windows.html">Vacation Windows</a><a href="schedules.html">2026 Schedules</a><a href="radio.html">Bay Area Radio</a><a href="methodology.html">Methodology & Day Planner</a><a href="flagged.html">Flagged for Review</a></nav>
-<main><h1>Flagged for Review</h1>
-<div class="card"><h2>Unverified items (do not rely on)</h2><ul>
-<li>49ers Week 18 2026 opponent/date/time — TBD at fetch time.</li>
-<li>49ers 2026 preseason times — secondary summary only.</li>
-<li>Stanford/Cal 2026 times marked TBA at announcement — check official schedule pages for final times.</li>
-<li>Pro Bowl Games 2026–2029 dates — not verified in this build.</li>
-<li>All 2027–2029 NFL/NCAAF/MLB game-by-game schedules — not released; ESTIMATED blocks only.</li>
-<li>Reference sites (VacationSchedule, ScheduleFreeTime, RADIOSF) — not fetchable in build environment; no data taken from them.</li></ul></div>
-<div class="card"><h2>Irregularities</h2><ol>
-<li><strong>Super Bowl LXI date conflict:</strong> Feb 14, 2027 (Wikipedia table + most secondaries) vs Feb 15, 2027 (one secondary). Site uses Feb 14. Resolve on NFL.com.</li>
-<li><strong>MLB postseason end</strong> depends on series lengths (World Series Game 7 if needed Oct 31, 2026). Site shows full possible span as busy.</li>
-<li><strong>Westwood One page</strong> shows duplicate Upcoming/Past listings + TBA Weeks 16–18 slots. Only named games recorded as verified.</li>
-<li><strong>Duration inputs:</strong> user-suggested 150/180 min vs researched ~170/192/204 min. Site uses researched values.</li></ol>
-<p>Full log: <a href="https://github.com/kanlerxz87-cyber/Freetime2/blob/main/VERIFICATION.md" target="_blank" rel="noopener">VERIFICATION.md</a> in repo root. Flagged items do not block publishing; review after site is live and request changes.</p></div></main><footer>Freetime2 • Times in PT (America/Los_Angeles) unless noted • ESTIMATED blocks are not confirmed schedules • See <a href="flagged.html">Flagged for Review</a></footer></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Flagged for Review — Free Time Vacation</title>
+<meta name="description" content="Every unverified, estimated and irregular item in the 2026–2029 vacation planner — read this before booking anything.">
+<link rel="stylesheet" href="assets/site.css">
+<script type="module" src="assets/site.js"></script>
+</head>
+<body>
+<header><div class="shell">
+  <div class="top"><a class="brand" href="../index.html"><span class="logo">◈</span>Free Time <em>Vacation</em></a><small>94122 · PACIFIC TIME</small></div>
+  <nav data-site-nav aria-label="Sections"></nav>
+</div></header>
+<main class="shell">
+<section class="hero">
+  <div class="eyebrow">FLAGGED FOR REVIEW · DO NOT BOOK BLINDLY</div>
+  <h1>Everything that is estimated, TBD or irregular.</h1>
+  <p>These items are published here instead of being silently “fixed.” Nothing on this list is verified. Per project policy, flagged items do not block the site — they block <em>your</em> certainty. Cross-check each one on the official source before relying on it.</p>
+</section>
+
+<section class="panel">
+  <h2>A. Structural estimates you must internalize</h2>
+  <ol>
+    <li><strong>All game-by-game rows for 2026/2027 MLB</strong> are reconstructions anchored to verified boundaries. The official 2026/2027 master schedules exist, but this build could not fetch them programmatically; rows are ESTIMATED. Verify anything you care about on MLB.com.</li>
+    <li><strong>All 2028 and 2029 schedules do not exist yet</strong> (MLB ~mid-2027/2028; NFL ~May 2027/2028; ACC ~Jan/Feb each year). Every 2028/2029 row is ESTIMATED.</li>
+    <li><strong>49ers Week 18 (at Arizona)</strong> — Jan 9 or 10, 2027; time TBD via NFL flex rules (Sat Jan 9 is possible).</li>
+    <li><strong>NFL flex scheduling</strong> — Weeks 5–18 games can move within Sunday/Monday/Thursday slots; listed times are the announced/estimated baseline only.</li>
+    <li><strong>Super Bowl LXI date conflict</strong> — Feb 14, 2027 (Wikipedia/host announcements) vs a lone secondary claiming Feb 15, 2027. Site uses <strong>Feb 14</strong> (Valentine’s Day).</li>
+    <li><strong>Super Bowl LXII (Atlanta) and LXIII (Las Vegas) exact dates</strong> are unconfirmed pending the 18-game/17-game format decision; sites/venues are announced.</li>
+    <li><strong>Possible 2026/2027 MLB CBA work stoppage</strong> — the 2027 schedule was released “pending the signing of a new CBA.” Opening Day could slip.</li>
+  </ol>
+</section>
+
+<section class="panel">
+  <h2>B. Unverified times / TBA rows</h2>
+  <div class="table"><table><thead><tr><th>Item</th><th>Status</th><th>Official check</th></tr></thead><tbody>
+    <tr><td>49ers 2026 preseason (Aug 13/20/27) times</td><td>Secondary-source only; official release does not print times</td><td><a href="https://49ers.com/schedule/">49ers.com/schedule</a></td></tr>
+    <tr><td>Cal 2026 times for Oct 17 (Wake Forest), Oct 24 (at SMU), Oct 31 (at NC State), Nov 14 (at Virginia), Nov 28 (Pittsburgh)</td><td>TBA in checked official text; likely published later</td><td><a href="https://calbears.com/sports/football/schedule/text">calbears.com</a></td></tr>
+    <tr><td>Stanford 2026 Oct 3 (at Wake Forest), Oct 31 (at Louisville), Nov 14 (at Virginia Tech) times</td><td>TBA at announcement; later published on gostanford.com</td><td><a href="https://gostanford.com/sports/football/schedule">gostanford.com</a></td></tr>
+    <tr><td>2026 MLB All-Star Game (Philadelphia) date — used Jul 14, 2026</td><td>Secondary consensus; not confirmed on official release here</td><td><a href="https://www.mlb.com/all-star">mlb.com/all-star</a></td></tr>
+    <tr><td>2026 MLB finale Sep 27 (15 games 3:00–3:20 PM ET)</td><td>Verified boundary via MLB release; exact per-game times unverified here</td><td><a href="https://www.mlb.com/press-release/press-release-game-times-announced-for-2026-regular-season-spring-training-spring-breakout-games">MLB.com press release</a></td></tr>
+    <tr><td>2026 MLB postseason window (Sep 29–Oct 31)</td><td>Matchups/lengths unknown; used as full-span busy — actual end may be earlier</td><td><a href="https://www.mlb.com/postseason">mlb.com/postseason</a></td></tr>
+    <tr><td>2027 MLB Opening Night opponent (Netflix)</td><td>Announced as “matchup TBA” at schedule release</td><td><a href="https://en.wikipedia.org/wiki/2027_Major_League_Baseball_season">2027 season summary</a></td></tr>
+    <tr><td>2027 97th All-Star Game (Wrigley Field, Jul 13, 2027)</td><td>Partial-secondary; official ASG page not yet updated</td><td><a href="https://www.mlb.com/all-star">mlb.com/all-star</a></td></tr>
+    <tr><td>Pro Bowl Games 2027/2028/2029 dates (used Feb 7/Feb 6/Feb 4)</td><td>ESTIMATED — not verified in checked sources</td><td><a href="https://www.nfl.com/news/">nfl.com</a></td></tr>
+    <tr><td>Stanford/Cal 2027–2029 slates (opponents, dates, times)</td><td>ESTIMATED from 2026 pattern; ACC releases typically Jan/Feb</td><td><a href="https://theacc.com/">theacc.com</a></td></tr>
+    <tr><td>ACC Championship Game Dec 5, 2026 (Charlotte)</td><td>Date verified via ACC/gostanford news; participants unknown in this build</td><td><a href="https://theacc.com/">theacc.com</a></td></tr>
+    <tr><td>Bowl eligibility 2026 (Stanford/Cal)</td><td>Neither team’s bowl locked in checked sources; defensive placeholders flagged</td><td><a href="https://www.espn.com/college-football/bowls">ESPN bowls</a></td></tr>
+  </tbody></table></div>
+</section>
+
+<section class="panel">
+  <h2>C. Radio / reception irregularities</h2>
+  <ol>
+    <li><strong>KSFO moved 560 → 810 AM in 2025</strong>; many sites still print “KSFO 560.” 560 is dark. KSFO carries the 49ers/Cal in 2026.</li>
+    <li><strong>KGO 810 no longer carries 49ers</strong> per current listings; older pages show it.</li>
+    <li><strong>KSTE 650 AM</strong> (Sacramento A’s flagship) is marginal in 94122, especially at night (920 W night power).</li>
+    <li><strong>KNEW 960 AM</strong> (iHeart Sports 960, Oakland, 5 kW) — A’s Bay Area home; reliable in SF.</li>
+    <li><strong>KTCT 1050 AM</strong> — Class B directional; 50 kW day, ~10–35 kW night (STA). Good by day; night coverage is legal but marginal against co-channel interference — treat night Stanford/WW1 shows as “maybe.”</li>
+    <li><strong>KNBR 104.5 FM</strong> — KNBR’s FM simulcast (Class D translator-class); strong in 94122; exact ERP not published in checked sources.</li>
+    <li><strong>Westwood One pre-emption</strong> — 49ers local rights (KNBR) take precedence over WW1 national calls; during 49ers games you hear Greg Papa, not the national crew.</li>
+    <li><strong>Spanish-language simulcasts</strong> (KIQI 1010 A’s; KSFN?) unverified per-game in this build.</li>
+  </ol>
+</section>
+
+<section class="panel">
+  <h2>D. Data & method irregularities</h2>
+  <ol>
+    <li>Twelve-thousand-plus game rows but <strong>~12,281</strong> are generated; only anchors are verified. Row counts ≠ realism — distributions are modeled (division-heavy, Fri/Sun weighting) from the balanced-schedule template.</li>
+    <li>2026/2027 MLB team-games per club range 162–163 (plus anchors like Opening Night); international “home” games carry venue suffixes in names (e.g., “Los Angeles Rams (Melbourne…)”), creating cosmetic team-count inflation in tables.</li>
+    <li>Strict “free day” requires zero untimed rows of any kind — <strong>one TBD game flips the day from FREE to BUSY</strong>. This is deliberately conservative.</li>
+    <li>Vacation windows computed on day granularity; partial-day “free evenings on game days” are shown per-day on the <a href="calendar.html">Scoreboard</a> but not aggregated into multi-day windows.</li>
+    <li><strong>Practical mode counts only priority=high rows.</strong> A non-SF MLB game on KNBR (there are none — KNBR doesn’t air out-of-market MLB) would not appear.</li>
+    <li>Westwood One WW1 rows are a <em>subset</em> of the NFL rows — do not double-add when scanning the MLB/NFL tables.</li>
+    <li>Durations: MLB 158 / NFL 183 / NCAAF 207 minutes from 2024–2025 averages; your mileage varies — delays, extra innings, OT all extend blocks.</li>
+    <li>Reference sites (VacationSchedule, ScheduleFreeTime, RADIOSF) could not be reached from the build sandbox; nothing was copied from them.</li>
+    <li>Analysis assumes Pacific-time dates for everything; a 10:00 AM PT Sunday game counts in the same PT calendar day as a 1:05 PM game.</li>
+    <li><strong>The 2–3-week free vacation does not exist strictly in 2026–2029.</strong> The strongest candidates are the Jan–Feb practical runs (~40 days) and 4–11-day strict islands in February. Any claim otherwise is wrong.</li>
+  </ol>
+</section>
+
+<section class="panel">
+  <h2>E. What would make this page shorter</h2>
+  <ul>
+    <li>MLB releasing 2028 & 2029 master schedules (mid-2027 / mid-2028) → re-run generator with official imports.</li>
+    <li>NFL confirming the 17- vs 18-game format and 2027 dates (~May 2027).</li>
+    <li>Official per-game import pipeline (MLB Stats API reachable) instead of modeled reconstruction.</li>
+    <li>Live KNBR programming grab to tag true local pre-emptions.</li>
+  </ul>
+</section>
+</main>
+<footer class="shell"><span>FREE TIME VACATION · Flagged ≠ wrong; flagged = not verified.</span><span><a href="sources.html">Sources</a> · <a href="methodology.html">Methodology</a></span></footer>
+<script type="module">import { injectNav } from './assets/site.js'; injectNav('Flagged for Review');</script>
+</body>
+</html>

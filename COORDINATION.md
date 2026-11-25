@@ -31,7 +31,7 @@ Shared task board for all agent sessions working on this repository.
 - Added an estimated-schedule engine (`tools/generate_schedules.py`) producing game-level rows for **all 30 MLB clubs** (2026–2029 incl. spring training, regular season, All-Star, postseason) and **all NFL games** (2026–2029 incl. preseason, regular season, postseason; 49ers 2026 uses the officially announced times/dates) for the busy/free calendar. Rows are tagged `estimated` unless anchored to an official announcement.
 - Added Westwood One national NFL radio broadcast rows (2026 list verified live) and Bay Area radio reception analysis for the Outer Sunset, 94122.
 - Extended the site: calendar scoreboard (prev/next day, PT times, per-day free blocks), vacation windows 2027/2028/2029, tables per league, sources page, flagged-for-review page.
-- Found and recorded irregularities (see Flagged for Review page), incl. possible MLB CBA work stoppage affecting 2027, undecided NFL 2027+ format (18-game question), stale radio call letters in third-party sources, KTCT daytimer limits.
+- Found and recorded irregularities (see Flagged for Review page), incl. possible MLB CBA work stoppage affecting 2027, undecided NFL 2027+ format (18-game question), stale radio call letters in third-party sources, KTCT night power/interference limits.
 - Corrected one premise from the brief: the 2026/2027 MLB schedules are officially released, but game-by-game rows could not be fetched in the restricted build environment, so every game row is an ESTIMATED reconstruction anchored to verified season windows; anchor dates are verified and marked as such.
 
 ## Pull request / merge record

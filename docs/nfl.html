@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NFL 2026–2029 — Free Time Vacation</title>
+<meta name="description" content="Every NFL game 2026–2029 — preseason, regular season, playoffs, Pro Bowl, Super Bowl — with Bay Area radio carriage notes.">
+<link rel="stylesheet" href="assets/site.css">
+<script type="module" src="assets/site.js"></script>
+<style>.pager{display:flex;gap:8px;align-items:center;margin:8px 0}</style>
+</head>
+<body>
+<header><div class="shell">
+  <div class="top"><a class="brand" href="../index.html"><span class="logo">◈</span>Free Time <em>Vacation</em></a><small>94122 · PACIFIC TIME</small></div>
+  <nav data-site-nav aria-label="Sections"></nav>
+</div></header>
+<main class="shell">
+<section class="hero">
+  <div class="eyebrow">NFL · 2026–2029 · PRESEASON + REGULAR + POSTSEASON + ALL-STAR</div>
+  <h1>Every NFL game on the calendar — and what the radio carries.</h1>
+  <p>The 2026 49ers schedule is officially published (prime times verified on <a href="https://49ers.1rmg.com/news-releases/49ers-announce-2026-schedule/">49ers.com release</a>). All other matchups are labeled reconstructions anchored to verified season boundaries. <strong>Westwood One national radio airs only primetime/playoff/international games</strong> — on 94122 dial, those land on KNBR 680/104.5 (subject to local pre-emption).</p>
+</section>
+<div class="callout"><strong>2026 49ers (official):</strong> Week 1 Thu Sep 10 at Rams (Melbourne) 5:35 PM PT Netflix · Week 2 Sep 20 Miami 1:25 PM FOX · Week 3 Sep 27 Arizona 1:05 PM FOX · Week 4 Oct 4 Denver 1:25 PM CBS · Week 5 Oct 11 at Seattle 1:25 PM FOX · Week 6 Oct 19 Washington 5:15 PM ESPN/ABC (MNF) · Week 7 Oct 25 at Atlanta 10:00 AM FOX · Week 8 BYE · Week 9 Nov 8 LV Raiders 1:05 PM CBS · Week 10 Nov 15 at Dallas 1:25 PM FOX · Week 11 Nov 22 Minnesota (Mexico City) 5:20 PM NBC (SNF) · Week 12 Nov 29 Seattle 1:25 PM FOX · Week 13 Dec 6 at NY Giants 10:00 AM FOX · Week 14 Dec 13 Rams 1:25 PM FOX · Week 15 Dec 17 at Chargers 5:15 PM Prime Video (TNF) · Week 16 Dec 27 at Kansas City 1:25 PM CBS · Week 17 Jan 3 2027 Eagles 5:20 PM NBC (SNF) · Week 18 Jan 9/10 at Arizona TBD.</div>
+
+<section class="panel">
+  <div class="controls">
+    <label>Year <select id="year"><option>2026</option><option selected>2027</option><option>2028</option><option>2029</option></select></label>
+    <label>Type <select id="type"><option value="">All types</option><option value="preseason">Preseason</option><option value="regular">Regular season</option><option value="postseason">Postseason</option><option value="all_star">Pro Bowl</option></select></label>
+    <label>Priority <select id="priority"><option value="">All</option><option value="high">High (49ers)</option><option value="normal">Normal</option></select></label>
+    <label>Search <input id="q" type="search" placeholder="team, week, stadium…" style="min-width:180px"></label>
+    <button id="csv" class="button secondary" type="button">Download CSV</button>
+  </div>
+  <p class="small" id="counts">Loading…</p>
+  <div class="table"><table><thead><tr><th>Date</th><th>Start (PT)</th><th>Matchup</th><th>Type</th><th>Priority</th><th>Status</th><th>Source</th></tr></thead><tbody id="rows"></tbody></table></div>
+  <div class="pager"><button id="more" type="button">Show 300 more</button><span class="small" id="shown"></span></div>
+</section>
+
+<section class="panel">
+  <h2>Season structure & verified anchors</h2>
+  <div class="grid">
+    <div class="card"><div class="eyebrow">2026 SEASON (OFFICIAL)</div><p>Kickoff Wed Sep 9, 2026 (Seattle vs New England) · regular season ends Week 18 on Jan 9–10, 2027 · Wild Card Jan 16–18, 2027 · Divisional Jan 23–24 · Championships Jan 31 · <strong>Super Bowl LXI Feb 14, 2027 — SoFi Stadium, Inglewood (ABC/ESPN)</strong>.</p><p class="small"><a href="https://49ers.1rmg.com/news-releases/49ers-announce-2026-schedule/">49ers official release</a> · <a href="https://www.westwoodonesports.com/nfl-schedule/">Westwood One NFL</a></p></div>
+    <div class="card"><div class="eyebrow">2027 (ESTIMATED)</div><p>Kickoff ~Sep 9, 2027 (Wednesday night if 2026 pattern holds) · Super Bowl LXII — Feb 2028, Mercedes-Benz Stadium, Atlanta (date unconfirmed; possible 18-game expansion could shift).</p><p class="small"><a href="https://en.wikipedia.org/wiki/List_of_Super_Bowl_champions">Super Bowl dates (secondary)</a></p></div>
+    <div class="card"><div class="eyebrow">2028 (ESTIMATED)</div><p>Kickoff ~Sep 7–13, 2028 · Super Bowl LXIII — Feb 2029, Allegiant Stadium, Las Vegas.</p></div>
+    <div class="card"><div class="eyebrow">2029 (ESTIMATED)</div><p>Kickoff ~Sep 6–12, 2029 · Super Bowl LXIV — Feb 2030, Nashville (Nissan Stadium), per NFL announcement.</p><p class="small"><a href="https://www.nfl.com/news/super-bowl-lxiv-to-be-held-in-nashville-s-new-nissan-stadium-in-2030">NFL.com announcement</a></p></div>
+  </div>
+</section>
+</main>
+<footer class="shell"><span>FREE TIME VACATION · All times Pacific.</span><span><a href="westwood.html">Westwood One</a> · <a href="flagged.html">Flagged for Review</a></span></footer>
+<script type="module">
+import { injectNav, esc, loadAll, downloadCsv, seasonTypeLabel } from './assets/site.js';
+injectNav('NFL');
+const $ = id => document.getElementById(id);
+let rows = [], filtered = [], shown = 0;
+async function reload(){ const y = $('year').value; rows = (await loadAll()).filter(r => r.sport === 'NFL' && r.date.startsWith(y)); apply(); }
+function apply(){
+  const ty = $('type').value, pr = $('priority').value, q = $('q').value.trim().toLowerCase();
+  filtered = rows.filter(r => (!ty || r.season_type === ty) && (!pr || r.priority === pr) &&
+    (!q || (r.title + ' ' + r.away + ' ' + r.home + ' ' + (r.note||'')).toLowerCase().includes(q)));
+  shown = 0; $('rows').innerHTML = '';
+  renderMore();
+  const hi = filtered.filter(r=>r.priority==='high').length, ver = filtered.filter(r=>r.verified).length;
+  $('counts').innerHTML = `<strong>${filtered.length.toLocaleString()}</strong> games (${hi} 49ers · ${ver} verified). Generated matchups are ESTIMATES.`;
+  $('more').style.display = filtered.length > 300 ? '' : 'none';
+}
+function renderMore(){
+  const slice = filtered.slice(shown, shown + 300);
+  $('rows').insertAdjacentHTML('beforeend', slice.map(r => {
+    const badge = r.verified ? '<span class="tag ver">VERIFIED</span>' : '<span class="tag est">ESTIMATED</span>';
+    const pr = r.priority === 'high' ? '<span class="tag good">HIGH</span>' : 'normal';
+    const time = r.start ? esc(r.start) : '<span class="tag flag">TBD</span>';
+    return `<tr><td>${esc(r.date)}</td><td>${time}</td><td>${esc(r.title)}<div class="small">${esc(r.note||'')}</div></td><td>${esc(seasonTypeLabel(r.season_type))}</td><td>${pr}</td><td>${badge}${(r.flags||[]).slice(0,3).map(f=>` <span class="tag info">${esc(f)}</span>`).join('')}</td><td><a href="${esc(r.source)}" rel="noopener">${esc(r.source_label)}</a></td></tr>`;
+  }).join(''));
+  shown += slice.length;
+  $('shown').textContent = `Showing ${shown.toLocaleString()} of ${filtered.length.toLocaleString()}`;
+  $('more').style.display = shown < filtered.length ? '' : 'none';
+}
+['year','type','priority','q'].forEach(id => { const el = $(id); el.addEventListener('input', id === 'year' ? reload : apply); el.addEventListener('change', id === 'year' ? reload : apply); });
+$('more').addEventListener('click', renderMore);
+$('csv').addEventListener('click', () => {
+  const data = [['date','start_pt','away','home','type','priority','status','source']].concat(
+    filtered.map(r => [r.date, r.start||'TBD', r.away, r.home, r.season_type, r.priority, r.verified?'verified':'estimated', r.source]));
+  downloadCsv(`freetime-nfl-${$('year').value}.csv`, data);
+});
+reload();
+</script>
+</body>
+</html>
